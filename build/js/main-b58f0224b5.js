@@ -48665,7 +48665,7 @@ object-assign
                !a.IS_TOUCH_DEVICE) {
                    let t = this._menuItems.length;
                    for (let e = 0; e < t; e++) {
-                       let t = new _o("assets/spritesheets/menu_blob_init.json",.25)
+                       let t = new _o("/assets/spritesheets/menu_blob_init.json",.25)
                          , i = this._menuItems[e].querySelector(".dotContainer");
                        i.appendChild(t.container),
                        oo.set(i, {
@@ -49477,7 +49477,7 @@ object-assign
                this._items[t].addEventListener(yo.CLICK, this.onClick);
            this._iconContainer = t.querySelector(".icon"),
            this._animationContainer = this._iconContainer.querySelector(".animationContainer"),
-           this._eyeAnimation = new _o("assets/spritesheets/behind_eye.json",.25),
+           this._eyeAnimation = new _o("/assets/spritesheets/behind_eye.json",.25),
            oo.set(this._animationContainer, {
                scale: .5,
                transformOrigin: "50% 50%"
@@ -70092,7 +70092,7 @@ object-assign
            this._enterPoint = new Et(0,0),
            this._edges = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]],
            this._circleContainer = new Zt,
-           this._spriteSheet = $r.shared.resources["assets/spritesheets/face_all.json"].spritesheet,
+           this._spriteSheet = $r.shared.resources["/assets/spritesheets/face_all.json"].spritesheet,
            this._faceLabels = ["AdultToBaby", "BabyToTeen", "TeenToAdult", "LtoR", "RtoL", "DownUp", "UpDown"],
            this.setupEye = ()=>{
                this.changeFace(0)
@@ -70741,7 +70741,7 @@ object-assign
    }
    class ef {
        constructor(t, e) {
-           this._dot = new _o("assets/spritesheets/dot2.json",.3),
+           this._dot = new _o("/assets/spritesheets/dot2.json",.3),
            this._prevId = 0,
            this._open = !1,
            this.onCtaClick = t=>{
@@ -72158,7 +72158,7 @@ object-assign
                this._disabled = !1,
                this._currentId = 0,
                this._currentText = "none",
-               this._dot = new _o("assets/spritesheets/scroll-dot.json",1.5),
+               this._dot = new _o("/assets/spritesheets/scroll-dot.json",1.5),
                this.changeText = ()=>{
                    this._currentId++,
                    this._currentId > 2 && (this._currentId = 0),
@@ -72908,7 +72908,7 @@ object-assign
                        })
                    } else {
                        this._stories[t]._id = t;
-                       let e = new _o("assets/spritesheets/menu_blob_init_black.json",.25)
+                       let e = new _o("/assets/spritesheets/menu_blob_init_black.json",.25)
                          , i = this._stories[t].querySelector(".dotContainer");
                        i.appendChild(e.container),
                        oo.set(i, {
@@ -73113,13 +73113,13 @@ object-assign
            ,
            this.loadSpriteSheets = ()=>{
                let t = $r.shared;
-               t.add("assets/spritesheets/face_all.json"),
-               t.add("assets/spritesheets/dot2.json"),
-               t.add("assets/spritesheets/play-pause.json"),
-               t.add("assets/spritesheets/scroll-dot.json"),
-               t.add("assets/spritesheets/behind_eye.json"),
-               t.add("assets/spritesheets/menu_blob_init.json"),
-               t.add("assets/spritesheets/menu_blob_init_black.json"),
+               t.add("/assets/spritesheets/face_all.json"),
+               t.add("/assets/spritesheets/dot2.json"),
+               t.add("/assets/spritesheets/play-pause.json"),
+               t.add("/assets/spritesheets/scroll-dot.json"),
+               t.add("/assets/spritesheets/behind_eye.json"),
+               t.add("/assets/spritesheets/menu_blob_init.json"),
+               t.add("/assets/spritesheets/menu_blob_init_black.json"),
                t.load(this.assetsLoaded)
            }
            ,
