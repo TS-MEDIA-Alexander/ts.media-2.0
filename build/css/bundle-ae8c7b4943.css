@@ -2017,10 +2017,20 @@ body.busy * {
    font-size: 15px;
    font-style: normal;
    font-weight: 400;
-   line-height: 139%;
+   line-height: 58px;
    border-bottom: 1px solid #000;
    display: inline-block;
-   margin: 0 auto
+   margin: 0 auto;
+
+   padding: 15px, 42px, 15px, 42px;
+   opacity: 0px;
+   border: 1px solid #CBCBCB;
+   border-radius: 11px;
+   width: 227px;
+   height: 58px;
+   opacity: 0px;
+   text-decoration: underline;
+
 }
 
 .CaseGridModule.mondayteers {
@@ -8897,12 +8907,39 @@ button.vjs-play-control:hover {
 
 }
 
-#alex-title {
-   color: red;
-   font-family: "Inter", sans-serif;
-   font-optical-sizing: auto;
-   /* font-weight: <weight>; */
-   font-style: normal;
-   font-variation-settings:
-      "slnt" 0;
+.Logo-container-row {
+   display: none;
+   margin: 0 auto;
+}
+
+.logo-container {
+   display: flex;
+   margin: 160px 0;
+   justify-content: center;
+}
+
+.logo-block {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 295px;
+   height: 113.5px;
+   border-right: 1px solid #6A6A6A;
+}
+
+.logo-block .img-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 91px;
+   height: 91px;
+   overflow: hidden;
+   border-radius: 50%;
+}
+.logo-block .img-container img{
+   width: 100%;
+}
+
+.logo-block:last-child {
+   border: none;
 }

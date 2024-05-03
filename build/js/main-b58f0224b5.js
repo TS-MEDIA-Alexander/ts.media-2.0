@@ -31149,6 +31149,7 @@ object-assign
    a.SITE_WRAPPER = document.getElementById("SiteWrapper"),
    a.TEMPLATE_LAYER = document.getElementById("TemplateLayer"),
    a.FOOTER = document.querySelector(".Footer"),
+   a.LOGO_CONTAINER_ROW=document.querySelector(".Logo-container-row"),
    a.IS_IE = !1,
    a.isOpera = !!window.opr && !!opr.addons || !!window.opera || navigator.userAgent.indexOf(" OPR/") >= 0,
    a.isFirefox = "undefined" != typeof InstallTrigger,
@@ -72241,15 +72242,15 @@ object-assign
                        x: Math.round(.5 * Math.round(e.width)) - Math.round(.5 * s),
                        y: a,
                        force3D: !0
-                   });
+                   });/*
                    let l = this._headlineText.getBoundingClientRect()
                      , u = a + o + 20;
                    oo.set(this._headlineText, {
                        y: u
                    }),
-                   oo.set(this._scrollIndicator, {
+                    oo.set(this._scrollIndicator, {
                        y: u + l.height + 20
-                   })
+                   }) */
                }
                ,
                this.updateImageSrc = ()=>{
@@ -72300,14 +72301,14 @@ object-assign
                this._video.addEventListener("canplaythrough", this.videoPlay),
                this._placeholderImage = this._animationContainer.querySelector("img"),
                oo.delayedCall(1.5, this.allowVideo),
-               a.TEMPLATE_MANAGER.signalHashChange.add(this.onHashChange),
-               t.querySelector(".scrollIndicator").appendChild(this._dot.container),
+               a.TEMPLATE_MANAGER.signalHashChange.add(this.onHashChange)/*,
+                t.querySelector(".scrollIndicator").appendChild(this._dot.container),
                oo.set(this._dot.container, {
                    scale: .5,
                    transformOrigin: "50% 0%"
                }),
                this._dot.loop = !0,
-               this._dot.play(this.changeText)
+               this._dot.play(this.changeText) */
            }
            kill() {
                super.kill(),
@@ -73141,10 +73142,13 @@ object-assign
            }
            , */
            this.initSite = ()=>{
+            //Проверяем есть ли елемент a.LOGO_CONTAINER_ROW на странице
+            a.LOGO_CONTAINER_ROW ? a.LOGO_CONTAINER_ROW.style.display="block":null
                this._siteInitialized = !0,
                a.MENU.init(document.body.querySelector(".MainMenu")),
                a.TEMPLATE_LAYER.style.display = "block",
                a.FOOTER.style.display = "block",
+               a.FOOTER.style.display = "block",               
                this.templateManager.addTemplate("HomeTemplate", bo),
                this.templateManager.addTemplate("AboutTemplate", Mp),
                this.templateManager.addTemplate("ServicesTemplate", Rp),
