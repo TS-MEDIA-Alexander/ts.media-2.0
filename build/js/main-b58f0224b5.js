@@ -72300,7 +72300,7 @@ object-assign
                    this._videoPlaying && (this._videoPlaying = !1,
                    this._video.pause());
                    //let t = a.BACKGROUND_RENDERER.isRetina() ? "" : "-non-retina";
-                   this._video.src = "/assets/videos/" + this._breakpoint +/*  t +  */".mp4"
+                   this._video.src = "./assets/videos/" + this._breakpoint +/*  t +  */".mp4"
                }
                ,
                this.videoPlay = ()=>{
