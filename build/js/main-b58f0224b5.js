@@ -1,3 +1,17 @@
+/* Анимация таймера на главной */
+let createTimer = (elem, time, step) => {
+   let result = parseFloat(document.querySelector(elem).innerHTML)
+
+   if (typeof result === 'number' && result > 1) {
+      let i = 0
+      let interval = setInterval(() => {
+         i += step
+         document.querySelector(elem).textContent = (i + '+').replace(/(?<=[0-9])(?=(?:[0-9]{3})+(?![0-9]))/g, " ")
+         result <= i && clearInterval(interval)
+      }, time)
+   }
+}
+
 /*! For license information please see main.js.LICENSE */
 !function(t) {
    var e = {};
@@ -32609,537 +32623,538 @@ object-assign
        }
    }
    ;
-   var Wt = function(t) {
-       function e() {
-           t.call(this),
-           this.tempDisplayObjectParent = null,
-           this.transform = new Lt,
-           this.alpha = 1,
-           this.visible = !0,
-           this.renderable = !0,
-           this.parent = null,
-           this.worldAlpha = 1,
-           this._lastSortedIndex = 0,
-           this._zIndex = 0,
-           this.filterArea = null,
-           this.filters = null,
-           this._enabledFilters = null,
-           this._bounds = new zt,
-           this._boundsID = 0,
-           this._lastBoundsID = -1,
-           this._boundsRect = null,
-           this._localBoundsRect = null,
-           this._mask = null,
-           this._destroyed = !1,
-           this.isSprite = !1
-       }
-       t && (e.__proto__ = t),
-       e.prototype = Object.create(t && t.prototype),
-       e.prototype.constructor = e;
-       var i = {
-           _tempDisplayObjectParent: {
-               configurable: !0
-           },
-           x: {
-               configurable: !0
-           },
-           y: {
-               configurable: !0
-           },
-           worldTransform: {
-               configurable: !0
-           },
-           localTransform: {
-               configurable: !0
-           },
-           position: {
-               configurable: !0
-           },
-           scale: {
-               configurable: !0
-           },
-           pivot: {
-               configurable: !0
-           },
-           skew: {
-               configurable: !0
-           },
-           rotation: {
-               configurable: !0
-           },
-           angle: {
-               configurable: !0
-           },
-           zIndex: {
-               configurable: !0
-           },
-           worldVisible: {
-               configurable: !0
-           },
-           mask: {
-               configurable: !0
-           }
-       };
-       return e.mixin = function(t) {
-           for (var i = Object.keys(t), n = 0; n < i.length; ++n) {
-               var r = i[n];
-               Object.defineProperty(e.prototype, r, Object.getOwnPropertyDescriptor(t, r))
-           }
-       }
-       ,
-       i._tempDisplayObjectParent.get = function() {
-           return null === this.tempDisplayObjectParent && (this.tempDisplayObjectParent = new e),
-           this.tempDisplayObjectParent
-       }
-       ,
-       e.prototype.updateTransform = function() {
-           this.transform.updateTransform(this.parent.transform),
-           this.worldAlpha = this.alpha * this.parent.worldAlpha,
-           this._bounds.updateID++
-       }
-       ,
-       e.prototype._recursivePostUpdateTransform = function() {
-           this.parent ? (this.parent._recursivePostUpdateTransform(),
-           this.transform.updateTransform(this.parent.transform)) : this.transform.updateTransform(this._tempDisplayObjectParent.transform)
-       }
-       ,
-       e.prototype.getBounds = function(t, e) {
-           return t || (this.parent ? (this._recursivePostUpdateTransform(),
-           this.updateTransform()) : (this.parent = this._tempDisplayObjectParent,
-           this.updateTransform(),
-           this.parent = null)),
-           this._boundsID !== this._lastBoundsID && (this.calculateBounds(),
-           this._lastBoundsID = this._boundsID),
-           e || (this._boundsRect || (this._boundsRect = new Gt),
-           e = this._boundsRect),
-           this._bounds.getRectangle(e)
-       }
-       ,
-       e.prototype.getLocalBounds = function(t) {
-           var e = this.transform
-             , i = this.parent;
-           this.parent = null,
-           this.transform = this._tempDisplayObjectParent.transform,
-           t || (this._localBoundsRect || (this._localBoundsRect = new Gt),
-           t = this._localBoundsRect);
-           var n = this.getBounds(!1, t);
-           return this.parent = i,
-           this.transform = e,
-           n
-       }
-       ,
-       e.prototype.toGlobal = function(t, e, i) {
-           return void 0 === i && (i = !1),
-           i || (this._recursivePostUpdateTransform(),
-           this.parent ? this.displayObjectUpdateTransform() : (this.parent = this._tempDisplayObjectParent,
-           this.displayObjectUpdateTransform(),
-           this.parent = null)),
-           this.worldTransform.apply(t, e)
-       }
-       ,
-       e.prototype.toLocal = function(t, e, i, n) {
-           return e && (t = e.toGlobal(t, i, n)),
-           n || (this._recursivePostUpdateTransform(),
-           this.parent ? this.displayObjectUpdateTransform() : (this.parent = this._tempDisplayObjectParent,
-           this.displayObjectUpdateTransform(),
-           this.parent = null)),
-           this.worldTransform.applyInverse(t, i)
-       }
-       ,
-       e.prototype.render = function(t) {}
-       ,
-       e.prototype.setParent = function(t) {
-           if (!t || !t.addChild)
-               throw new Error("setParent: Argument must be a Container");
-           return t.addChild(this),
-           t
-       }
-       ,
-       e.prototype.setTransform = function(t, e, i, n, r, s, o, a, h) {
-           return void 0 === t && (t = 0),
-           void 0 === e && (e = 0),
-           void 0 === i && (i = 1),
-           void 0 === n && (n = 1),
-           void 0 === r && (r = 0),
-           void 0 === s && (s = 0),
-           void 0 === o && (o = 0),
-           void 0 === a && (a = 0),
-           void 0 === h && (h = 0),
-           this.position.x = t,
-           this.position.y = e,
-           this.scale.x = i || 1,
-           this.scale.y = n || 1,
-           this.rotation = r,
-           this.skew.x = s,
-           this.skew.y = o,
-           this.pivot.x = a,
-           this.pivot.y = h,
-           this
-       }
-       ,
-       e.prototype.destroy = function() {
-           this.removeAllListeners(),
-           this.parent && this.parent.removeChild(this),
-           this.transform = null,
-           this.parent = null,
-           this._bounds = null,
-           this._currentBounds = null,
-           this._mask = null,
-           this.filterArea = null,
-           this.interactive = !1,
-           this.interactiveChildren = !1,
-           this._destroyed = !0
-       }
-       ,
-       i.x.get = function() {
-           return this.position.x
-       }
-       ,
-       i.x.set = function(t) {
-           this.transform.position.x = t
-       }
-       ,
-       i.y.get = function() {
-           return this.position.y
-       }
-       ,
-       i.y.set = function(t) {
-           this.transform.position.y = t
-       }
-       ,
-       i.worldTransform.get = function() {
-           return this.transform.worldTransform
-       }
-       ,
-       i.localTransform.get = function() {
-           return this.transform.localTransform
-       }
-       ,
-       i.position.get = function() {
-           return this.transform.position
-       }
-       ,
-       i.position.set = function(t) {
-           this.transform.position.copyFrom(t)
-       }
-       ,
-       i.scale.get = function() {
-           return this.transform.scale
-       }
-       ,
-       i.scale.set = function(t) {
-           this.transform.scale.copyFrom(t)
-       }
-       ,
-       i.pivot.get = function() {
-           return this.transform.pivot
-       }
-       ,
-       i.pivot.set = function(t) {
-           this.transform.pivot.copyFrom(t)
-       }
-       ,
-       i.skew.get = function() {
-           return this.transform.skew
-       }
-       ,
-       i.skew.set = function(t) {
-           this.transform.skew.copyFrom(t)
-       }
-       ,
-       i.rotation.get = function() {
-           return this.transform.rotation
-       }
-       ,
-       i.rotation.set = function(t) {
-           this.transform.rotation = t
-       }
-       ,
-       i.angle.get = function() {
-           return this.transform.rotation * bt
-       }
-       ,
-       i.angle.set = function(t) {
-           this.transform.rotation = t * xt
-       }
-       ,
-       i.zIndex.get = function() {
-           return this._zIndex
-       }
-       ,
-       i.zIndex.set = function(t) {
-           this._zIndex = t,
-           this.parent && (this.parent.sortDirty = !0)
-       }
-       ,
-       i.worldVisible.get = function() {
-           var t = this;
-           do {
-               if (!t.visible)
-                   return !1;
-               t = t.parent
-           } while (t);
-           return !0
-       }
-       ,
-       i.mask.get = function() {
-           return this._mask
-       }
-       ,
-       i.mask.set = function(t) {
-           this._mask && (this._mask.renderable = !0,
-           this._mask.isMask = !1),
-           this._mask = t,
-           this._mask && (this._mask.renderable = !1,
-           this._mask.isMask = !0)
-       }
-       ,
-       Object.defineProperties(e.prototype, i),
-       e
+   var Wt = function (t) {
+      function e() {
+         t.call(this),
+            this.tempDisplayObjectParent = null,
+            this.transform = new Lt,
+            this.alpha = 1,
+            this.visible = !0,
+            this.renderable = !0,
+            this.parent = null,
+            this.worldAlpha = 1,
+            this._lastSortedIndex = 0,
+            this._zIndex = 0,
+            this.filterArea = null,
+            this.filters = null,
+            this._enabledFilters = null,
+            this._bounds = new zt,
+            this._boundsID = 0,
+            this._lastBoundsID = -1,
+            this._boundsRect = null,
+            this._localBoundsRect = null,
+            this._mask = null,
+            this._destroyed = !1,
+            this.isSprite = !1
+      }
+      t && (e.__proto__ = t),
+         e.prototype = Object.create(t && t.prototype),
+         e.prototype.constructor = e;
+      var i = {
+         /* _tempDisplayObjectParent: {
+             configurable: !0
+         }, */
+         x: {
+            configurable: !0
+         },
+         y: {
+            configurable: !0
+         },
+         /*worldTransform: {
+             configurable: !0
+         },
+          localTransform: {
+             configurable: !0
+         }, */
+         position: {
+            configurable: !0
+         },
+         scale: {
+            configurable: !0
+         }/* ,
+          pivot: {
+              configurable: !0
+          },
+          skew: {
+              configurable: !0
+          },
+          rotation: {
+              configurable: !0
+          },
+          angle: {
+              configurable: !0
+          },
+          zIndex: {
+              configurable: !0
+          },
+          worldVisible: {
+              configurable: !0
+          },
+          mask: {
+              configurable: !0
+          } */
+      };
+      return e.mixin = function (t) {
+         for (var i = Object.keys(t), n = 0; n < i.length; ++n) {
+            var r = i[n];
+            Object.defineProperty(e.prototype, r, Object.getOwnPropertyDescriptor(t, r))
+         }
+      }
+         ,
+         /* i._tempDisplayObjectParent.get = function() {
+             return null === this.tempDisplayObjectParent && (this.tempDisplayObjectParent = new e),
+             this.tempDisplayObjectParent
+         }
+         , */
+         /* e.prototype.updateTransform = function() {
+             this.transform.updateTransform(this.parent.transform),
+             this.worldAlpha = this.alpha * this.parent.worldAlpha,
+             this._bounds.updateID++
+         }
+         , */
+         /* e.prototype._recursivePostUpdateTransform = function() {
+             this.parent ? (this.parent._recursivePostUpdateTransform(),
+             this.transform.updateTransform(this.parent.transform)) : this.transform.updateTransform(this._tempDisplayObjectParent.transform)
+         }
+         , */
+         /* e.prototype.getBounds = function(t, e) {
+             return t || (this.parent ? (this._recursivePostUpdateTransform(),
+             this.updateTransform()) : (this.parent = this._tempDisplayObjectParent,
+             this.updateTransform(),
+             this.parent = null)),
+             this._boundsID !== this._lastBoundsID && (this.calculateBounds(),
+             this._lastBoundsID = this._boundsID),
+             e || (this._boundsRect || (this._boundsRect = new Gt),
+             e = this._boundsRect),
+             this._bounds.getRectangle(e)
+         }
+         , */
+         /* e.prototype.getLocalBounds = function(t) {
+             var e = this.transform
+               , i = this.parent;
+             this.parent = null,
+             this.transform = this._tempDisplayObjectParent.transform,
+             t || (this._localBoundsRect || (this._localBoundsRect = new Gt),
+             t = this._localBoundsRect);
+             var n = this.getBounds(!1, t);
+             return this.parent = i,
+             this.transform = e,
+             n
+         }
+         , */
+         /* e.prototype.toGlobal = function(t, e, i) {
+             return void 0 === i && (i = !1),
+             i || (this._recursivePostUpdateTransform(),
+             this.parent ? this.displayObjectUpdateTransform() : (this.parent = this._tempDisplayObjectParent,
+             this.displayObjectUpdateTransform(),
+             this.parent = null)),
+             this.worldTransform.apply(t, e)
+         }
+         , */
+         /* e.prototype.toLocal = function(t, e, i, n) {
+             return e && (t = e.toGlobal(t, i, n)),
+             n || (this._recursivePostUpdateTransform(),
+             this.parent ? this.displayObjectUpdateTransform() : (this.parent = this._tempDisplayObjectParent,
+             this.displayObjectUpdateTransform(),
+             this.parent = null)),
+             this.worldTransform.applyInverse(t, i)
+         }
+         , */
+         /* e.prototype.render = function(t) {}
+         , */
+         /* e.prototype.setParent = function(t) {
+             if (!t || !t.addChild)
+                 throw new Error("setParent: Argument must be a Container");
+             return t.addChild(this),
+             t
+         }
+         , */
+         /* e.prototype.setTransform = function(t, e, i, n, r, s, o, a, h) {
+             return void 0 === t && (t = 0),
+             void 0 === e && (e = 0),
+             void 0 === i && (i = 1),
+             void 0 === n && (n = 1),
+             void 0 === r && (r = 0),
+             void 0 === s && (s = 0),
+             void 0 === o && (o = 0),
+             void 0 === a && (a = 0),
+             void 0 === h && (h = 0),
+             this.position.x = t,
+             this.position.y = e,
+             this.scale.x = i || 1,
+             this.scale.y = n || 1,
+             this.rotation = r,
+             this.skew.x = s,
+             this.skew.y = o,
+             this.pivot.x = a,
+             this.pivot.y = h,
+             this
+         }
+         , */
+         //Без этого эффект работает, но начинает зависать. 
+         e.prototype.destroy = function () {
+            this.removeAllListeners(),
+               this.parent && this.parent.removeChild(this),
+               this.transform = null,
+               this.parent = null,
+               this._bounds = null,
+               this._currentBounds = null,
+               this._mask = null,
+               this.filterArea = null,
+               this.interactive = !1,
+               this.interactiveChildren = !1,
+               this._destroyed = !0
+         }
+         ,
+         i.x.get = function () {
+            return this.position.x
+         }
+         ,
+         i.x.set = function (t) {
+            this.transform.position.x = t
+         }
+         ,
+         i.y.get = function () {
+            return this.position.y
+         }
+         ,
+         i.y.set = function (t) {
+            this.transform.position.y = t
+         }
+         ,
+         /* i.worldTransform.get = function() {
+             return this.transform.worldTransform
+         }
+         , */
+         /* i.localTransform.get = function() {
+             return this.transform.localTransform
+         }
+         , */
+         i.position.get = function () {
+            return this.transform.position
+         }
+         ,
+         /* i.position.set = function(t) {
+             this.transform.position.copyFrom(t)
+         }
+         , */
+         i.scale.get = function () {
+            return this.transform.scale
+         }
+         ,
+         /* i.scale.set = function(t) {
+             this.transform.scale.copyFrom(t)
+         }
+         , */
+         /* i.pivot.get = function() {
+             return this.transform.pivot
+         }
+         , */
+         /*  i.pivot.set = function(t) {
+              this.transform.pivot.copyFrom(t)
+          }
+          , */
+         /*  i.skew.get = function() {
+              return this.transform.skew
+          }
+          , */
+         /* i.skew.set = function(t) {
+             this.transform.skew.copyFrom(t)
+         }
+         , */
+         /* i.rotation.get = function() {
+             return this.transform.rotation
+         }
+         , */
+         /* i.rotation.set = function(t) {
+             this.transform.rotation = t
+         }
+         , */
+         /* i.angle.get = function() {
+             return this.transform.rotation * bt
+         }
+         , */
+         /* i.angle.set = function(t) {
+             this.transform.rotation = t * xt
+         }
+         , */
+         /* i.zIndex.get = function() {
+             return this._zIndex
+         }
+         , */
+         /*  i.zIndex.set = function(t) {
+              this._zIndex = t,
+              this.parent && (this.parent.sortDirty = !0)
+          }
+          , */
+         /*  i.worldVisible.get = function() {
+              var t = this;
+              do {
+                  if (!t.visible)
+                      return !1;
+                  t = t.parent
+              } while (t);
+              return !0
+          }
+          , */
+         /* i.mask.get = function() {
+             return this._mask
+         }
+         , */
+         /*  i.mask.set = function(t) {
+              this._mask && (this._mask.renderable = !0,
+              this._mask.isMask = !1),
+              this._mask = t,
+              this._mask && (this._mask.renderable = !1,
+              this._mask.isMask = !0)
+          }
+          , */
+         Object.defineProperties(e.prototype, i),
+         e
    }(v.a);
    function qt(t, e) {
        return t.zIndex === e.zIndex ? t._lastSortedIndex - e._lastSortedIndex : t.zIndex - e.zIndex
    }
    Wt.prototype.displayObjectUpdateTransform = Wt.prototype.updateTransform;
-   var Zt = function(t) {
-       function e() {
-           t.call(this),
-           this.children = [],
-           this.sortableChildren = m.SORTABLE_CHILDREN,
-           this.sortDirty = !1
-       }
-       t && (e.__proto__ = t),
-       e.prototype = Object.create(t && t.prototype),
-       e.prototype.constructor = e;
-       var i = {
-           width: {
-               configurable: !0
-           },
-           height: {
-               configurable: !0
-           }
-       };
-       return e.prototype.onChildrenChange = function() {}
-       ,
-       e.prototype.addChild = function(t) {
-           var e = arguments
-             , i = arguments.length;
-           if (i > 1)
+   var Zt = function (t) {
+      function e() {
+         t.call(this),
+            this.children = []/* ,
+          this.sortableChildren = m.SORTABLE_CHILDREN,
+          this.sortDirty = !1 */
+      }
+      t && (e.__proto__ = t),
+         e.prototype = Object.create(t && t.prototype),
+         e.prototype.constructor = e;
+      /* var i = {
+          width: {
+              configurable: !0
+          },
+          height: {
+              configurable: !0
+          }
+      }; */
+      return e.prototype.onChildrenChange = function () { }
+         ,
+         e.prototype.addChild = function (t) {
+            var e = arguments
+               , i = arguments.length;
+            if (i > 1)
                for (var n = 0; n < i; n++)
-                   this.addChild(e[n]);
-           else
+                  this.addChild(e[n]);
+            else
                t.parent && t.parent.removeChild(t),
-               t.parent = this,
-               this.sortDirty = !0,
-               t.transform._parentID = -1,
-               this.children.push(t),
-               this._boundsID++,
-               this.onChildrenChange(this.children.length - 1),
-               this.emit("childAdded", t, this, this.children.length - 1),
-               t.emit("added", this);
-           return t
-       }
-       ,
-       e.prototype.addChildAt = function(t, e) {
-           if (e < 0 || e > this.children.length)
-               throw new Error(t + "addChildAt: The index " + e + " supplied is out of bounds " + this.children.length);
-           return t.parent && t.parent.removeChild(t),
-           t.parent = this,
-           this.sortDirty = !0,
-           t.transform._parentID = -1,
-           this.children.splice(e, 0, t),
-           this._boundsID++,
-           this.onChildrenChange(e),
-           t.emit("added", this),
-           this.emit("childAdded", t, this, e),
-           t
-       }
-       ,
-       e.prototype.swapChildren = function(t, e) {
-           if (t !== e) {
-               var i = this.getChildIndex(t)
-                 , n = this.getChildIndex(e);
-               this.children[i] = e,
-               this.children[n] = t,
-               this.onChildrenChange(i < n ? i : n)
-           }
-       }
-       ,
-       e.prototype.getChildIndex = function(t) {
-           var e = this.children.indexOf(t);
-           if (-1 === e)
-               throw new Error("The supplied DisplayObject must be a child of the caller");
-           return e
-       }
-       ,
-       e.prototype.setChildIndex = function(t, e) {
-           if (e < 0 || e >= this.children.length)
-               throw new Error("The index " + e + " supplied is out of bounds " + this.children.length);
-           var i = this.getChildIndex(t);
-           tt(this.children, i, 1),
-           this.children.splice(e, 0, t),
-           this.onChildrenChange(e)
-       }
-       ,
-       e.prototype.getChildAt = function(t) {
-           if (t < 0 || t >= this.children.length)
-               throw new Error("getChildAt: Index (" + t + ") does not exist.");
-           return this.children[t]
-       }
-       ,
-       e.prototype.removeChild = function(t) {
-           var e = arguments
-             , i = arguments.length;
-           if (i > 1)
+                  t.parent = this,
+                  this.sortDirty = !0,
+                  t.transform._parentID = -1,
+                  this.children.push(t),
+                  this._boundsID++,
+                  this.onChildrenChange(this.children.length - 1),
+                  this.emit("childAdded", t, this, this.children.length - 1),
+                  t.emit("added", this);
+            return t
+         }
+         ,
+         /* e.prototype.addChildAt = function(t, e) {
+             if (e < 0 || e > this.children.length)
+                 throw new Error(t + "addChildAt: The index " + e + " supplied is out of bounds " + this.children.length);
+             return t.parent && t.parent.removeChild(t),
+             t.parent = this,
+             this.sortDirty = !0,
+             t.transform._parentID = -1,
+             this.children.splice(e, 0, t),
+             this._boundsID++,
+             this.onChildrenChange(e),
+             t.emit("added", this),
+             this.emit("childAdded", t, this, e),
+             t
+         }
+         , */
+         /* e.prototype.swapChildren = function(t, e) {
+             if (t !== e) {
+                 var i = this.getChildIndex(t)
+                   , n = this.getChildIndex(e);
+                 this.children[i] = e,
+                 this.children[n] = t,
+                 this.onChildrenChange(i < n ? i : n)
+             }
+         }
+         , */
+         /* e.prototype.getChildIndex = function(t) {
+             var e = this.children.indexOf(t);
+             if (-1 === e)
+                 throw new Error("The supplied DisplayObject must be a child of the caller");
+             return e
+         }
+         , */
+         /* e.prototype.setChildIndex = function(t, e) {
+             if (e < 0 || e >= this.children.length)
+                 throw new Error("The index " + e + " supplied is out of bounds " + this.children.length);
+             var i = this.getChildIndex(t);
+             tt(this.children, i, 1),
+             this.children.splice(e, 0, t),
+             this.onChildrenChange(e)
+         }
+         , */
+         /* e.prototype.getChildAt = function(t) {
+             if (t < 0 || t >= this.children.length)
+                 throw new Error("getChildAt: Index (" + t + ") does not exist.");
+             return this.children[t]
+         }
+         , */
+         e.prototype.removeChild = function (t) {
+            var e = arguments
+               , i = arguments.length;
+            if (i > 1)
                for (var n = 0; n < i; n++)
-                   this.removeChild(e[n]);
-           else {
+                  this.removeChild(e[n]);
+            else {
                var r = this.children.indexOf(t);
                if (-1 === r)
-                   return null;
+                  return null;
                t.parent = null,
-               t.transform._parentID = -1,
-               tt(this.children, r, 1),
+                  t.transform._parentID = -1,
+                  tt(this.children, r, 1),
+                  this._boundsID++,
+                  this.onChildrenChange(r),
+                  t.emit("removed", this),
+                  this.emit("childRemoved", t, this, r)
+            }
+            return t
+         }
+         ,
+         /* e.prototype.removeChildAt = function(t) {
+             var e = this.getChildAt(t);
+             return e.parent = null,
+             e.transform._parentID = -1,
+             tt(this.children, t, 1),
+             this._boundsID++,
+             this.onChildrenChange(t),
+             e.emit("removed", this),
+             this.emit("childRemoved", e, this, t),
+             e
+         }
+         , */
+         /*   e.prototype.removeChildren = function(t, e) {
+               void 0 === t && (t = 0);
+               var i, n = t, r = "number" == typeof e ? e : this.children.length, s = r - n;
+               if (s > 0 && s <= r) {
+                   i = this.children.splice(n, s);
+                   for (var o = 0; o < i.length; ++o)
+                       i[o].parent = null,
+                       i[o].transform && (i[o].transform._parentID = -1);
+                   this._boundsID++,
+                   this.onChildrenChange(t);
+                   for (var a = 0; a < i.length; ++a)
+                       i[a].emit("removed", this),
+                       this.emit("childRemoved", i[a], this, a);
+                   return i
+               }
+               if (0 === s && 0 === this.children.length)
+                   return [];
+               throw new RangeError("removeChildren: numeric values are outside the acceptable range.")
+           }
+           , */
+         /* e.prototype.sortChildren = function() {
+             for (var t = !1, e = 0, i = this.children.length; e < i; ++e) {
+                 var n = this.children[e];
+                 n._lastSortedIndex = e,
+                 t || 0 === n.zIndex || (t = !0)
+             }
+             t && this.children.length > 1 && this.children.sort(qt),
+             this.sortDirty = !1
+         }
+         , */
+         e.prototype.updateTransform = function () {
+            this.sortableChildren && this.sortDirty && this.sortChildren(),
                this._boundsID++,
-               this.onChildrenChange(r),
-               t.emit("removed", this),
-               this.emit("childRemoved", t, this, r)
-           }
-           return t
-       }
-       ,
-       e.prototype.removeChildAt = function(t) {
-           var e = this.getChildAt(t);
-           return e.parent = null,
-           e.transform._parentID = -1,
-           tt(this.children, t, 1),
-           this._boundsID++,
-           this.onChildrenChange(t),
-           e.emit("removed", this),
-           this.emit("childRemoved", e, this, t),
-           e
-       }
-       ,
-       e.prototype.removeChildren = function(t, e) {
-           void 0 === t && (t = 0);
-           var i, n = t, r = "number" == typeof e ? e : this.children.length, s = r - n;
-           if (s > 0 && s <= r) {
-               i = this.children.splice(n, s);
-               for (var o = 0; o < i.length; ++o)
-                   i[o].parent = null,
-                   i[o].transform && (i[o].transform._parentID = -1);
-               this._boundsID++,
-               this.onChildrenChange(t);
-               for (var a = 0; a < i.length; ++a)
-                   i[a].emit("removed", this),
-                   this.emit("childRemoved", i[a], this, a);
-               return i
-           }
-           if (0 === s && 0 === this.children.length)
-               return [];
-           throw new RangeError("removeChildren: numeric values are outside the acceptable range.")
-       }
-       ,
-       e.prototype.sortChildren = function() {
-           for (var t = !1, e = 0, i = this.children.length; e < i; ++e) {
-               var n = this.children[e];
-               n._lastSortedIndex = e,
-               t || 0 === n.zIndex || (t = !0)
-           }
-           t && this.children.length > 1 && this.children.sort(qt),
-           this.sortDirty = !1
-       }
-       ,
-       e.prototype.updateTransform = function() {
-           this.sortableChildren && this.sortDirty && this.sortChildren(),
-           this._boundsID++,
-           this.transform.updateTransform(this.parent.transform),
-           this.worldAlpha = this.alpha * this.parent.worldAlpha;
-           for (var t = 0, e = this.children.length; t < e; ++t) {
+               this.transform.updateTransform(this.parent.transform),
+               this.worldAlpha = this.alpha * this.parent.worldAlpha;
+            for (var t = 0, e = this.children.length; t < e; ++t) {
                var i = this.children[t];
                i.visible && i.updateTransform()
-           }
-       }
-       ,
-       e.prototype.calculateBounds = function() {
-           this._bounds.clear(),
-           this._calculateBounds();
-           for (var t = 0; t < this.children.length; t++) {
-               var e = this.children[t];
-               e.visible && e.renderable && (e.calculateBounds(),
-               e._mask ? (e._mask.calculateBounds(),
-               this._bounds.addBoundsMask(e._bounds, e._mask._bounds)) : e.filterArea ? this._bounds.addBoundsArea(e._bounds, e.filterArea) : this._bounds.addBounds(e._bounds))
-           }
-           this._lastBoundsID = this._boundsID
-       }
-       ,
-       e.prototype._calculateBounds = function() {}
-       ,
-       e.prototype.render = function(t) {
-           if (this.visible && !(this.worldAlpha <= 0) && this.renderable)
+            }
+         }
+         ,
+         /* e.prototype.calculateBounds = function() {
+             this._bounds.clear(),
+             this._calculateBounds();
+             for (var t = 0; t < this.children.length; t++) {
+                 var e = this.children[t];
+                 e.visible && e.renderable && (e.calculateBounds(),
+                 e._mask ? (e._mask.calculateBounds(),
+                 this._bounds.addBoundsMask(e._bounds, e._mask._bounds)) : e.filterArea ? this._bounds.addBoundsArea(e._bounds, e.filterArea) : this._bounds.addBounds(e._bounds))
+             }
+             this._lastBoundsID = this._boundsID
+         }
+         , */
+         /* e.prototype._calculateBounds = function() {}
+         , */
+         e.prototype.render = function (t) {
+            if (this.visible && !(this.worldAlpha <= 0) && this.renderable)
                if (this._mask || this.filters && this.filters.length)
-                   this.renderAdvanced(t);
+                  this.renderAdvanced(t);
                else {
-                   this._render(t);
-                   for (var e = 0, i = this.children.length; e < i; ++e)
-                       this.children[e].render(t)
+                  this._render(t);
+                  for (var e = 0, i = this.children.length; e < i; ++e)
+                     this.children[e].render(t)
                }
-       }
-       ,
-       e.prototype.renderAdvanced = function(t) {
-           t.batch.flush();
-           var e = this.filters
-             , i = this._mask;
-           if (e) {
-               this._enabledFilters || (this._enabledFilters = []),
-               this._enabledFilters.length = 0;
-               for (var n = 0; n < e.length; n++)
-                   e[n].enabled && this._enabledFilters.push(e[n]);
-               this._enabledFilters.length && t.filter.push(this, this._enabledFilters)
-           }
-           i && t.mask.push(this, this._mask),
-           this._render(t);
-           for (var r = 0, s = this.children.length; r < s; r++)
-               this.children[r].render(t);
-           t.batch.flush(),
-           i && t.mask.pop(this, this._mask),
-           e && this._enabledFilters && this._enabledFilters.length && t.filter.pop()
-       }
-       ,
-       e.prototype._render = function(t) {}
-       ,
-       e.prototype.destroy = function(e) {
-           t.prototype.destroy.call(this),
-           this.sortDirty = !1;
-           var i = "boolean" == typeof e ? e : e && e.children
-             , n = this.removeChildren(0, this.children.length);
-           if (i)
-               for (var r = 0; r < n.length; ++r)
-                   n[r].destroy(e)
-       }
-       ,
-       i.width.get = function() {
-           return this.scale.x * this.getLocalBounds().width
-       }
-       ,
-       i.width.set = function(t) {
-           var e = this.getLocalBounds().width;
-           this.scale.x = 0 !== e ? t / e : 1,
-           this._width = t
-       }
-       ,
-       i.height.get = function() {
-           return this.scale.y * this.getLocalBounds().height
-       }
-       ,
-       i.height.set = function(t) {
-           var e = this.getLocalBounds().height;
-           this.scale.y = 0 !== e ? t / e : 1,
-           this._height = t
-       }
-       ,
-       Object.defineProperties(e.prototype, i),
-       e
+         }
+         ,
+         /* e.prototype.renderAdvanced = function(t) {
+             t.batch.flush();
+             var e = this.filters
+               , i = this._mask;
+             if (e) {
+                 this._enabledFilters || (this._enabledFilters = []),
+                 this._enabledFilters.length = 0;
+                 for (var n = 0; n < e.length; n++)
+                     e[n].enabled && this._enabledFilters.push(e[n]);
+                 this._enabledFilters.length && t.filter.push(this, this._enabledFilters)
+             }
+             i && t.mask.push(this, this._mask),
+             this._render(t);
+             for (var r = 0, s = this.children.length; r < s; r++)
+                 this.children[r].render(t);
+             t.batch.flush(),
+             i && t.mask.pop(this, this._mask),
+             e && this._enabledFilters && this._enabledFilters.length && t.filter.pop()
+         }
+         , */
+         e.prototype._render = function (t) { }
+         ,
+         /* e.prototype.destroy = function(e) {
+             t.prototype.destroy.call(this),
+             this.sortDirty = !1;
+             var i = "boolean" == typeof e ? e : e && e.children
+               , n = this.removeChildren(0, this.children.length);
+             if (i)
+                 for (var r = 0; r < n.length; ++r)
+                     n[r].destroy(e)
+         }
+         ,
+         i.width.get = function() {
+             return this.scale.x * this.getLocalBounds().width
+         }
+         ,
+         i.width.set = function(t) {
+             var e = this.getLocalBounds().width;
+             this.scale.x = 0 !== e ? t / e : 1,
+             this._width = t
+         }
+         ,
+         i.height.get = function() {
+             return this.scale.y * this.getLocalBounds().height
+         }
+         ,
+         i.height.set = function(t) {
+             var e = this.getLocalBounds().height;
+             this.scale.y = 0 !== e ? t / e : 1,
+             this._height = t
+         }
+         ,
+        Object.defineProperties(e.prototype, i), */
+         e
    }(Wt);
    Zt.prototype.containerUpdateTransform = Zt.prototype.updateTransform;
    Wt.mixin({
@@ -40139,251 +40154,251 @@ object-assign
 */
    var Xn = new Et
      , $n = new Uint16Array([0, 1, 2, 0, 2, 3])
-     , tr = function(t) {
-       function e(e) {
-           t.call(this),
-           this._anchor = new _t(this._onAnchorUpdate,this,e ? e.defaultAnchor.x : 0,e ? e.defaultAnchor.y : 0),
-           this._texture = null,
-           this._width = 0,
-           this._height = 0,
-           this._tint = null,
-           this._tintRGB = null,
-           this.tint = 16777215,
-           this.blendMode = b.NORMAL,
-           this.shader = null,
-           this._cachedTint = 16777215,
-           this.uvs = null,
-           this.texture = e || Me.EMPTY,
-           this.vertexData = new Float32Array(8),
-           this.vertexTrimmedData = null,
-           this._transformID = -1,
-           this._textureID = -1,
-           this._transformTrimmedID = -1,
-           this._textureTrimmedID = -1,
-           this.indices = $n,
-           this.size = 4,
-           this.start = 0,
-           this.pluginName = "batch",
-           this.isSprite = !0,
-           this._roundPixels = m.ROUND_PIXELS
-       }
-       t && (e.__proto__ = t),
-       e.prototype = Object.create(t && t.prototype),
-       e.prototype.constructor = e;
-       var i = {
-           roundPixels: {
-               configurable: !0
-           },
-           width: {
-               configurable: !0
-           },
-           height: {
-               configurable: !0
-           },
-           anchor: {
-               configurable: !0
-           },
-           tint: {
-               configurable: !0
-           },
-           texture: {
-               configurable: !0
-           }
-       };
-       return e.prototype._onTextureUpdate = function() {
-           this._textureID = -1,
-           this._textureTrimmedID = -1,
-           this._cachedTint = 16777215,
-           this._width && (this.scale.x = nt(this.scale.x) * this._width / this._texture.orig.width),
-           this._height && (this.scale.y = nt(this.scale.y) * this._height / this._texture.orig.height)
-       }
-       ,
-       e.prototype._onAnchorUpdate = function() {
-           this._transformID = -1,
-           this._transformTrimmedID = -1
-       }
-       ,
-       e.prototype.calculateVertices = function() {
-           var t = this._texture;
-           if (this._transformID !== this.transform._worldID || this._textureID !== t._updateID) {
+     , tr = function (t) {
+      function e(e) {
+         t.call(this),
+            this._anchor = new _t(this._onAnchorUpdate, this, e ? e.defaultAnchor.x : 0, e ? e.defaultAnchor.y : 0),
+            this._texture = null,
+            this._width = 0,
+            this._height = 0,
+            this._tint = null,
+            this._tintRGB = null,
+            this.tint = 16777215,
+            this.blendMode = b.NORMAL,
+            this.shader = null,
+            this._cachedTint = 16777215,
+            this.uvs = null,
+            this.texture = e || Me.EMPTY,
+            this.vertexData = new Float32Array(8),
+            this.vertexTrimmedData = null,
+            this._transformID = -1,
+            this._textureID = -1,
+            this._transformTrimmedID = -1,
+            this._textureTrimmedID = -1,
+            this.indices = $n,
+            this.size = 4,
+            this.start = 0,
+            this.pluginName = "batch",
+            this.isSprite = !0,
+            this._roundPixels = m.ROUND_PIXELS
+      }
+      //t && (e.__proto__ = t),
+      e.prototype = Object.create(t && t.prototype),
+         e.prototype.constructor = e;
+      var i = {
+         roundPixels: {
+            configurable: !0
+         },
+         width: {
+            configurable: !0
+         },
+         height: {
+            configurable: !0
+         },
+         anchor: {
+            configurable: !0
+         },
+         tint: {
+            configurable: !0
+         },
+         texture: {
+            configurable: !0
+         }
+      };
+      return e.prototype._onTextureUpdate = function () {
+         this._textureID = -1,
+            this._textureTrimmedID = -1,
+            this._cachedTint = 16777215,
+            this._width && (this.scale.x = nt(this.scale.x) * this._width / this._texture.orig.width),
+            this._height && (this.scale.y = nt(this.scale.y) * this._height / this._texture.orig.height)
+      }
+         ,
+         /*  e.prototype._onAnchorUpdate = function() {
+              this._transformID = -1,
+              this._transformTrimmedID = -1
+          }
+          , */
+         e.prototype.calculateVertices = function () {
+            var t = this._texture;
+            if (this._transformID !== this.transform._worldID || this._textureID !== t._updateID) {
                this._textureID !== t._updateID && (this.uvs = this._texture._uvs.uvsFloat32),
-               this._transformID = this.transform._worldID,
-               this._textureID = t._updateID;
+                  this._transformID = this.transform._worldID,
+                  this._textureID = t._updateID;
                var e = this.transform.worldTransform
-                 , i = e.a
-                 , n = e.b
-                 , r = e.c
-                 , s = e.d
-                 , o = e.tx
-                 , a = e.ty
-                 , h = this.vertexData
-                 , l = t.trim
-                 , u = t.orig
-                 , c = this._anchor
-                 , d = 0
-                 , A = 0
-                 , g = 0
-                 , p = 0;
+                  , i = e.a
+                  , n = e.b
+                  , r = e.c
+                  , s = e.d
+                  , o = e.tx
+                  , a = e.ty
+                  , h = this.vertexData
+                  , l = t.trim
+                  , u = t.orig
+                  , c = this._anchor
+                  , d = 0
+                  , A = 0
+                  , g = 0
+                  , p = 0;
                if (l ? (d = (A = l.x - c._x * u.width) + l.width,
-               g = (p = l.y - c._y * u.height) + l.height) : (d = (A = -c._x * u.width) + u.width,
-               g = (p = -c._y * u.height) + u.height),
-               h[0] = i * A + r * p + o,
-               h[1] = s * p + n * A + a,
-               h[2] = i * d + r * p + o,
-               h[3] = s * p + n * d + a,
-               h[4] = i * d + r * g + o,
-               h[5] = s * g + n * d + a,
-               h[6] = i * A + r * g + o,
-               h[7] = s * g + n * A + a,
-               this._roundPixels)
-                   for (var f = 0; f < 8; f++)
-                       h[f] = Math.round(h[f])
-           }
-       }
-       ,
-       e.prototype.calculateTrimmedVertices = function() {
-           if (this.vertexTrimmedData) {
-               if (this._transformTrimmedID === this.transform._worldID && this._textureTrimmedID === this._texture._updateID)
-                   return
-           } else
-               this.vertexTrimmedData = new Float32Array(8);
-           this._transformTrimmedID = this.transform._worldID,
-           this._textureTrimmedID = this._texture._updateID;
-           var t = this._texture
-             , e = this.vertexTrimmedData
-             , i = t.orig
-             , n = this._anchor
-             , r = this.transform.worldTransform
-             , s = r.a
-             , o = r.b
-             , a = r.c
-             , h = r.d
-             , l = r.tx
-             , u = r.ty
-             , c = -n._x * i.width
-             , d = c + i.width
-             , A = -n._y * i.height
-             , g = A + i.height;
-           e[0] = s * c + a * A + l,
-           e[1] = h * A + o * c + u,
-           e[2] = s * d + a * A + l,
-           e[3] = h * A + o * d + u,
-           e[4] = s * d + a * g + l,
-           e[5] = h * g + o * d + u,
-           e[6] = s * c + a * g + l,
-           e[7] = h * g + o * c + u
-       }
-       ,
-       e.prototype._render = function(t) {
-           this.calculateVertices(),
-           t.batch.setObjectRenderer(t.plugins[this.pluginName]),
-           t.plugins[this.pluginName].render(this)
-       }
-       ,
-       e.prototype._calculateBounds = function() {
-           var t = this._texture.trim
-             , e = this._texture.orig;
-           !t || t.width === e.width && t.height === e.height ? (this.calculateVertices(),
-           this._bounds.addQuad(this.vertexData)) : (this.calculateTrimmedVertices(),
-           this._bounds.addQuad(this.vertexTrimmedData))
-       }
-       ,
-       e.prototype.getLocalBounds = function(e) {
-           return 0 === this.children.length ? (this._bounds.minX = this._texture.orig.width * -this._anchor._x,
-           this._bounds.minY = this._texture.orig.height * -this._anchor._y,
-           this._bounds.maxX = this._texture.orig.width * (1 - this._anchor._x),
-           this._bounds.maxY = this._texture.orig.height * (1 - this._anchor._y),
-           e || (this._localBoundsRect || (this._localBoundsRect = new Gt),
-           e = this._localBoundsRect),
-           this._bounds.getRectangle(e)) : t.prototype.getLocalBounds.call(this, e)
-       }
-       ,
-       e.prototype.containsPoint = function(t) {
-           this.worldTransform.applyInverse(t, Xn);
-           var e = this._texture.orig.width
-             , i = this._texture.orig.height
-             , n = -e * this.anchor.x
-             , r = 0;
-           return Xn.x >= n && Xn.x < n + e && (r = -i * this.anchor.y,
-           Xn.y >= r && Xn.y < r + i)
-       }
-       ,
-       e.prototype.destroy = function(e) {
-           if (t.prototype.destroy.call(this, e),
-           this._texture.off("update", this._onTextureUpdate, this),
-           this._anchor = null,
-           "boolean" == typeof e ? e : e && e.texture) {
-               var i = "boolean" == typeof e ? e : e && e.baseTexture;
-               this._texture.destroy(!!i)
-           }
-           this._texture = null,
-           this.shader = null
-       }
-       ,
-       e.from = function(t, i) {
-           return new e(t instanceof Me ? t : Me.from(t, i))
-       }
-       ,
-       i.roundPixels.set = function(t) {
-           this._roundPixels !== t && (this._transformID = -1),
-           this._roundPixels = t
-       }
-       ,
-       i.roundPixels.get = function() {
-           return this._roundPixels
-       }
-       ,
-       i.width.get = function() {
-           return Math.abs(this.scale.x) * this._texture.orig.width
-       }
-       ,
-       i.width.set = function(t) {
-           var e = nt(this.scale.x) || 1;
-           this.scale.x = e * t / this._texture.orig.width,
-           this._width = t
-       }
-       ,
-       i.height.get = function() {
-           return Math.abs(this.scale.y) * this._texture.orig.height
-       }
-       ,
-       i.height.set = function(t) {
-           var e = nt(this.scale.y) || 1;
-           this.scale.y = e * t / this._texture.orig.height,
-           this._height = t
-       }
-       ,
-       i.anchor.get = function() {
-           return this._anchor
-       }
-       ,
-       i.anchor.set = function(t) {
-           this._anchor.copyFrom(t)
-       }
-       ,
-       i.tint.get = function() {
-           return this._tint
-       }
-       ,
-       i.tint.set = function(t) {
-           this._tint = t,
-           this._tintRGB = (t >> 16) + (65280 & t) + ((255 & t) << 16)
-       }
-       ,
-       i.texture.get = function() {
-           return this._texture
-       }
-       ,
-       i.texture.set = function(t) {
-           this._texture !== t && (this._texture = t || Me.EMPTY,
-           this._cachedTint = 16777215,
-           this._textureID = -1,
-           this._textureTrimmedID = -1,
-           t && (t.baseTexture.valid ? this._onTextureUpdate() : t.once("update", this._onTextureUpdate, this)))
-       }
-       ,
-       Object.defineProperties(e.prototype, i),
-       e
+                  g = (p = l.y - c._y * u.height) + l.height) : (d = (A = -c._x * u.width) + u.width,
+                     g = (p = -c._y * u.height) + u.height),
+                  h[0] = i * A + r * p + o,
+                  h[1] = s * p + n * A + a,
+                  h[2] = i * d + r * p + o,
+                  h[3] = s * p + n * d + a,
+                  h[4] = i * d + r * g + o,
+                  h[5] = s * g + n * d + a,
+                  h[6] = i * A + r * g + o,
+                  h[7] = s * g + n * A + a,
+                  this._roundPixels)
+                  for (var f = 0; f < 8; f++)
+                     h[f] = Math.round(h[f])
+            }
+         }
+         ,
+         /* e.prototype.calculateTrimmedVertices = function() {
+             if (this.vertexTrimmedData) {
+                 if (this._transformTrimmedID === this.transform._worldID && this._textureTrimmedID === this._texture._updateID)
+                     return
+             } else
+                 this.vertexTrimmedData = new Float32Array(8);
+             this._transformTrimmedID = this.transform._worldID,
+             this._textureTrimmedID = this._texture._updateID;
+             var t = this._texture
+               , e = this.vertexTrimmedData
+               , i = t.orig
+               , n = this._anchor
+               , r = this.transform.worldTransform
+               , s = r.a
+               , o = r.b
+               , a = r.c
+               , h = r.d
+               , l = r.tx
+               , u = r.ty
+               , c = -n._x * i.width
+               , d = c + i.width
+               , A = -n._y * i.height
+               , g = A + i.height;
+             e[0] = s * c + a * A + l,
+             e[1] = h * A + o * c + u,
+             e[2] = s * d + a * A + l,
+             e[3] = h * A + o * d + u,
+             e[4] = s * d + a * g + l,
+             e[5] = h * g + o * d + u,
+             e[6] = s * c + a * g + l,
+             e[7] = h * g + o * c + u
+         }
+         , */
+         e.prototype._render = function (t) {
+            this.calculateVertices(),
+               t.batch.setObjectRenderer(t.plugins[this.pluginName]),
+               t.plugins[this.pluginName].render(this)
+         }
+         ,
+         /* e.prototype._calculateBounds = function() {
+             var t = this._texture.trim
+               , e = this._texture.orig;
+             !t || t.width === e.width && t.height === e.height ? (this.calculateVertices(),
+             this._bounds.addQuad(this.vertexData)) : (this.calculateTrimmedVertices(),
+             this._bounds.addQuad(this.vertexTrimmedData))
+         }
+         , */
+         /* e.prototype.getLocalBounds = function(e) {
+             return 0 === this.children.length ? (this._bounds.minX = this._texture.orig.width * -this._anchor._x,
+             this._bounds.minY = this._texture.orig.height * -this._anchor._y,
+             this._bounds.maxX = this._texture.orig.width * (1 - this._anchor._x),
+             this._bounds.maxY = this._texture.orig.height * (1 - this._anchor._y),
+             e || (this._localBoundsRect || (this._localBoundsRect = new Gt),
+             e = this._localBoundsRect),
+             this._bounds.getRectangle(e)) : t.prototype.getLocalBounds.call(this, e)
+         }
+         , */
+         /* e.prototype.containsPoint = function(t) {
+             this.worldTransform.applyInverse(t, Xn);
+             var e = this._texture.orig.width
+               , i = this._texture.orig.height
+               , n = -e * this.anchor.x
+               , r = 0;
+             return Xn.x >= n && Xn.x < n + e && (r = -i * this.anchor.y,
+             Xn.y >= r && Xn.y < r + i)
+         }
+         , */
+         /* e.prototype.destroy = function(e) {
+             if (t.prototype.destroy.call(this, e),
+             this._texture.off("update", this._onTextureUpdate, this),
+             this._anchor = null,
+             "boolean" == typeof e ? e : e && e.texture) {
+                 var i = "boolean" == typeof e ? e : e && e.baseTexture;
+                 this._texture.destroy(!!i)
+             }
+             this._texture = null,
+             this.shader = null
+         }
+         , */
+         e.from = function (t, i) {
+            return new e(t instanceof Me ? t : Me.from(t, i))
+         }
+         ,
+         /* i.roundPixels.set = function(t) {
+             this._roundPixels !== t && (this._transformID = -1),
+             this._roundPixels = t
+         }
+         , */
+         /*  i.roundPixels.get = function() {
+              return this._roundPixels
+          }
+          , */
+         /* i.width.get = function() {
+             return Math.abs(this.scale.x) * this._texture.orig.width
+         }
+         , */
+         i.width.set = function (t) {
+            var e = nt(this.scale.x) || 1;
+            this.scale.x = e * t / this._texture.orig.width,
+               this._width = t
+         }
+         ,
+         /* i.height.get = function() {
+             return Math.abs(this.scale.y) * this._texture.orig.height
+         }
+         , */
+         i.height.set = function (t) {
+            var e = nt(this.scale.y) || 1;
+            this.scale.y = e * t / this._texture.orig.height,
+               this._height = t
+         }
+         ,
+         /* i.anchor.get = function() {
+             return this._anchor
+         }
+         , */
+         /* i.anchor.set = function(t) {
+             this._anchor.copyFrom(t)
+         }
+         , */
+         /* i.tint.get = function() {
+             return this._tint
+         }
+         , */
+         i.tint.set = function (t) {
+            this._tint = t,
+               this._tintRGB = (t >> 16) + (65280 & t) + ((255 & t) << 16)
+         }
+         ,
+         i.texture.get = function () {
+            return this._texture
+         }
+         ,
+         i.texture.set = function (t) {
+            this._texture !== t && (this._texture = t || Me.EMPTY,
+               this._cachedTint = 16777215,
+               this._textureID = -1,
+               this._textureTrimmedID = -1,
+               t && (t.baseTexture.valid ? this._onTextureUpdate() : t.once("update", this._onTextureUpdate, this)))
+         }
+         ,
+         Object.defineProperties(e.prototype, i),
+         e
    }(Zt)
      , er = 0
      , ir = {
@@ -48517,12 +48532,12 @@ object-assign
                oo.killTweensOf(i._spriteSheet),
                oo.killTweensOf(i),
                i._currentFrame = 0,
-               i.updateFramePosition(),
+               /* i.updateFramePosition(), */
                oo.to(i, i._speed, {
                    _spriteFrame: i._frameData.length - 1,
                    repeat: i._loop ? -1 : 0,
                    roundProps: ["_spriteFrame"],
-                   onUpdate: i.updateFramePosition,
+                   /* onUpdate: i.updateFramePosition, */
                    onRepeat: i.onRepeat,
                    onRepeatParams: [t],
                    onComplete: i.onComplete,
@@ -48548,11 +48563,11 @@ object-assign
                oo.killTweensOf(this._spriteSheet),
                oo.killTweensOf(this),
                this._currentFrame = this._frameData.length - 1,
-               this.updateFramePosition(),
+               /* this.updateFramePosition(), */
                oo.to(this, this._speed, {
                    _spriteFrame: 0,
                    roundProps: ["_spriteFrame"],
-                   onUpdate: this.updateFramePosition,
+                   /* onUpdate: this.updateFramePosition, */
                    ease: Bs.c.easeNone,
                    overwrite: "true"
                })
@@ -48568,11 +48583,11 @@ object-assign
                this._playing = !1,
                this._spriteFrame = 0,
                oo.killTweensOf(this._spriteSheet),
-               oo.killTweensOf(this),
-               this.updateFramePosition()
+               oo.killTweensOf(this)/* ,
+               this.updateFramePosition() */
            }
            ,
-           this.updateFramePosition = ()=>{
+           /* this.updateFramePosition = ()=>{
                this._currentFrame = this._spriteFrame,
                oo.set(this.container, {
                    x: this._frameData[this._currentFrame].spriteSourceSize.x,
@@ -48585,15 +48600,15 @@ object-assign
                    y: -this._frameData[this._currentFrame].frame.y
                })
            }
-           ,
+           , */
            this.container = document.createElement("div"),
            this._speed = e;
-           let n = $r.shared.resources[t].spritesheet;
+           /* let n = $r.shared.resources[t].spritesheet;
            Object.keys(n.data.frames).forEach(t=>{
                this._frameData.push(n.data.frames[t])
-           }
-           );
-           oo.set(this.container, {
+           } 
+           );*/
+           /*oo.set(this.container, {
                width: this._frameData[0].spriteSourceSize.w,
                height: this._frameData[0].spriteSourceSize.h,
                overflow: "hidden",
@@ -48610,8 +48625,8 @@ object-assign
                top: 0,
                left: 0,
                pointerEvents: "none"
-           }),
-           this.container.appendChild(this._spriteSheet)
+           }) ,
+           this.container.appendChild(this._spriteSheet) */
        }
        set loop(t) {
            this._loop = t
@@ -48634,7 +48649,7 @@ object-assign
            this._isMobile = h.isMobile(),
            this._mobileMenuActive = !1,
            this.init = t=>{
-               if (this._element = t,
+               /* if (*/this._element = t, 
                this._quoteDisplay = new mo(t.querySelector(".QuoteDisplay")),
                this._menuBulge = new Eo(document.querySelector("#MenuBulge")),
                a.IS_TOUCH_DEVICE || this._menuBulge.activate(),
@@ -48661,10 +48676,10 @@ object-assign
                this._mobileBurger.addEventListener(yo.CLICK, this.openMenu),
                this._mobileClose = this._mobileBurger.querySelector(".closeX"),
                this._mobileIcon = this._mobileBurger.querySelector(".burger"),
-               this._closeButton.addEventListener(yo.CLICK, this.close),
-               !a.IS_TOUCH_DEVICE) {
-                   let t = this._menuItems.length;
-                   for (let e = 0; e < t; e++) {
+               this._closeButton.addEventListener(yo.CLICK, this.close)
+               /* !a.IS_TOUCH_DEVICE) { */
+                   /*let t = this._menuItems.length;
+                    for (let e = 0; e < t; e++) {
                        let t = new _o("/assets/spritesheets/menu_blob_init.json",.25)
                          , i = this._menuItems[e].querySelector(".dotContainer");
                        i.appendChild(t.container),
@@ -48677,9 +48692,9 @@ object-assign
                            animation: t,
                            container: i
                        })
-                   }
-                   this.setupEvents()
-               }
+                   } 
+                   this.setupEvents()*/
+               /* } */
            }
            ,
            this.openMenu = t=>{
@@ -49477,12 +49492,12 @@ object-assign
                this._items[t].addEventListener(yo.CLICK, this.onClick);
            this._iconContainer = t.querySelector(".icon"),
            this._animationContainer = this._iconContainer.querySelector(".animationContainer"),
-           this._eyeAnimation = new _o("/assets/spritesheets/behind_eye.json",.25),
+           /* this._eyeAnimation = new _o("/assets/spritesheets/behind_eye.json",.25), */
            oo.set(this._animationContainer, {
                scale: .5,
                transformOrigin: "50% 50%"
            }),
-           this._animationContainer.appendChild(this._eyeAnimation.container),
+           /* this._animationContainer.appendChild(this._eyeAnimation.container), */
            this._eyeObserver = new IntersectionObserver(this.onEyeIntersection,{
                threshold: [0, 1],
                rootMargin: "200px"
@@ -69243,12 +69258,12 @@ object-assign
                    this._video.pause())
            }
            ,
-           this.onIntersection = t=>{
+           /* this.onIntersection = t=>{
                t[0].isIntersecting || (this._animation.src = this._animationSteps[0],
                oo.killTweensOf(this.addFinalAnimationStep),
                this.clearEmails(999))
            }
-           ,
+           , */
            this.updateBackbuttonPercent = ()=>{
                let t = 55 * this._backButtonPercent
                  , e = "M0,55 C107.57331,55 172.397965," + t + " 261.914001," + t + " C351.430038," + t + " 418.082695,55 524.041347,55 C630,55 -108,55 0,55 Z";
@@ -69271,9 +69286,9 @@ object-assign
                a.IS_TOUCH_DEVICE || (this._emailLinks[t].addEventListener(yo.MOUSE_OVER, this.onLinkOver),
                this._emailLinks[t].addEventListener(yo.MOUSE_OUT, this.onLinkOut)));
            a.TEMPLATE_MANAGER.signalHashChange.add(this.onHashChange),
-           this._observer = new IntersectionObserver(this.onIntersection),
+           /* this._observer = new IntersectionObserver(this.onIntersection), */
            this.updateBackbuttonPercent(),
-           this._observer.observe(t),
+           /* this._observer.observe(t), */
            this._backButtonPath.addEventListener(yo.CLICK, this.onBackClick),
            ho.signalBottomReached.add(this.bottomTrigger)
        }
@@ -69622,246 +69637,259 @@ object-assign
    }
    const Gp = !1;
    class Yp {
-       constructor(t, e, i) {
-           this._outerSegments = [],
-           this._innerSegments = [],
-           this._mousePosition = new Et(-300,-300),
-           this._prevMousePosition = {
+      constructor(t, e, i) {
+         this._outerSegments = [],
+            this._innerSegments = [],
+            this._mousePosition = new Et(-300, -300),
+            /*this._prevMousePosition = {
                x: 0,
                y: 0
-           },
-           this._internalMousePosition = {
+            },*/
+            this._internalMousePosition = {
                x: 0,
                y: 0
-           },
-           this._intermediateMousePosition = {
+            },
+            this._intermediateMousePosition = {
                x: 0,
                y: 0
-           },
-           this._center = {
+            },
+           /* this._center = {
                x: 0,
                y: 0
-           },
-           this._closestSegmentId = 0,
-           this._mouseMoved = !1,
-           this._allBursted = !1,
-           this._active = !1,
-           this._killed = !1,
-           this._isDirty = !1,
-           this._justEntered = !1,
-           this._imageBounds = {
+            },*/
+            //this._closestSegmentId = 0,
+            //this._mouseMoved = !1,
+            //this._allBursted = !1,
+            //this._active = !1,
+            //this._killed = !1,
+            //this._isDirty = !1,
+            //this._justEntered = !1,
+            this._imageBounds = {
                x: 0,
                y: 0,
                width: 0,
                height: 0
-           },
-           this.container = new Zt,
-           this.generateSegments = ()=>{
+            },
+            this.container = new Zt,
+            this.generateSegments = () => {
                let t = 276;
                this._outerSegmentPositions = [[-10, -10], [500, -10], [500, this._baseHeight + 10], [-10, this._baseHeight + 10]],
-               276 === this._baseHeight ? this._innerSegmentPositions = [[0, 0], [125, 0], [245, 0], [365, 0], [490, 0], [490, 135], [490, t], [365, t], [245, t], [125, t], [0, t], [0, 135]] : 351 === this._baseHeight ? (t = 351,
-               this._innerSegmentPositions = [[0, 0], [125, 0], [245, 0], [365, 0], [490, 0], [490, 88], [490, 176], [490, 264], [490, t], [365, t], [245, t], [125, t], [0, t], [0, 264], [0, 88]]) : (t = 647,
-               this._innerSegmentPositions = [[0, 0], [125, 0], [245, 0], [365, 0], [490, 0], [490, 128], [490, 258], [490, 388], [490, 518], [490, t], [365, t], [245, t], [125, t], [0, t], [0, 518], [0, 388], [0, 258], [0, 128]])
-           }
-           ,
-           this.initMask = ()=>{
+                  276 === this._baseHeight ? this._innerSegmentPositions = [[0, 0], [125, 0], [245, 0], [365, 0], [490, 0], [490, 135], [490, t], [365, t], [245, t], [125, t], [0, t], [0, 135]] : 351 === this._baseHeight ? (t = 351,
+                     this._innerSegmentPositions = [[0, 0], [125, 0], [245, 0], [365, 0], [490, 0], [490, 88], [490, 176], [490, 264], [490, t], [365, t], [245, t], [125, t], [0, t], [0, 264], [0, 88]]) : (t = 647,
+                        this._innerSegmentPositions = [[0, 0], [125, 0], [245, 0], [365, 0], [490, 0], [490, 128], [490, 258], [490, 388], [490, 518], [490, t], [365, t], [245, t], [125, t], [0, t], [0, 518], [0, 388], [0, 258], [0, 128]])
+            }
+            ,
+            this.initMask = () => {
                this._maskCanvas = document.createElement("canvas"),
-               this._maskCtx = this._maskCanvas.getContext("2d"),
-               this._maskScope = new yp.PaperScope,
-               this._maskScope.setup(this._maskCanvas),
-               this._maskScope.view.autoUpdate = !1,
-               this._maskCanvas.setAttribute("data-id", "#ID-" + 9999 * Math.random()),
-               this._outerPath = new yp.Path,
-               this._outerPath.fillColor = new yp.Color("#FF0000"),
-               this._outerPath.closed = !0;
+                  this._maskCtx = this._maskCanvas.getContext("2d"),
+                  this._maskScope = new yp.PaperScope,
+                  this._maskScope.setup(this._maskCanvas),
+                  //this._maskScope.view.autoUpdate = !1,
+                  //this._maskCanvas.setAttribute("data-id", "#ID-" + 9999 * Math.random()),
+                  this._outerPath = new yp.Path//,
+                  //this._outerPath.fillColor = new yp.Color("#FF0000"),
+                  //this._outerPath.closed = !0;
                let t = this._outerSegmentPositions.length;
                for (let e = 0; e < t; e++)
-                   this._outerPath.add(new yp.Point(0,0));
-               t = this._outerPath.segments.length;
+                  this._outerPath.add(new yp.Point(0, 0));
+               //t = this._outerPath.segments.length;
                for (let e = 0; e < t; e++)
-                   this._outerSegments.push(new Hp(this._outerPath.segments[e],this._outerSegmentPositions[e],this._imageBounds,this.container,e,!1,this));
+                  this._outerSegments.push(new Hp(this._outerPath.segments[e], this._outerSegmentPositions[e], this._imageBounds, this.container, e, !1, this));// без этой строчки пропадает середина 
                this._maskPath = new yp.Path,
-               this._maskPath.fillColor = new yp.Color("#FF0000"),
-               this._maskPath.closed = !0,
-               t = this._innerSegmentPositions.length;
+                  this._maskPath.fillColor = new yp.Color("#FF0000"), // без этой строчки анимация становится угловатой
+                  this._maskPath.closed = !0,
+                  t = this._innerSegmentPositions.length;
                for (let e = 0; e < t; e++)
-                   this._maskPath.add(new yp.Point(0,0));
+                  this._maskPath.add(new yp.Point(0, 0));
                t = this._maskPath.segments.length;
                for (let e = 0; e < t; e++)
-                   this._innerSegments.push(new Hp(this._maskPath.segments[e],this._innerSegmentPositions[e],this._imageBounds,this.container,e,Gp,this));
+                  this._innerSegments.push(new Hp(this._maskPath.segments[e], this._innerSegmentPositions[e], this._imageBounds, this.container, e, Gp, this));
                this._maskCompound = new yp.CompoundPath({
-                   children: [this._outerPath, this._maskPath]
+                  children: [this._outerPath, this._maskPath]
                }),
-               this._maskCompound.fillColor = new yp.Color(this._entry.color),
-               this._maskCompound.fillRule = "evenodd"
-           }
-           ,
-           this.updateInternalMousePosition = ()=>{
+                  this._maskCompound.fillColor = new yp.Color(this._entry.color),
+                  this._maskCompound.fillRule = "evenodd"
+            }
+            ,
+            this.updateInternalMousePosition = () => {
                this._mousePosition.x = this._internalMousePosition.x,
-               this._mousePosition.y = this._internalMousePosition.y,
-               this._allBursted || (oo.killTweensOf(this.checkIfWithinInner),
-               oo.delayedCall(.2, this.checkIfWithinInner))
-           }
-           ,
-           this.checkIfWithinInner = ()=>{
-               let t, e = !1, i = this._innerSegments.length, n = 9999, r = 0, s = !1;
+                  this._mousePosition.y = this._internalMousePosition.y/* ,
+                  this._allBursted || (oo.killTweensOf(this.checkIfWithinInner),
+                     oo.delayedCall(.2, this.checkIfWithinInner)) */
+            }
+            ,
+            this.checkIfWithinInner = () => {
+              /*  let t, e = !1, i = this._innerSegments.length, n = 9999, r = 0, s = !1;
                for (let e = 0; e < i; e++)
-                   (t = d(this._innerSegments[e].maxIntermediatePosition, this._mousePosition)) < n && (n = t,
-                   r = e),
-                   this._innerSegments[e].dragging && (s = !0);
+                  (t = d(this._innerSegments[e].maxIntermediatePosition, this._mousePosition)) < n && (n = t,
+                     r = e),
+                     this._innerSegments[e].dragging && (s = !0);
                this._closestSegmentId = r;
                for (let t = 0; t < i; t++)
-                   this._innerSegments[t].toggleIntermediateMarker(t === r);
+                  this._innerSegments[t].toggleIntermediateMarker(t === r);
                return d(this._center, this._mousePosition) < d(this._center, this._innerSegments[r].maxIntermediatePosition) && !s && !this._allBursted && this._active && (e = !0,
-               this.bursted(new Et(0,0))),
-               e
-           }
-           ,
-           this.bursted = t=>{
+                  this.bursted(new Et(0, 0))),
+                  e */
+            }
+           /*  ,
+            this.bursted = t => {
                if (this._allBursted)
-                   return;
+                  return;
                let e = this._innerSegments.length
-                 , i = !0;
+                  , i = !0;
                for (let t = 0; t < e; t++)
-                   if (this._innerSegments[t].dragging) {
-                       i = !1;
-                       break
-                   }
+                  if (this._innerSegments[t].dragging) {
+                     i = !1;
+                     break
+                  }
                if (i) {
-                   this._allBursted = !0;
-                   for (let t = 0; t < e; t++)
-                       this._innerSegments[t].dragging = !1,
-                       this._innerSegments[t].bursted = !0;
-                   this._entry.maskBursted(t)
+                  this._allBursted = !0;
+                  for (let t = 0; t < e; t++)
+                     this._innerSegments[t].dragging = !1,
+                        this._innerSegments[t].bursted = !0;
+                  this._entry.maskBursted(t)
                }
-           }
-           ,
-           this.stopRendering = ()=>{
-               this._isDirty = !1
-           }
-           ,
-           this.toggleJustEntered = t=>{
-               this._justEntered = t
-           }
-           ,
-           this.render = ()=>{
+            } */
+            /* ,
+            this.stopRendering = ()=>{
+                this._isDirty = !1
+            } */
+            /* ,
+            this.toggleJustEntered = t=>{
+                this._justEntered = t
+            } */
+            ,
+            this.render = () => {
                this.updateSegments(),
-               this.updatePath()
-           }
-           ,
-           this.updatePath = ()=>{
-               let t = this._innerSegments.length;
-               for (let e = 0; e < t; e++)
-                   this._innerSegments[e].update();
-               t = this._outerSegments.length;
-               for (let e = 0; e < t; e++)
-                   this._outerSegments[e].update();
+                  this.updatePath()
+            }
+            ,
+            this.updatePath = () => {
+               //let t = this._innerSegments.length;
+               /* for (let e = 0; e < t; e++)
+                  this._innerSegments[e].update(); */
+               //t = this._outerSegments.length;
+               /* for (let e = 0; e < t; e++)
+                  this._outerSegments[e].update(); */
                this._maskCtx.clearRect(0, 0, this._width, this._height),
-               this._maskPath.smooth({
-                   type: "catmull-rom"
-               }),
-               this._maskScope.view.update(),
-               this.sprite.texture.update()
-           }
-           ,
-           this.updateSegments = ()=>{
-               let t = this._innerSegments.length
-                 , e = []
-                 , i = 999999
-                 , n = 0;
+               //Без этого эффекта нижняя часть имеет не упругую дифформацию
+   
+               //Эффект, который смягчает анимацию. Без него искажения угловатые
+                  this._maskPath.smooth({
+                     type: "catmull-rom"
+                  }),
+   
+                  this._maskScope.view.update(),
+                  this.sprite.texture.update()
+            }
+            ,
+            this.updateSegments = () => {
+               let t = this._innerSegments.length// без этого параметра не работают искажения снизу карточки
+                  , e = []
+                  /* , i = 999999
+                  , n = 0; */
                for (let r = 0; r < t; r++) {
-                   this._innerSegments[r].mousePosition = this._mousePosition,
-                   e.push(this._innerSegments[r].getCalculatedOffset());
-                   let t = d(this._mousePosition, this._innerSegments[r].intermidateStaticPos);
-                   t < i && (n = r,
-                   i = t)
+                  this._innerSegments[r].mousePosition = this._mousePosition,
+                     e.push(this._innerSegments[r].getCalculatedOffset());
+                  let t = d(this._mousePosition, this._innerSegments[r].intermidateStaticPos);
+                  t < i && (n = r,
+                     i = t)
                }
                for (let i = 0; i < t; i++)
-                   this._innerSegments[i].applyOffset(e[i], !0)
-           }
-           ,
-           this.resize = (t,e,i)=>{
-               this._width = t,
-               this._height = e,
-               this._scale = i,
-               this._center.x = Math.round(.5 * this._width),
-               this._center.y = Math.round(.5 * this._height),
-               this._imageBounds.width = this._width,
-               this._imageBounds.height = this._height,
-               this._maskCanvas.width = this._width,
-               this._maskCanvas.height = this._height,
-               this._maskCanvas.style.width = this._width + "px",
-               this._maskCanvas.style.height = this._height + "px",
-               this.resizeSegments(),
-               this.updatePath()
-           }
-           ,
-           this.resizeSegments = ()=>{
+                  this._innerSegments[i].applyOffset(e[i], !0)
+            }
+            ,
+   
+            //Ф-ия, создающая искажения
+            this.resize = (t, e, i) => {
+            this._width = t,//Ширина искажения
+            this._height = e,//Высота искажения
+            this._scale = i,
+            //this._center.x = Math.round(.5 * this._width),
+            //this._center.y = Math.round(.5 * this._height),
+            this._imageBounds.width = this._width,
+            this._imageBounds.height = this._height,
+   
+            //Настроивает эффект у нижних и правыч частей
+            this._maskCanvas.width = this._width,
+            this._maskCanvas.height = this._height,
+            //this._maskCanvas.style.width = this._width + "px",
+            //this._maskCanvas.style.height = this._height + "px"//,
+            this.resizeSegments()//,
+            //this.updatePath()
+            }
+            ,
+            this.resizeSegments = () => {
                let t = this._innerSegments.length;
                for (let e = 0; e < t; e++)
-                   this._innerSegments[e].bounds = this._imageBounds,
-                   this._innerSegments[e].resize(this._scale);
+                  this._innerSegments[e].bounds = this._imageBounds,
+                     this._innerSegments[e].resize(this._scale);
                t = this._outerSegments.length;
                for (let e = 0; e < t; e++)
-                   this._outerSegments[e].bounds = this._imageBounds,
-                   this._outerSegments[e].resize(this._scale);
+                  this._outerSegments[e].bounds = this._imageBounds,
+                     this._outerSegments[e].resize(this._scale);
                this.updatePath()
-           }
-           ,
-           this.setBaseHeight = t=>{
-               this._baseHeight,
-               this._baseHeight = t
-           }
-           ,
-           this._id = t,
-           this._baseHeight = e,
-           this._entry = i,
-           this.sprite = new tr,
-           this.container.addChild(this.sprite),
-           this.generateSegments(),
-           this.initMask(),
-           this.sprite.texture = Me.from(this._maskCanvas),
-           this.container.x = -1
-       }
-       updateMousePosition(t) {
-           let e = arguments.length > 1 && void 0 !== arguments[1] && arguments[1];
-           (t.x !== this._intermediateMousePosition.x || t.y !== this._intermediateMousePosition.y || e) && (this._mouseMoved = !0,
-           this._intermediateMousePosition.x = t.x,
-           this._intermediateMousePosition.y = t.y,
-           oo.set(this._internalMousePosition, {
+            }
+            /* ,
+            this.setBaseHeight = t=>{
+                this._baseHeight,
+                this._baseHeight = t
+            } */
+            ,
+            //this._id = t,
+            this._baseHeight = e,//Без этой переменной не будет центра карточек
+            this._entry = i,
+            this.sprite = new tr,
+            this.container.addChild(this.sprite),
+            this.generateSegments(),
+            this.initMask(),
+            this.sprite.texture = Me.from(this._maskCanvas)//,
+         //this.container.x = -1
+      }
+      updateMousePosition(t) {
+         let e = arguments.length > 1 && void 0 !== arguments[1] && arguments[1];
+         (t.x !== this._intermediateMousePosition.x || t.y !== this._intermediateMousePosition.y || e) && (this._mouseMoved = !0,
+            this._intermediateMousePosition.x = t.x,
+            this._intermediateMousePosition.y = t.y,
+            oo.set(this._internalMousePosition, {
                x: t.x,
                y: t.y,
                onUpdate: this.updateInternalMousePosition,
                overwrite: "true"
-           }))
-       }
-       get isActive() {
+            }))
+      }
+      /*  get isActive() {
            return this._active
-       }
-       get active() {
-           return this._active
-       }
-       set active(t) {
-           if (this._active = t,
-           !t) {
-               let t = this._innerSegments.length;
-               for (let e = 0; e < t; e++)
-                   this._innerSegments[e].bursted = !1,
-                   this._innerSegments[e].dragging = !1
-           }
-       }
-       get allBursted() {
-           return this._allBursted
-       }
-       set allBursted(t) {
-           this._allBursted = t
-       }
-       get scope() {
-           return this._maskScope
-       }
-       get closestSegment() {
-           return this._innerSegments[this._closestSegmentId].maxIntermediatePosition
-       }
+       } */
+      /* get active() {
+          return this._active
+      } */
+      set active(t) {
+         /* if (this._active = t,
+         !t) {
+             let t = this._innerSegments.length;
+             for (let e = 0; e < t; e++)
+                 this._innerSegments[e].bursted = !1,
+                 this._innerSegments[e].dragging = !1
+         } */
+      }
+   
+   
+      /* get allBursted() {
+          return this._allBursted
+      }
+      
+      set allBursted(t) {
+          this._allBursted = t
+      } */
+   
+   
+      get scope() {
+         return this._maskScope
+      }
+      /* get closestSegment() {
+          return this._innerSegments[this._closestSegmentId].maxIntermediatePosition
+      } */
    }
    function Np(t, e, i, n) {
        var r = t
@@ -70092,7 +70120,7 @@ object-assign
            this._enterPoint = new Et(0,0),
            this._edges = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]],
            this._circleContainer = new Zt,
-           this._spriteSheet = $r.shared.resources["/assets/spritesheets/face_all.json"].spritesheet,
+           /* this._spriteSheet = $r.shared.resources["/assets/spritesheets/face_all.json"].spritesheet, */
            this._faceLabels = ["AdultToBaby", "BabyToTeen", "TeenToAdult", "LtoR", "RtoL", "DownUp", "UpDown"],
            this.setupEye = ()=>{
                this.changeFace(0)
@@ -70102,7 +70130,7 @@ object-assign
                this._animatedSprite && (this.container.addChild(this._animatedSprite),
                this._animatedSprite.destroy(),
                this._animatedSprite = null),
-               this._animatedSprite = new Is(this._spriteSheet.animations[this._faceLabels[t]]),
+               /* this._animatedSprite = new Is(this._spriteSheet.animations[this._faceLabels[t]]), */
                this._animatedSprite.alpha = 0,
                this._animatedSprite.scale.x = this._animatedSprite.scale.y = .5,
                this._animatedSprite.loop = !1,
@@ -70189,13 +70217,13 @@ object-assign
            this._scope = i,
            this._edgeDetector = new Xp(this._imageBounds,n),
            this._scope.activate(),
-           this._circle = tr.from("/assets/images/circle.png"),
+           /* this._circle = tr.from("/assets/images/circle.png"),
            this._circle.x = -20,
            this._circle.y = -20,
-           this._circle.width = this._circle.height = 40,
-           this._circleContainer.scale.x = this._circleContainer.scale.y = 0,
-           this._circleContainer.addChild(this._circle),
-           this.container.addChild(this._circleContainer)
+           this._circle.width = this._circle.height = 40, */
+           this._circleContainer.scale.x = this._circleContainer.scale.y = 0/*,
+           this._circleContainer.addChild(this._circle) ,
+           this.container.addChild(this._circleContainer) */
        }
        get connected() {
            return this._connected
@@ -70739,7 +70767,7 @@ object-assign
            ho.signalScroll.remove(this.onScroll)
        }
    }
-   class ef {
+   /* class ef {
        constructor(t, e) {
            this._dot = new _o("/assets/spritesheets/dot2.json",.3),
            this._prevId = 0,
@@ -70841,7 +70869,7 @@ object-assign
            }),
            this._dot.play()
        }
-   }
+   } */
    class nf {
        constructor() {
            this._queue = [],
@@ -72158,7 +72186,7 @@ object-assign
                this._disabled = !1,
                this._currentId = 0,
                this._currentText = "none",
-               this._dot = new _o("/assets/spritesheets/scroll-dot.json",1.5),
+               /* this._dot = new _o("/assets/spritesheets/scroll-dot.json",1.5), */
                this.changeText = ()=>{
                    this._currentId++,
                    this._currentId > 2 && (this._currentId = 0),
@@ -72197,12 +72225,12 @@ object-assign
                        null !== t && t.catch(()=>{
                            this._video.play()
                        }
-                       ),
-                       this._dot.play(this.changeText)
+                       )/* ,
+                       this._dot.play(this.changeText) */
                    } else
                        this._videoPlaying && !t[0].isIntersecting && (this._videoPlaying = !1,
-                       this._video.pause(),
-                       this._dot.stop())
+                       this._video.pause()/* ,
+                       this._dot.stop() */)
                }
                ,
                /* this.changeHeadline = t=>{
@@ -72256,9 +72284,9 @@ object-assign
                this.updateImageSrc = ()=>{
                    oo.set(this._placeholderImage, {
                        opacity: 0
-                   }),
-                   this._placeholderImage.addEventListener("load", this.showImage),
-                   this._placeholderImage.src = "/assets/images/" + this._breakpoint + ".png"
+                   })/* ,
+                   this._placeholderImage.addEventListener("load", this.showImage) ,
+                   this._placeholderImage.src = "/assets/images/" + this._breakpoint + ".png" */
                }
                ,
                this.showImage = ()=>{
@@ -72724,7 +72752,7 @@ object-assign
                }
                ,
                this._filter = t.querySelector(".filter"),
-               this._filter && (this._caseFilter = new ef(this._filter,this)),
+               /* this._filter && (this._caseFilter = new ef(this._filter,this)), */
                this._isRelated = t.classList.contains("related"),
                this._color = t.getAttribute("data-color"),
                this.sharedHoverVideo = a.SHARED_VIDEO,
@@ -72750,7 +72778,10 @@ object-assign
                ho.signalScroll.add(this.onScroll),
                this.resize(),
                this._rendering && (ae.shared.add(this.render),
-               window.addEventListener(yo.MOUSE_MOVE, this.onMouseMove))
+               window.addEventListener(yo.MOUSE_MOVE, this.onMouseMove)),
+               createTimer(".myClass1", 25, 2),
+               createTimer(".myClass2", 32, 2),
+               createTimer(".myClass3", 5, 2000)
            }
            get isRendering() {
                return this._rendering
@@ -72908,7 +72939,7 @@ object-assign
                        })
                    } else {
                        this._stories[t]._id = t;
-                       let e = new _o("/assets/spritesheets/menu_blob_init_black.json",.25)
+                       /* let e = new _o("/assets/spritesheets/menu_blob_init_black.json",.25)
                          , i = this._stories[t].querySelector(".dotContainer");
                        i.appendChild(e.container),
                        oo.set(i, {
@@ -72919,7 +72950,7 @@ object-assign
                        this._dots.push({
                            animation: e,
                            container: i
-                       }),
+                       }), */
                        this._stories[t].addEventListener(yo.MOUSE_OVER, this.onStoryOver),
                        this._stories[t].addEventListener(yo.MOUSE_OUT, this.onStoryOut)
                    }
@@ -73113,13 +73144,13 @@ object-assign
            ,
            this.loadSpriteSheets = ()=>{
                let t = $r.shared;
-               t.add("/assets/spritesheets/face_all.json"),
-               t.add("/assets/spritesheets/dot2.json"),
-               t.add("/assets/spritesheets/play-pause.json"),
-               t.add("/assets/spritesheets/scroll-dot.json"),
-               t.add("/assets/spritesheets/behind_eye.json"),
-               t.add("/assets/spritesheets/menu_blob_init.json"),
-               t.add("/assets/spritesheets/menu_blob_init_black.json"),
+               /* t.add("/assets/spritesheets/face_all.json"), */
+               /* t.add("/assets/spritesheets/dot2.json"), */
+               /* t.add("/assets/spritesheets/play-pause.json"), */
+               /* t.add("/assets/spritesheets/scroll-dot.json"), */
+               /* t.add("/assets/spritesheets/behind_eye.json"), */
+               /* t.add("/assets/spritesheets/menu_blob_init.json"), */ /* !!!!!!!!! */
+               /* t.add("/assets/spritesheets/menu_blob_init_black.json"), */
                t.load(this.assetsLoaded)
            }
            ,
