@@ -49028,7 +49028,7 @@ object-assign
            });
            let e = a.FOOTER.querySelector(".content");
            a.FOOTER.style.backgroundColor = (a.TEMPLATE_MANAGER.currentPath,
-           "#f8f6f5"),
+           "#EEEEEE"),
            e.style.display = "stories" === a.TEMPLATE_MANAGER.currentPath ? "none" : "flex",
            a.TEMPLATE_LAYER.style.backgroundColor = a.SPLASH_COLOR;
            let i = this.element.getAttribute("data-menu-color");
