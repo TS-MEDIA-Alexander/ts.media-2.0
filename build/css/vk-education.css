@@ -1,0 +1,32 @@
+/* -----------------------------------------------------header----------------------------------------------------- */
+.vk-video-header {
+   margin-top: 90px;
+   height: 840px;
+   background: url('./../../assets/images/vk-education/vk-img-header.svg') no-repeat;
+   background-size: cover;
+}
+
+.vk-bg-header{
+   background: #00228C;
+}
+.vk-logo{
+   background: url('./../../assets/images/vk-education/logos/vk-subheader-logo.svg') 0 0/auto auto no-repeat;
+}
+.vk-border-top{
+   border-top-color: #9AC9FE;
+}
+
+.vk-subheader__text {
+   font-family: 'Montserrat';
+   font-size: 20px;
+   font-weight: 300;
+   line-height: 30.5px;
+}
+.vk-description-title{
+   font-family: 'Inter';
+   font-size: 12px;
+   font-weight: 400;
+   color: #9AC9FE;
+}
+
+

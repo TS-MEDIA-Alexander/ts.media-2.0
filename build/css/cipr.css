@@ -1,0 +1,303 @@
+/* -------------------------------------------------отступы------------------------------------------------------------------- */
+.p-main {
+   padding: 120px 0;
+}
+
+.m-t {
+   margin-top: 120px;
+}
+
+.p-t200 {
+   padding-top: 200px;
+}
+
+/* -------------------------------------------------cipr__subheader------------------------------------------------------------- */
+.cipr__video-header {
+   margin-top: 90px;
+   height: 840px;
+   background: url('./../../assets/images/cipr/cipr-img-header.svg') center no-repeat;
+   background-size: cover;
+}
+
+.cipr__bg-header {
+   background: #141838;
+}
+
+.cipr__logo {
+   background: url('./../../assets/images/cipr/logos/cipr-subheader-logo.svg') 0 0/auto auto no-repeat;
+}
+
+.cipr__border-top {
+   border-top-color: #FFFFFF29;
+}
+
+.cipr__description-title {
+   font-family: 'Inter';
+   font-size: 12px;
+   font-weight: 400;
+   color: #FFFFFF7A;
+}
+
+.text-white {
+   color: #FFFFFF;
+}
+
+.cipr__subheader__title {
+   font-family: 'Schule';
+   font-size: 48px;
+   font-weight: 400;
+   line-height: 56px;
+   text-align: left;
+}
+
+@media screen and (max-width: 1590px) {
+   .cipr__subheader__title {
+      font-size: 30px;
+   }
+}
+
+@media screen and (max-width: 1364px) {
+   .cipr__subheader__title {
+      text-align: center;
+   }
+}
+
+.cipr__subheader__text {
+   font-family: 'Inter';
+   font-size: 20px;
+   font-weight: 300;
+   line-height: 28px;
+}
+
+/* -------------------------------------------------case-galery------------------------------------------------------------- */
+.cipr__galery {
+   background: #E8EDFE;
+}
+.cipr__bg {
+   background: #C6CAFA;
+}
+
+.cipr__img-container {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+}
+
+.cipr__img-min {
+   width: 480px;
+   height: 485px;
+   background-size: cover;
+}
+
+.cipr__img-middle {
+   width: 1064px;
+   height: 677px;
+   background-size: cover;
+}
+
+.cipr__img-large {
+   width: 1648px;
+   height: 600px;
+   background-size: cover;
+}
+
+.cipr__img-2 {
+   background: url('./../../assets/images/cipr/galery/img-2.png') center no-repeat;
+}
+
+.cipr__img-17 {
+   background: url('./../../assets/images/cipr/galery/img-17.png') center no-repeat;
+}
+
+.cipr__img-7 {
+   background: url('./../../assets/images/cipr/galery/img-7.png') center no-repeat;
+}
+
+
+.cipr__img-14 {
+   background: url('./../../assets/images/cipr/galery/img-14.png') center no-repeat;
+   height: 580px;
+}
+
+.cipr__img-15 {
+   background: url('./../../assets/images/cipr/galery/img-15.png') center no-repeat;
+   height: 1064px;
+}
+
+.cipr__img-1 {
+   background: url('./../../assets/images/cipr/galery/img-1.png') center no-repeat;
+   height: 736px;
+}
+
+.cipr__img-10 {
+   background: url('./../../assets/images/cipr/galery/img-10.png') center no-repeat;
+   height: 532px;
+}
+
+.cipr__img-10 {
+   background: url('./../../assets/images/cipr/galery/img-10.png') center no-repeat;
+   height: 532px;
+}
+
+.cipr__img-11 {
+   background: url('./../../assets/images/cipr/galery/img-11.png') center no-repeat;
+   height: 240px;
+}
+
+.cipr__img-3 {
+   background: url('./../../assets/images/cipr/galery/img-3.png') center no-repeat;
+   height: 1064px;
+}
+
+.cipr__img-4 {
+   background: url('./../../assets/images/cipr/galery/img-4.png') center no-repeat;
+   height: 284px;
+}
+
+.cipr__img-9 {
+   background: url('./../../assets/images/cipr/galery/img-9.png') center no-repeat;
+   height: 573px;
+}
+
+/* ----- */
+.cipr__img-12 {
+   background: url('./../../assets/images/cipr/galery/img-12.png') center no-repeat;
+   height: 372px;
+}
+
+.cipr__img-16 {
+   background: url('./../../assets/images/cipr/galery/img-16.png') center no-repeat;
+   height: 680px;
+}
+
+.cipr__img-18 {
+   background: url('./../../assets/images/cipr/galery/img-18.png') center no-repeat;
+   height: 680px;
+}
+
+.cipr__img-19 {
+   background: url('./../../assets/images/cipr/galery/img-19.png') center no-repeat;
+   height: 372px;
+}
+
+.case__flex-contain-low {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: end;
+}
+
+.cipr__text-container {
+   width: 100%;
+   display: flex;
+   justify-content: flex-end;
+}
+
+@media screen and (max-width: 1660px) {
+   .case__flex-contain-low {
+      flex-direction: column;
+   }
+
+   .cipr__img-container {
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .cipr__img-min {
+      width: 50%;
+   }
+
+   .cipr__img-middle {
+      margin-top: 120px;
+      width: 90%;
+   }
+
+   .cipr__img-large {
+      width: 90%;
+   }
+}
+
+@media screen and (max-width: 980px) {
+   .cipr__img-min {
+      width: 100%;
+   }
+
+   .cipr__img-middle {
+      width: 100%;
+   }
+
+   .cipr__img-large {
+      width: 100%;
+   }
+}
+
+/* -------------------------------------------------cipr__galery_dark------------------------------------------------------------ */
+.cipr__galery_dark {
+   background: #060428;
+}
+
+
+
+.case__text_dark .case__text-title {
+   color: white;
+}
+
+.case__text_dark .case__text-body {
+   color: white;
+}
+
+.cipr__img-5 {
+   background: url('./../../assets/images/cipr/galery/img-5.png') center no-repeat;
+   height: 832px;
+}
+
+.cipr__img-6 {
+   background: url('./../../assets/images/cipr/galery/img-6.png') center no-repeat;
+   height: 980px;
+}
+
+.cipr__img-8 {
+   background: url('./../../assets/images/cipr/galery/img-8.png') center no-repeat;
+   height: 980px;
+}
+
+.cipr__img-row-column-container {
+   display: flex;
+   justify-content: end;
+}
+
+.cipr__img-column {
+   width: 480px;
+   height: 1097px;
+   margin-left: 104px;
+   background-size: cover;
+}
+
+.cipr__img-column:first-child {
+   margin-left: 0;
+}
+
+.cipr__img-column-1 {
+   background: url('./../../assets/images/cipr/galery/img-column-1.png') center no-repeat;
+}
+
+.cipr__img-column-2 {
+   background: url('./../../assets/images/cipr/galery/img-column-2.png') center no-repeat;
+}
+
+@media screen and (max-width: 1660px) {
+   .case__text_dark {
+      margin-top: 50px;
+   }
+}
+
+
+.cipr__video{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   overflow: hidden;
+}
+.cipr__video .video{
+   width: 100%;
+}
