@@ -301,3 +301,8 @@
 .cipr__video .video{
    width: 100%;
 }
+@media screen and (max-width: 1470px){
+   .cipr__video .video{
+      width: auto;
+   }
+}
