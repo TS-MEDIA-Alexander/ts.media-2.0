@@ -42,6 +42,13 @@
 }
 
 @font-face {
+   font-family: 'IBM Plex Sans';
+   src: url(../../assets/fonts/IBM_Plex_Sans/IBMPlexSans-Thin.ttf) format("truetype");
+   font-weight: 100;
+   font-style: normal
+}
+
+@font-face {
    font-family: 'Schule';
    src: url(../../assets/fonts/Schule/schule.ttf) format("truetype");
    font-weight: 400;
@@ -53,6 +60,10 @@
    src: url(../../assets/fonts/Montserrat/Montserrat.ttf) format("truetype");
    font-weight: 300;
    font-style: normal
+}
+
+.a-i-c {
+   align-items: center;
 }
 
 .container {
@@ -5998,7 +6009,7 @@ body:not(.touch) .FeaturedCollaborationsModule .desktop .entry:hover .videoConta
 }
 
 .Footer {
-   background-color: #EEEEEE !important;
+   background-color: #EEEEEE;
    padding-top: 60px;
    display: none
 }
@@ -6065,22 +6076,23 @@ body:not(.touch) .FeaturedCollaborationsModule .desktop .entry:hover .videoConta
    pointer-events: none
 }
 
-.Footer .right .section .emailLink {
-   font-family: Inter;
-   font-size: 18px;
+.emailLink a {
+   font-family: 'Inter', Arial, sans-serif;
+   font-size: 20px;
    font-weight: 400;
-   line-height: 25.02px;
-   text-align: left;
+   line-height: 27px;
+}
+
+.emailLink a:hover {
+   color: #669944;
 }
 
 .Footer .right .section .title {
-   pointer-events: none;
-   width: 200px;
-   font-family: Inter;
-   font-size: 13.23px;
+   color: #7c7c7c;
+   font-size: 14px;
+   font-family: 'Inter', Arial, sans-serif;
+   line-height: 1.55;
    font-weight: 400;
-   line-height: 20.02px;
-   text-align: left;
 }
 
 @media screen and (max-width: 489px) {
@@ -6123,18 +6135,17 @@ body:not(.touch) .FeaturedCollaborationsModule .desktop .entry:hover .videoConta
    min-width: 180px;
    width: 45.37037037%;
    display: inline-block;
-   padding-bottom: 27px;
+   padding-bottom: 10px;
    cursor: pointer
 }
 
 .Footer .right .visit .offices .office .city {
    color: #2c2d2e;
-   margin-bottom: 7px;
-   font-family: Inter;
    font-size: 18px;
-   font-weight: 300;
-   line-height: 25.02px;
-   text-align: left;
+   font-family: 'Inter', Arial, sans-serif;
+   line-height: 1.35;
+   font-weight: 400;
+
 }
 
 @media screen and (max-width: 489px) {
@@ -6245,9 +6256,9 @@ body:not(.touch) .FeaturedCollaborationsModule .desktop .entry:hover .videoConta
       width: 100%
    }
 
-   .Footer .right .visit .offices .office {
+   /*  .Footer .right .visit .offices .office {
       padding-bottom: 62px
-   }
+   } */
 
 
 }
@@ -6270,9 +6281,9 @@ body:not(.touch) .FeaturedCollaborationsModule .desktop .entry:hover .videoConta
       padding-bottom: 60px
    }
 
-   .Footer .right .visit .offices .office {
+   /* .Footer .right .visit .offices .office {
       padding-bottom: 47px
-   }
+   } */
 
 
 
@@ -6315,8 +6326,7 @@ body:not(.touch) .FeaturedCollaborationsModule .desktop .entry:hover .videoConta
       justify-content: space-between
    }
 
-   .Footer .right .logoDept,
-   .Footer .right .section {
+   .Footer .right .logoDept {
       width: 45.37037037%;
    }
 
@@ -6326,10 +6336,25 @@ body:not(.touch) .FeaturedCollaborationsModule .desktop .entry:hover .videoConta
 }
 
 .logo {
+   display: flex;
+   justify-content: space-between;
+   align-items: end;
    top: 41px;
    left: 4.88281%;
+   opacity: 0;
+}
+
+.logo a {
    cursor: pointer;
-   opacity: 0
+}
+
+.logo-text {
+   margin: 0 0 2px 21px;
+   font-family: 'IBM Plex Sans';
+   font-size: 10px;
+   font-weight: 100;
+   line-height: 16px;
+   text-align: left;
 }
 
 .logo,
@@ -8923,6 +8948,16 @@ button.vjs-play-control:hover {
    width: 81%;
 }
 
+.footer-video-container {
+   width: 133px;
+   height: 152px;
+}
+
+.footer-video-container video {
+   width: 100%;
+   height: 100%;
+}
+
 @media screen and (max-width: 971px) {
    .right-flex-container {
       width: 92%;
@@ -8933,6 +8968,10 @@ button.vjs-play-control:hover {
    .right-flex-container {
       width: 100%;
    }
+
+   .footer-video-container {
+      display: none;
+   }
 }
 
 @media screen and (max-width: 489px) {
@@ -8941,14 +8980,21 @@ button.vjs-play-control:hover {
       align-items: center;
    }
 
+   .Footer .right .visit .offices .office,
+   .Footer .right .visit .offices .title{
+      width: 100%;
+      text-align: center;
+   }
+
 }
 
 .footer-logo-container {
    display: flex;
-   height: 150px;
    flex-direction: column;
    justify-content: space-between;
 }
+
+
 
 @media screen and (max-width: 489px) {
    .footer-logo-container {
@@ -8977,7 +9023,7 @@ button.vjs-play-control:hover {
 }
 
 .footer-logo-container .title {
-   font-family: Inter;
+   font-family: 'Inter';
    font-size: 12.14px;
    font-weight: 400;
    line-height: 18.06px;
@@ -9020,16 +9066,47 @@ button.vjs-play-control:hover {
 .logo-block .img-container {
    display: flex;
    justify-content: center;
-   align-items: center;
-   width: 91px;
-   height: 91px;
-   overflow: hidden;
-   border-radius: 50%;
+   width: 96px;
+   height: 48px;
+   cursor: pointer;
 }
 
-.logo-block .img-container img {
-   width: 100%;
+@media screen and (max-width: 1482px) {
+   .logo-block .img-container {
+      width: auto;
+      height: auto;
+   }
 }
+
+@media screen and (max-width: 720px) {
+   .logo-block .img-container {
+      width: 96px;
+      height: 48px;
+   }
+}
+
+.h-b {
+   height: 200%;
+}
+
+.active {
+   display: none;
+}
+
+.img-container:hover .hover {
+   display: none;
+}
+
+.img-container:hover .active {
+   display: block;
+}
+
+/* .img-container:enabled  svg path{
+   fill: #CBCBCB;
+} */
+
+
+
 
 .logo-block:last-child {
    border: none;
@@ -9098,7 +9175,7 @@ button.vjs-play-control:hover {
 .case__subheader-content-wrapper {
    display: flex;
    justify-content: space-between;
-   padding: 48px 0px 88px 0;
+   padding: 60px 0px 68px 0;
 }
 
 .case__subheader__flex-container-title {
@@ -9238,6 +9315,7 @@ button.vjs-play-control:hover {
       margin: 0;
       width: 100%;
    }
+
    .case__more-flex-container .case__more-img {
       width: 90%;
    }
