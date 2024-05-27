@@ -6350,7 +6350,7 @@ body:not(.touch) .FeaturedCollaborationsModule .desktop .entry:hover .videoConta
 
 .logo-text {
    margin: 0 0 2px 21px;
-   font-family: 'IBM Plex Sans';
+   font-family: 'Inter';
    font-size: 10px;
    font-weight: 100;
    line-height: 16px;
@@ -9171,6 +9171,26 @@ button.vjs-play-control:hover {
    color: #FFFFFF;
    font-family: 'Schule';
 }
+.case__video-header {
+   margin-top: 90px;
+   height: 840px;
+   background-size: cover;
+}
+
+.case__video{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   overflow: hidden;
+}
+.case__video .video{
+   width: 100%;
+}
+@media screen and (max-width: 1470px){
+   .case__video .video{
+      width: auto;
+   }
+}
 
 .case__subheader-content-wrapper {
    display: flex;
@@ -9238,6 +9258,34 @@ button.vjs-play-control:hover {
    font-weight: 300;
    line-height: 28px;
    text-align: left;
+}
+
+/* -------------------------------------------------case__column------------------------------------------------------------- */
+.case__img-row-column-container {
+   display: flex;
+   justify-content: end;
+}
+
+.case__img-column {
+   width: 480px;
+   height: 1097px;
+   margin-left: 104px;
+   background-size: cover;
+}
+
+.case__img-column:first-child {
+   margin-left: 0;
+}
+
+@media screen and (max-width: 1200px){
+   .case__img-row-column-container {
+      flex-direction: column;
+      align-items: center;
+   }
+   .case__img-column {
+      margin-left: 0;
+      margin-top: 40px;
+   }
 }
 
 /* -------------------------------------------------case__team------------------------------------------------------------- */
