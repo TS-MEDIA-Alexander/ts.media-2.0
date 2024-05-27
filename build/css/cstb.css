@@ -18,6 +18,7 @@
 /* -------------------------------------------------cstb__subheader------------------------------------------------------------- */
 .cstb__video-header {
    background: url('./../../assets/images/cstb/header-video_cont.png') center no-repeat;
+   background-size: cover;
 }
 
 .cstb__bg-header {

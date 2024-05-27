@@ -23,6 +23,7 @@
 /* -------------------------------------------------lgdc__subheader------------------------------------------------------------- */
 .lgdc__video-header {
    background: url('./../../assets/images/legend-сup/header-video_cont.png') center no-repeat;
+   background-size: cover;
 }
 
 .lgdc__bg-header {

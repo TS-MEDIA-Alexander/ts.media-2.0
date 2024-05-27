@@ -9174,8 +9174,8 @@ button.vjs-play-control:hover {
 
 .case__video-header {
    margin-top: 90px;
+   width: 100%;
    height: 840px;
-   background-size: cover;
 }
 
 .case__video-management {
