@@ -34,7 +34,7 @@
    font-style: normal
 }
 
-@font-face {
+/* @font-face {
    font-family: 'IBM Plex Serif';
    src: url(../../assets/fonts/IBM_Plex_Serif/IBMPlexSerif-SemiBold.ttf) format("truetype");
    font-weight: 400;
@@ -46,7 +46,7 @@
    src: url(../../assets/fonts/IBM_Plex_Sans/IBMPlexSans-Thin.ttf) format("truetype");
    font-weight: 100;
    font-style: normal
-}
+} */
 
 @font-face {
    font-family: 'Schule';
@@ -8981,7 +8981,7 @@ button.vjs-play-control:hover {
    }
 
    .Footer .right .visit .offices .office,
-   .Footer .right .visit .offices .title{
+   .Footer .right .visit .offices .title {
       width: 100%;
       text-align: center;
    }
@@ -9113,7 +9113,7 @@ button.vjs-play-control:hover {
 }
 
 .animation-flex-container {
-   font-family: 'IBM Plex Serif';
+   font-family: "Inter", sans-serif;
    margin: 0 auto;
    width: 1024px;
    display: flex;
@@ -9171,23 +9171,57 @@ button.vjs-play-control:hover {
    color: #FFFFFF;
    font-family: 'Schule';
 }
+
 .case__video-header {
    margin-top: 90px;
    height: 840px;
    background-size: cover;
 }
 
-.case__video{
+.case__video-management {
+   position: absolute;
+   height: 54.11px;
+   width: 74.06px;
+   bottom: 36px;
+   right: 58.94px;
+   cursor: pointer;
+}
+
+.case__video-management::after {
+   content: 'Аудио';
+   position: absolute;
+   right: calc(100% + 20px);
+   top: 8px;
+   font-family: 'Inter';
+   font-size: 27px;
+   font-weight: 400;
+   text-align: left;
+
+   color: #FFFFFF;
+}
+
+.case__video-management_mute {
+   background: url('../../assets/icons/mute.svg') 0 0/auto auto no-repeat;
+}
+
+.case__video-management_sound {
+   background: url('../../assets/icons/sound.svg') 0 0/auto auto no-repeat;
+}
+
+.case__video {
    display: flex;
    justify-content: center;
    align-items: center;
    overflow: hidden;
+   position: relative;
 }
-.case__video .video{
+
+.case__video .video {
    width: 100%;
 }
-@media screen and (max-width: 1470px){
-   .case__video .video{
+
+@media screen and (max-width: 1470px) {
+   .case__video .video {
       width: auto;
    }
 }
@@ -9200,8 +9234,8 @@ button.vjs-play-control:hover {
 
 .case__subheader__flex-container-title {
    max-width: 493px;
-   font-family: inherit;
-   font-size: 38px;
+   font-family: 'Schule';
+   font-size: 48px;
    font-weight: 400;
    line-height: 55px;
    text-align: left;
@@ -9260,6 +9294,14 @@ button.vjs-play-control:hover {
    text-align: left;
 }
 
+.case__text_dark .case__text-title {
+   color: white;
+}
+
+.case__text_dark .case__text-body {
+   color: white;
+}
+
 /* -------------------------------------------------case__column------------------------------------------------------------- */
 .case__img-row-column-container {
    display: flex;
@@ -9277,11 +9319,12 @@ button.vjs-play-control:hover {
    margin-left: 0;
 }
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1200px) {
    .case__img-row-column-container {
       flex-direction: column;
       align-items: center;
    }
+
    .case__img-column {
       margin-left: 0;
       margin-top: 40px;
