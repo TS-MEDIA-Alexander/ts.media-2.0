@@ -1,16 +1,19 @@
 /* Анимация таймера на главной */
 let createTimer = (elem, time, step) => {
 
-      let result = parseFloat(document.querySelector(elem)?.innerHTML)
+   let result = parseFloat(document.querySelector(elem)?.innerHTML)
 
-      if (typeof result === 'number' && result > 1) {
-         let i = 0
-         let interval = setInterval(() => {
-            i += step
-            document.querySelector(elem).textContent = (i + '+').replace(/(?<=[0-9])(?=(?:[0-9]{3})+(?![0-9]))/g, " ")
-            result <= i && clearInterval(interval)
-         }, time)
-      }
+   if (typeof result === 'number' && result > 1) {
+      let i = 0
+      let interval = setInterval(() => {
+         document.querySelector(elem) || clearInterval(interval)
+         i += step
+         document.querySelector(elem).textContent = (i + '+').replace(/(?<=[0-9])(?=(?:[0-9]{3})+(?![0-9]))/g, " ")
+         result <= i && clearInterval(interval)
+      }, time)
+   }
+
+      
 }
 
 /* Решение проблемы с переходом */
