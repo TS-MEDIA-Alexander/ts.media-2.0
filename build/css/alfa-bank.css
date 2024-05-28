@@ -10,8 +10,13 @@
 .p-t {
    padding-top: 120px;
 }
-.p-t200 {
-   padding-top: 200px;
+
+.p-t260 {
+   padding-top: 260px;
+}
+
+.m-b260 {
+   margin-bottom: 260px;
 }
 
 /* -------------------------------------------------alfa__subheader------------------------------------------------------------- */
@@ -21,7 +26,7 @@
 }
 
 .alfa__bg-header {
-   background: #141838;
+   background: #ED3726;
 }
 
 .alfa__logo {
@@ -70,11 +75,14 @@
 
 /* -------------------------------------------------case-galery------------------------------------------------------------- */
 .alfa__galery {
-   background: #E8EDFE;
+   background: #FFFFFF;
 }
+
 .alfa__bg {
-   background: #C6CAFA;
+   background: #F1F2F3;
 }
+
+
 
 .alfa__img-container {
    display: flex;
@@ -82,102 +90,107 @@
    flex-wrap: wrap;
 }
 
+.alfa__img-container-left {
+   width: 100%;
+   display: flex;
+   justify-content: start;
+}
+
+.alfa__img-container-center {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+}
+
+.alfa__img-container-right {
+   width: 100%;
+   display: flex;
+   justify-content: end;
+}
+
+.alfa__img-smol {
+   width: 487px;
+   height: 274px;
+}
+
 .alfa__img-min {
-   width: 480px;
-   height: 485px;
-   background-size: cover;
+   width: 1064px;
+   height: 900px;
+   background-size: contain !important;
 }
 
 .alfa__img-middle {
    width: 1064px;
-   height: 677px;
-   background-size: cover;
+   height: 1130px;
+   background-size: contain !important;
 }
 
 .alfa__img-large {
    width: 1648px;
-   height: 600px;
-   background-size: cover;
-}
-
-.alfa__img-2 {
-   background: url('./../../assets/images/cipr/galery/img-2.png') center no-repeat;
-}
-
-.alfa__img-17 {
-   background: url('./../../assets/images/cipr/galery/img-17.png') center no-repeat;
-}
-
-.alfa__img-7 {
-   background: url('./../../assets/images/cipr/galery/img-7.png') center no-repeat;
-}
-
-
-.alfa__img-14 {
-   background: url('./../../assets/images/cipr/galery/img-14.png') center no-repeat;
-   height: 580px;
-}
-
-.alfa__img-15 {
-   background: url('./../../assets/images/cipr/galery/img-15.png') center no-repeat;
-   height: 1064px;
+   height: 900px;
+   background-size: contain !important;
 }
 
 .alfa__img-1 {
-   background: url('./../../assets/images/cipr/galery/img-1.png') center no-repeat;
-   height: 736px;
+   background: url('./../../assets/images/alfaBank/galery/img-1.png') center no-repeat;
+   height: 956px;
 }
 
-.alfa__img-10 {
-   background: url('./../../assets/images/cipr/galery/img-10.png') center no-repeat;
-   height: 532px;
-}
-
-.alfa__img-10 {
-   background: url('./../../assets/images/cipr/galery/img-10.png') center no-repeat;
-   height: 532px;
-}
-
-.alfa__img-11 {
-   background: url('./../../assets/images/cipr/galery/img-11.png') center no-repeat;
-   height: 240px;
+.alfa__img-2 {
+   background: url('./../../assets/images/alfaBank/galery/img-2.png') center no-repeat;
 }
 
 .alfa__img-3 {
-   background: url('./../../assets/images/cipr/galery/img-3.png') center no-repeat;
-   height: 1064px;
+   background: url('./../../assets/images/alfaBank/galery/img-3.png') center no-repeat;
+   height: 1258px;
 }
 
 .alfa__img-4 {
-   background: url('./../../assets/images/cipr/galery/img-4.png') center no-repeat;
-   height: 284px;
+   background: url('./../../assets/images/alfaBank/galery/img-4.png') center no-repeat;
+   height: 1100px;
+}
+
+.alfa__img-5 {
+   background: url('./../../assets/images/alfaBank/galery/img-5.png') center no-repeat;
+   background-size: contain;
+}
+
+.alfa__img-6 {
+   background: url('./../../assets/images/alfaBank/galery/img-6.png') center no-repeat;
+}
+
+.alfa__img-7 {
+   background: url('./../../assets/images/alfaBank/galery/img-7.png') center no-repeat;
+}
+
+.alfa__img-13 {
+   background: url('./../../assets/images/alfaBank/galery/img-13.png') center no-repeat;
+}
+
+
+.alfa__img-8 {
+   background: url('./../../assets/images/alfaBank/galery/img-8.png') center no-repeat;
 }
 
 .alfa__img-9 {
-   background: url('./../../assets/images/cipr/galery/img-9.png') center no-repeat;
-   height: 573px;
+   background: url('./../../assets/images/alfaBank/galery/img-9.png') center no-repeat;
+   height: 1100px;
 }
 
-/* ----- */
+.alfa__img-10 {
+   background: url('./../../assets/images/alfaBank/galery/img-10.png') center no-repeat;
+   height: 700px;
+}
+
+.alfa__img-11 {
+   background: url('./../../assets/images/alfaBank/galery/img-11.png') center no-repeat;
+}
+
 .alfa__img-12 {
-   background: url('./../../assets/images/cipr/galery/img-12.png') center no-repeat;
-   height: 372px;
+   background: url('./../../assets/images/alfaBank/galery/img-12.png') center no-repeat;
 }
 
-.alfa__img-16 {
-   background: url('./../../assets/images/cipr/galery/img-16.png') center no-repeat;
-   height: 680px;
-}
 
-.alfa__img-18 {
-   background: url('./../../assets/images/cipr/galery/img-18.png') center no-repeat;
-   height: 680px;
-}
-
-.alfa__img-19 {
-   background: url('./../../assets/images/cipr/galery/img-19.png') center no-repeat;
-   height: 372px;
-}
 
 .case__flex-contain-low {
    width: 100%;
@@ -189,7 +202,13 @@
 .alfa__text-container {
    width: 100%;
    display: flex;
-   justify-content: flex-end;
+   justify-content: space-between;
+}
+
+.alfa__text-container_right {
+   width: 100%;
+   display: flex;
+   justify-content: end;
 }
 
 @media screen and (max-width: 1660px) {
@@ -216,47 +235,52 @@
    }
 }
 
+@media screen and (max-width: 1134px) {
+   .alfa__text-container {
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .case__text {
+      margin-top: 40px;
+   }
+}
+
 @media screen and (max-width: 980px) {
-   .alfa__img-min {
-      width: 100%;
-   }
 
-   .alfa__img-middle {
-      width: 100%;
-   }
-
+   .alfa__img-smol,
+   .alfa__img-min,
+   .alfa__img-middle,
    .alfa__img-large {
       width: 100%;
    }
 }
 
-/* -------------------------------------------------alfa__galery_dark------------------------------------------------------------ */
 .alfa__galery_dark {
-   background: #060428;
+   background: #21201F url('../../assets/images/alfaBank/pattern.png') -10px 260px/auto auto no-repeat;
+   background-size: contain;
 }
 
-
-.alfa__img-5 {
-   background: url('./../../assets/images/cipr/galery/img-5.png') center no-repeat;
-   height: 832px;
-}
-
-.alfa__img-6 {
-   background: url('./../../assets/images/cipr/galery/img-6.png') center no-repeat;
-   height: 980px;
-}
-
-.alfa__img-8 {
-   background: url('./../../assets/images/cipr/galery/img-8.png') center no-repeat;
-   height: 980px;
-}
-
-.alfa__img-column-1 {
-   background: url('./../../assets/images/cipr/galery/img-column-1.png') center no-repeat;
-}
+.alfa__img-column-1 {}
 
 .alfa__img-column-2 {
-   background: url('./../../assets/images/cipr/galery/img-column-2.png') center no-repeat;
+   background: url('./../../assets/images/alfaBank/galery/img-column-2.png') center no-repeat;
+}
+
+.alfa__img-column-3 {
+   background: url('./../../assets/images/alfaBank/galery/img-column-3.png') center no-repeat;
+}
+
+.alfa__img-column-4 {
+   background: url('./../../assets/images/alfaBank/galery/img-column-4.png') center no-repeat;
+}
+
+.alfa__img-column-5 {
+   background: url('./../../assets/images/alfaBank/galery/img-column-5.png') center no-repeat;
+}
+
+.alfa__img-column-6 {
+   background: url('./../../assets/images/alfaBank/galery/img-column-6.png') center no-repeat;
 }
 
 @media screen and (max-width: 1660px) {

@@ -92,25 +92,25 @@
 .lgdc__img-smol {
    width: 1064px;
    height: 400px;
-   background-size: cover;
+   background-size: contain !important;
 }
 
 .lgdc__img-min {
    width: 772px;
    height: 900px;
-   background-size: cover;
+   background-size: contain !important;
 }
 
 .lgdc__img-middle {
    width: 1064px;
    height: 900px;
-   background-size: cover;
+   background-size: contain !important;
 }
 
 .lgdc__img-large {
    width: 1648px;
    height: 900px;
-   background-size: cover;
+   background-size: contain !important;
 }
 
 .lgdc__img-1 {

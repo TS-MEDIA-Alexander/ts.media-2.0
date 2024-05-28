@@ -85,19 +85,19 @@
 .cipr__img-min {
    width: 480px;
    height: 485px;
-   background-size: cover;
+   background-size: contain !important;
 }
 
 .cipr__img-middle {
    width: 1064px;
    height: 677px;
-   background-size: cover;
+   background-size: contain !important;
 }
 
 .cipr__img-large {
    width: 1648px;
    height: 600px;
-   background-size: cover;
+   background-size: contain !important;
 }
 
 .cipr__img-2 {
@@ -253,10 +253,12 @@
 
 .cipr__img-column-1 {
    background: url('./../../assets/images/cipr/galery/img-column-1.png') center no-repeat;
+   height: 1097px;
 }
 
 .cipr__img-column-2 {
    background: url('./../../assets/images/cipr/galery/img-column-2.png') center no-repeat;
+   height: 1097px;
 }
 
 @media screen and (max-width: 1660px) {

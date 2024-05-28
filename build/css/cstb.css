@@ -86,19 +86,19 @@
 .cstb__img-min {
    width: 480px;
    height: 485px;
-   background-size: cover;
+   background-size: contain !important;
 }
 
 .cstb__img-middle {
    width: 772px;
    height: 440px;
-   background-size: cover;
+   background-size: contain !important;
 }
 
 .cstb__img-large {
    width: 1648px;
    height: 572px;
-   background-size: cover;
+   background-size: contain !important;
 }
 
 .cstb__img-1 {

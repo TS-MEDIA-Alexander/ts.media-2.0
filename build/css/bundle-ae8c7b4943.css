@@ -9113,7 +9113,7 @@ button.vjs-play-control:hover {
 }
 
 .animation-flex-container {
-   font-family: "Inter", sans-serif;
+   font-family: 'Schule', sans-serif;
    margin: 0 auto;
    width: 1024px;
    display: flex;
@@ -9307,10 +9307,14 @@ button.vjs-play-control:hover {
    display: flex;
    justify-content: end;
 }
+.case__img-row-column-container_left {
+   display: flex;
+   justify-content: start;
+}
 
 .case__img-column {
    width: 480px;
-   height: 1097px;
+   height: 900px;
    margin-left: 104px;
    background-size: cover;
 }
@@ -9320,6 +9324,7 @@ button.vjs-play-control:hover {
 }
 
 @media screen and (max-width: 1200px) {
+   .case__img-row-column-container_left,
    .case__img-row-column-container {
       flex-direction: column;
       align-items: center;
