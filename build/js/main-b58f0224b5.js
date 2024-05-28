@@ -1,16 +1,26 @@
 /* Анимация таймера на главной */
 let createTimer = (elem, time, step) => {
-   let result = parseFloat(document.querySelector(elem).innerHTML)
 
-   if (typeof result === 'number' && result > 1) {
-      let i = 0
-      let interval = setInterval(() => {
-         i += step
-         document.querySelector(elem).textContent = (i + '+').replace(/(?<=[0-9])(?=(?:[0-9]{3})+(?![0-9]))/g, " ")
-         result <= i && clearInterval(interval)
-      }, time)
-   }
+      let result = parseFloat(document.querySelector(elem)?.innerHTML)
+
+      if (typeof result === 'number' && result > 1) {
+         let i = 0
+         let interval = setInterval(() => {
+            i += step
+            document.querySelector(elem).textContent = (i + '+').replace(/(?<=[0-9])(?=(?:[0-9]{3})+(?![0-9]))/g, " ")
+            result <= i && clearInterval(interval)
+         }, time)
+      }
 }
+
+/* Решение проблемы с переходом */
+const entrys=document.querySelectorAll(".entry")
+
+entrys.forEach(el=>{
+   el.addEventListener('click', ()=>{
+      setTimeout(()=>location.reload(), 1000)
+   })
+})
 
 /*! For license information please see main.js.LICENSE */
 !function (t) {
@@ -69153,12 +69163,12 @@ let createTimer = (elem, time, step) => {
                   window.open("https://boards.greenhouse.io/hellomonday/jobs/4652824", "_blank")
                }
                ,
-               this.onHashChange = t => {
+               /* this.onHashChange = t => {
                   t.urlChanged && (this._animation.src = this._animationSteps[0],
                      oo.killTweensOf(this.addFinalAnimationStep),
                      this.clearEmails(999))
                }
-               ,
+               , */
                this.onLinkOver = t => {
                   let e = t.currentTarget._id;
                   oo.to(this._emailTitles[e], .2, {
@@ -69287,9 +69297,9 @@ let createTimer = (elem, time, step) => {
                   this._emailLinks[t].classList.contains("external") ? this._emailLinks[t].classList.contains("intern") ? this._emailLinks[t].addEventListener(yo.CLICK, this.externalLinkIntern) : this._emailLinks[t].addEventListener(yo.CLICK, this.externalLink) : (this._emailLinks[t].addEventListener(yo.CLICK, this.onLinkClick),
                      a.IS_TOUCH_DEVICE || (this._emailLinks[t].addEventListener(yo.MOUSE_OVER, this.onLinkOver),
                         this._emailLinks[t].addEventListener(yo.MOUSE_OUT, this.onLinkOut)));
-            a.TEMPLATE_MANAGER.signalHashChange.add(this.onHashChange),
-               /* this._observer = new IntersectionObserver(this.onIntersection), */
-               this.updateBackbuttonPercent(),
+            /* a.TEMPLATE_MANAGER.signalHashChange.add(this.onHashChange), */
+            /* this._observer = new IntersectionObserver(this.onIntersection), */
+            this.updateBackbuttonPercent(),
                /* this._observer.observe(t), */
                this._backButtonPath.addEventListener(yo.CLICK, this.onBackClick),
                ho.signalBottomReached.add(this.bottomTrigger)
@@ -72343,7 +72353,7 @@ let createTimer = (elem, time, step) => {
             kill() {
                super.kill(),
                   clearInterval(this._timer),
-                  this._dot.stop(),
+                  /* this._dot.stop(), */
                   this._observer && this._observer.disconnect(),
                   a.TEMPLATE_MANAGER.signalHashChange.remove(this.onHashChange),
                   this._video && !this._video.paused && this._videoPlaying && this._video.pause()

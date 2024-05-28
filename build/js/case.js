@@ -33,6 +33,8 @@ const videos=document.querySelectorAll('.case__video')
 setTimeout(()=>addControlAudio(videos), 4000)
 
 
+
+
 /* function hasAudio (video) {
    return video.mozHasAudio ||
    Boolean(video.webkitAudioDecodedByteCount) ||
