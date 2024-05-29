@@ -9219,10 +9219,14 @@ button.vjs-play-control:hover {
 .case__video .video {
    width: 100%;
 }
+.case__video .video_height {
+   height: 100%;
+}
 
 @media screen and (max-width: 1470px) {
-   .case__video .video {
+   .case__video .video, .case__video .video_height {
       width: auto;
+      height: auto;
    }
 }
 
