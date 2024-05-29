@@ -29,17 +29,16 @@ const videos=document.querySelectorAll('.case__video')
 
 }
 
-
-
-const entrys=document.querySelectorAll(".entry")
 if(document.querySelectorAll('.case__video')){
    setTimeout(()=>addControlAudio(), 4000)
 }
 
 
+const entrys=document.querySelectorAll(".entry")
+
 entrys.forEach(el=>{
    el.addEventListener('click', ()=>{
-      setTimeout(()=>addControlAudio(), 4000)
+      setTimeout(()=>addControlAudio(), 7000)
    })
 })
 

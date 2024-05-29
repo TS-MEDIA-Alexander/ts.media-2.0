@@ -1,29 +1,22 @@
 /* Анимация таймера на главной */
-let createTimer = (elem, time, step) => {
+let createTimer = (data, time, step) => {
 
-   let result = parseFloat(document.querySelector(elem)?.innerHTML)
+   let elem=document.querySelector(data)
+
+   let result = parseFloat(elem?.innerHTML)
 
    if (typeof result === 'number' && result > 1) {
       let i = 0
-      let interval = setInterval(() => {
-         document.querySelector(elem) || clearInterval(interval)
+      var interval = setInterval(() => {
+         elem || clearInterval(interval)
          i += step
-         document.querySelector(elem).textContent = (i + '+').replace(/(?<=[0-9])(?=(?:[0-9]{3})+(?![0-9]))/g, " ")
+         elem.textContent = (i + '+').replace(/(?<=[0-9])(?=(?:[0-9]{3})+(?![0-9]))/g, " ")
          result <= i && clearInterval(interval)
       }, time)
    }
-
       
 }
 
-/* Решение проблемы с переходом */
-/* const entrys=document.querySelectorAll(".entry")
-
-entrys.forEach(el=>{
-   el.addEventListener('click', ()=>{
-      setTimeout(()=>location.reload(), 1000)
-   })
-}) */
 
 /*! For license information please see main.js.LICENSE */
 !function (t) {
@@ -72344,7 +72337,10 @@ entrys.forEach(el=>{
                   this._video.addEventListener("canplaythrough", this.videoPlay),
                   this._placeholderImage = this._animationContainer.querySelector("img"),
                   oo.delayedCall(1.5, this.allowVideo),
-                  a.TEMPLATE_MANAGER.signalHashChange.add(this.onHashChange)/*,
+                  a.TEMPLATE_MANAGER.signalHashChange.add(this.onHashChange),
+                  createTimer(".myClass1", 25, 2),
+                  createTimer(".myClass2", 32, 2),
+                  createTimer(".myClass3", 5, 2000)/*,
                 t.querySelector(".scrollIndicator").appendChild(this._dot.container),
                oo.set(this._dot.container, {
                    scale: .5,
@@ -72793,10 +72789,10 @@ entrys.forEach(el=>{
                   ho.signalScroll.add(this.onScroll),
                   this.resize(),
                   this._rendering && (ae.shared.add(this.render),
-                     window.addEventListener(yo.MOUSE_MOVE, this.onMouseMove)),
+                     window.addEventListener(yo.MOUSE_MOVE, this.onMouseMove))/* ,
                   createTimer(".myClass1", 25, 2),
                   createTimer(".myClass2", 32, 2),
-                  createTimer(".myClass3", 5, 2000)
+                  createTimer(".myClass3", 5, 2000) */
             }
             get isRendering() {
                return this._rendering
