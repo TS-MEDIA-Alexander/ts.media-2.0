@@ -30,7 +30,7 @@
 }
 
 .alfa__logo {
-   background: url('./../../assets/images//alfaBank/logos/alpha_bank-subheader-logo.svg') 0 0/auto auto no-repeat;
+   background: url('./../../assets/images/alfaBank/logos/alpha_bank-subheader-logo.svg') 0 0/auto auto no-repeat;
 }
 
 .alfa__border-top {
@@ -44,9 +44,10 @@
    color: #FFFFFF7A;
 }
 
-.text-white {
-   color: #FFFFFF;
+.alfa__text-block {
+   margin-right: 292px;
 }
+
 
 .alfa__subheader__title {
    font-weight: 400;
@@ -71,6 +72,12 @@
    font-size: 20px;
    font-weight: 300;
    line-height: 28px;
+}
+
+@media screen and (max-width: 850px){
+   .alfa__text-block {
+      margin-right: 0;
+   }
 }
 
 /* -------------------------------------------------case-galery------------------------------------------------------------- */

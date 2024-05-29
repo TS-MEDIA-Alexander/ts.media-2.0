@@ -1,0 +1,239 @@
+/* -------------------------------------------------отступы------------------------------------------------------------------- */
+.p-main {
+   padding: 120px 0;
+}
+
+.m-t {
+   margin-top: 120px;
+}
+
+.p-t {
+   padding-top: 120px;
+}
+
+.m-t200 {
+   margin-top: 200px;
+}
+
+/* -------------------------------------------------ct1__subheader------------------------------------------------------------- */
+.ct1__video-header {
+   background: url('./../../assets/images/cipr-t1/cipr-t1-img-header.png') center no-repeat;
+   background-size: cover;
+}
+
+.ct1__bg-header {
+   background: #E3E9EC;
+}
+
+.ct1__logo {
+   background: url('./../../assets/images/cipr-t1/logos/logo_cont.svg') 0 0/auto auto no-repeat;
+}
+
+.ct1__border-top {
+   border-top-color: #FFFFFF29;
+}
+
+.ct1__description-title {
+   font-family: 'Inter';
+   font-size: 12px;
+   font-weight: 400;
+   color: #1573AA7A;
+}
+
+.ct1__text {
+   color: #1573AA;
+}
+
+.ct1__text-block {
+   margin-right: 292px;
+}
+
+.ct1__subheader__title {
+   font-weight: 400;
+   line-height: 56px;
+   color: #1573AA;
+}
+
+@media screen and (max-width: 1590px) {
+   .ct1__subheader__title {
+      font-size: 30px;
+   }
+}
+
+@media screen and (max-width: 1364px) {
+   .ct1__subheader__title {
+      text-align: center;
+   }
+}
+@media screen and (max-width: 920px){
+   .ct1__text-block {
+      margin-right: 0;
+   }
+}
+
+.ct1__subheader__text {
+   font-family: 'Inter';
+   font-size: 20px;
+   font-weight: 300;
+   line-height: 28px;
+   color: #0D1029;
+}
+
+/* -------------------------------------------------case-galery------------------------------------------------------------- */
+.ct1__galery {
+   background: #FFFFFF;
+}
+
+.ct1__bg {
+   background: #F1F2F3;
+}
+
+
+
+.ct1__img-container {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+}
+
+.ct1__img-container-left {
+   width: 100%;
+   display: flex;
+   justify-content: start;
+}
+
+.ct1__img-container-center {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+}
+
+.ct1__img-container-right {
+   width: 100%;
+   display: flex;
+   justify-content: end;
+}
+
+.ct1__img-min {
+   width: 1064px;
+   height: 900px;
+   background-size: contain !important;
+}
+
+.ct1__img-middle {
+   width: 1064px;
+   height: 939px;
+   background-size: contain !important;
+}
+
+.ct1__img-large {
+   width: 1648px;
+   height: 939px;
+   background-size: contain !important;
+}
+
+.ct1__img-1 {
+   background: url('./../../assets/images/cipr-t1/galary/img-1.png') center no-repeat;
+}
+.ct1__img-2 {
+   background: url('./../../assets/images/cipr-t1/galary/img-2.png') center no-repeat;
+}
+.ct1__img-3 {
+   background: url('./../../assets/images/cipr-t1/galary/img-3.png') center no-repeat;
+}
+.ct1__img-4 {
+   background: url('./../../assets/images/cipr-t1/galary/img-4.png') center no-repeat;
+}
+.ct1__img-5 {
+   background: url('./../../assets/images/cipr-t1/galary/img-5.png') center no-repeat;
+}
+
+.ct1__img-6 {
+   background: url('./../../assets/images/cipr-t1/galary/img-6.png') center no-repeat;
+}
+
+.ct1__img-7 {
+   background: url('./../../assets/images/cipr-t1/galary/img-7.png') center no-repeat;
+}
+
+.ct1__img-8 {
+   background: url('./../../assets/images/cipr-t1/galary/img-8.png') center no-repeat;
+}
+.ct1__img-9 {
+   background: url('./../../assets/images/cipr-t1/galary/img-9.png') center no-repeat;
+}
+
+
+
+
+
+.case__flex-contain-low {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: end;
+}
+
+.ct1__text-container {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+}
+
+.ct1__text-container_right {
+   width: 100%;
+   display: flex;
+   justify-content: end;
+}
+
+@media screen and (max-width: 1660px) {
+   .case__flex-contain-low {
+      flex-direction: column;
+   }
+
+   .ct1__img-container {
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .ct1__img-min {
+      width: 50%;
+   }
+
+   .ct1__img-middle {
+      margin-top: 120px;
+      width: 90%;
+   }
+
+   .ct1__img-large {
+      width: 90%;
+   }
+}
+
+@media screen and (max-width: 1134px) {
+   .ct1__text-container {
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .case__text {
+      margin-top: 40px;
+   }
+}
+
+@media screen and (max-width: 980px) {
+
+   .ct1__img-smol,
+   .ct1__img-min,
+   .ct1__img-middle,
+   .ct1__img-large {
+      width: 100%;
+   }
+}
+
+
+@media screen and (max-width: 1660px) {
+   .case__text_dark {
+      margin-top: 50px;
+   }
+}

@@ -9278,6 +9278,10 @@ button.vjs-play-control:hover {
    font-family: 'Inter';
 }
 
+.text-white {
+   color: #FFFFFF;
+}
+
 .case__text-title {
    font-family: inherit;
    font-size: 12px;
