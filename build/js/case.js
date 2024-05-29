@@ -4,8 +4,9 @@ function hasAudio (video) {
    Boolean(video.audioTracks && video.audioTracks.length);
 }
 
-function addControlAudio(videos){
+function addControlAudio(){
 
+const videos=document.querySelectorAll('.case__video')
    videos.forEach(el => {
       const video=el.getElementsByTagName('video')
       
@@ -28,9 +29,20 @@ function addControlAudio(videos){
 
 }
 
-const videos=document.querySelectorAll('.case__video')
 
-setTimeout(()=>addControlAudio(videos), 4000)
+
+const entrys=document.querySelectorAll(".entry")
+if(document.querySelectorAll('.case__video')){
+   setTimeout(()=>addControlAudio(), 4000)
+}
+
+
+entrys.forEach(el=>{
+   el.addEventListener('click', ()=>{
+      setTimeout(()=>addControlAudio(), 4000)
+   })
+})
+
 
 
 

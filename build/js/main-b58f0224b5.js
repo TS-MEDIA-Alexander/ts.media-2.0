@@ -17,13 +17,13 @@ let createTimer = (elem, time, step) => {
 }
 
 /* Решение проблемы с переходом */
-const entrys=document.querySelectorAll(".entry")
+/* const entrys=document.querySelectorAll(".entry")
 
 entrys.forEach(el=>{
    el.addEventListener('click', ()=>{
       setTimeout(()=>location.reload(), 1000)
    })
-})
+}) */
 
 /*! For license information please see main.js.LICENSE */
 !function (t) {
