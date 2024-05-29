@@ -1,0 +1,286 @@
+/* -------------------------------------------------отступы------------------------------------------------------------------- */
+.p-main {
+   padding: 120px 0;
+}
+
+.m-t {
+   margin-top: 120px;
+}
+.m-t200 {
+   margin-top: 200px;
+}
+
+.p-t {
+   padding-top: 120px;
+}
+
+.p-b200 {
+   padding-bottom: 200px;
+}
+
+/* -------------------------------------------------fmr__subheader------------------------------------------------------------- */
+.fmr__video-header {
+   background: url('./../../assets/images/forum-made-russia/fmr-video_cont.png') center no-repeat;
+   background-size: cover;
+}
+
+.fmr__bg-header {
+   background: #111741;
+}
+
+.fmr__logo {
+   background: url('./../../assets/images/forum-made-russia/logos/logo_cont.svg') 0 0/auto auto no-repeat;
+}
+
+.fmr__border-top {
+   border-top-color: #FFFFFF29;
+}
+
+.fmr__description-title {
+   font-family: 'Inter';
+   font-size: 12px;
+   font-weight: 400;
+   color: #9AC9FE7A;
+}
+
+.fmr__text {
+   color: #9AC9FE;
+}
+
+.fmr__subheader__title {
+   font-weight: 400;
+   line-height: 56px;
+}
+
+@media screen and (max-width: 1590px) {
+   .fmr__subheader__title {
+      font-size: 30px;
+   }
+}
+
+@media screen and (max-width: 1364px) {
+   .fmr__subheader__title {
+      text-align: center;
+   }
+}
+
+.fmr__subheader__text {
+   font-family: 'Inter';
+   font-size: 20px;
+   font-weight: 300;
+   line-height: 28px;
+}
+
+/* -------------------------------------------------case-galery------------------------------------------------------------- */
+.fmr__galery {
+   background: #FFFFFF;
+}
+
+.fmr__galery-dark {
+   background: #111741;
+}
+
+.fmr__bg {
+   background: #F1F2F3;
+}
+
+.fmr__img-container {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+}
+
+.fmr__img-smol {
+   width: 772px;
+   height: 439px;
+   background-size: contain !important;
+}
+
+.fmr__img-min {
+   width: 1064px;
+   height: 591px;
+   background-size: contain !important;
+}
+
+.fmr__img-middle {
+   width: 772px;
+   height: 772px;
+   background-size: contain !important;
+}
+
+.fmr__img-large {
+   width: 1648px;
+   height: 900px;
+   background-size: contain !important;
+}
+
+.fmr__img-1 {
+   background: url('./../../assets/images/forum-made-russia/galery/img-1.png') center no-repeat;
+}
+
+.fmr__img-2 {
+   background: url('./../../assets/images/forum-made-russia/galery/img-2.png') center no-repeat;
+   height: 246px;
+}
+
+.fmr__img-3 {
+   background: url('./../../assets/images/forum-made-russia/galery/img-3.png') center no-repeat;
+}
+
+.fmr__img-4 {
+   background: url('./../../assets/images/forum-made-russia/galery/img-4.png') center no-repeat;
+   height: 662px;
+}
+
+.fmr__img-5 {
+   background: url('./../../assets/images/forum-made-russia/galery/img-5.png') center no-repeat;
+}
+
+.fmr__img-6 {
+   background: url('./../../assets/images/forum-made-russia/galery/img-6.png') center no-repeat;
+}
+
+.fmr__img-7 {
+   background: url('./../../assets/images/forum-made-russia/galery/img-7.png') center no-repeat;
+}
+
+.fmr__img-8 {
+   background: url('./../../assets/images/forum-made-russia/galery/img-8.png') center no-repeat;
+}
+
+.fmr__img-9 {
+   background: url('./../../assets/images/forum-made-russia/galery/img-9.png') center no-repeat;
+}
+
+.fmr__img-10 {
+   background: url('./../../assets/images/forum-made-russia/galery/img-10.png') center no-repeat;
+}
+
+.fmr__img-11 {
+   background: url('./../../assets/images/forum-made-russia/galery/img-11.png') center no-repeat;
+}
+
+.fmr__img-12 {
+   background: url('./../../assets/images/forum-made-russia/galery/img-12.png') center no-repeat;
+   height: 820px;
+}
+
+.fmr__img-13 {
+   background: url('./../../assets/images/forum-made-russia/galery/img-13.png') center no-repeat;
+   height: 493px;
+}
+
+.fmr__img-14 {
+   background: url('./../../assets/images/forum-made-russia/galery/img-14.png') center no-repeat;
+}
+
+.fmr__text-container-vertical-center {
+   display: flex;
+   align-items: center;
+}
+
+.fmr__img-container-left {
+   width: 100%;
+   display: flex;
+   justify-content: start;
+}
+
+.fmr__img-container-center {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+}
+
+.fmr__img-container-right {
+   width: 100%;
+   display: flex;
+   justify-content: end;
+}
+
+.fmr__text-block {
+   margin-right: 292px;
+}
+
+
+.case__flex-contain-low {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: end;
+}
+
+.fmr__text-container {
+   display: flex;
+   justify-content: flex-end;
+}
+
+@media screen and (max-width: 1660px) {
+   .case__flex-contain-low {
+      flex-direction: column;
+   }
+
+   .fmr__img-container {
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .fmr__img-min {
+      width: 50%;
+   }
+
+   .fmr__img-middle {
+      margin-top: 120px;
+      width: 90%;
+   }
+
+   .fmr__img-large {
+      width: 90%;
+   }
+}
+
+@media screen and (max-width: 980px) {
+   .fmr__img-min {
+      width: 100%;
+   }
+
+   .fmr__img-middle {
+      width: 100%;
+   }
+
+   .fmr__img-large {
+      width: 100%;
+   }
+}
+
+.fmr__img-column-1 {
+   background: url('./../../assets/images/forum-made-russia/galery/img-column-1.png') center no-repeat;
+   height: 900px;
+}
+
+.fmr__img-column-2 {
+   background: url('./../../assets/images/forum-made-russia/galery/img-column-2.png') center no-repeat;
+   height: 900px;
+
+}
+
+.fmr__text-flex-container-column-end {
+   display: flex;
+   flex-direction: column;
+   justify-content: end;
+}
+
+.fmr__img-row-column-container {
+   display: flex;
+   justify-content: end;
+}
+
+.fmr__img-column {
+   width: 480px;
+   height: 1097px;
+   margin-left: 104px;
+   background-size: cover;
+}
+
+.fmr__img-column:first-child {
+   margin-left: 0;
+}
