@@ -9137,15 +9137,6 @@ button.vjs-play-control:hover {
    text-align: left;
 }
 
-.our-success-amount-plus {
-   width: 25px;
-   height: 24px;
-   border: 1px solid red;
-}
-.our-success-amount-plus img{
-   width: 100%;
-}
-
 @media screen and (max-width: 1137px) {
    .animation-flex-container {
       width: 100%;
