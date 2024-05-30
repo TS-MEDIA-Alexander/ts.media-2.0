@@ -1,7 +1,7 @@
 /* Анимация таймера на главной */
 let createTimer = (data, time, step) => {
 
-   let elem=document.querySelector(data)
+   let elem = document.querySelector(data)
 
    let result = parseFloat(elem?.innerHTML)
 
@@ -10,12 +10,56 @@ let createTimer = (data, time, step) => {
       var interval = setInterval(() => {
          elem || clearInterval(interval)
          i += step
-         elem.textContent = (i + '+').replace(/(?<=[0-9])(?=(?:[0-9]{3})+(?![0-9]))/g, " ")
+         elem.textContent = String(i).replace(/(?<=[0-9])(?=(?:[0-9]{3})+(?![0-9]))/g, " ")
          result <= i && clearInterval(interval)
       }, time)
    }
-      
+
 }
+
+
+/* Решение со звуком для перезагрузски (на будущее) */
+/* const observer = new MutationObserver(mutationRecords => {
+
+   mutationRecords.forEach((mutationRecordsEl) => {
+
+      const video = mutationRecordsEl.target
+
+      const el = video.parentElement
+
+      if (el?.innerHTML) {
+         el.innerHTML = [el.innerHTML, '<div class="case__video-management case__video-management_mute"></div>']
+         el.querySelector('.case__video-management').addEventListener('click', () => {
+            el.querySelector('video').muted = !el.querySelector('video').muted
+            el.querySelector('video').muted ? (
+               el.querySelector('.case__video-management').classList.remove('case__video-management_sound'),
+               el.querySelector('.case__video-management').classList.add('case__video-management_mute')
+            ) : (
+               el.querySelector('.case__video-management').classList.remove('case__video-management_mute'),
+               el.querySelector('.case__video-management').classList.add('case__video-management_sound')
+            )
+         })
+
+      }
+      
+      console.group()
+      console.log(el)
+      console.log(video)
+      console.log(hasAudio(video))
+      console.groupEnd()
+   })
+
+})
+
+const case__video = document.querySelectorAll('.case__video')
+
+case__video.forEach(el => {
+   observer.observe(el.getElementsByTagName('video')[0], {
+      attributes: true
+   })
+
+}) */
+
 
 
 
@@ -64,7 +108,7 @@ function addControlAudio() {
 }
 
 if (document.querySelectorAll('.case__video')) {
-   setTimeout(() => addControlAudio(), 4000)
+   setTimeout(() => addControlAudio(), 3000)
 }
 
 
@@ -72838,7 +72882,7 @@ if (document.querySelectorAll('.case__video')) {
                   this._disableScroll = Boolean(this.element.getAttribute("data-disable-scroll"));
                let n = t.querySelector(".data");
                this._data = n.querySelectorAll(".entry"),
-               addEventOnEntry();
+                  addEventOnEntry();
                   n.parentNode.removeChild(n),
                   this.setupColumns(),
                   this.setupEntries(),

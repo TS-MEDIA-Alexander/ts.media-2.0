@@ -9122,11 +9122,24 @@ button.vjs-play-control:hover {
 }
 
 .our-success-container-amount {
+   position: relative;
    font-family: inherit;
    font-size: 81px;
    font-weight: 400;
    text-align: left;
    color: #8BA83D;
+   display: inline;
+}
+
+.our-success-container-amount::after {
+   content: '';
+   position: absolute;
+   top: calc(50% - 15px);
+   left: calc(100% + 8px);
+   width: 25px;
+   height: 24.34px;
+   background: url('https://static.tildacdn.com/tild3739-3134-4034-a465-343265393233/_.svg') 0 0/auto auto no-repeat;
+   background-size: contain;
 }
 
 .our-success-container-text {
@@ -9137,9 +9150,9 @@ button.vjs-play-control:hover {
    text-align: left;
 }
 
-@media screen and (max-width: 1137px) {
+@media screen and (max-width: 1238px) {
    .animation-flex-container {
-      width: 100%;
+      width: 90%;
    }
 
    .our-success-container-amount {
