@@ -3923,7 +3923,8 @@ body:not(.touch) .FeaturedCollaborationsModule .desktop .entry:hover .videoConta
    display: none;
    width: calc(100% + 6px);
    margin-left: -3px;
-   pointer-events: none
+   pointer-events: none;
+   border: none;
 }
 
 .HeroModule .animationContainer img {
@@ -9123,7 +9124,7 @@ button.vjs-play-control:hover {
 .our-success-container-amount {
    font-family: inherit;
    font-size: 81px;
-   font-weight: 600;
+   font-weight: 400;
    text-align: left;
    color: #8BA83D;
 }
