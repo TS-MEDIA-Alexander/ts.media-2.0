@@ -9137,6 +9137,15 @@ button.vjs-play-control:hover {
    text-align: left;
 }
 
+.our-success-amount-plus {
+   width: 25px;
+   height: 24px;
+   border: 1px solid red;
+}
+.our-success-amount-plus img{
+   width: 100%;
+}
+
 @media screen and (max-width: 1137px) {
    .animation-flex-container {
       width: 100%;
@@ -9220,12 +9229,15 @@ button.vjs-play-control:hover {
 .case__video .video {
    width: 100%;
 }
+
 .case__video .video_height {
    height: 100%;
 }
 
 @media screen and (max-width: 1470px) {
-   .case__video .video, .case__video .video_height {
+
+   .case__video .video,
+   .case__video .video_height {
       width: auto;
       height: auto;
    }
@@ -9316,6 +9328,7 @@ button.vjs-play-control:hover {
    display: flex;
    justify-content: end;
 }
+
 .case__img-row-column-container_left {
    display: flex;
    justify-content: start;
@@ -9333,6 +9346,7 @@ button.vjs-play-control:hover {
 }
 
 @media screen and (max-width: 1200px) {
+
    .case__img-row-column-container_left,
    .case__img-row-column-container {
       flex-direction: column;
