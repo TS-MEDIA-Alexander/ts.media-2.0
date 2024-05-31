@@ -1,0 +1,274 @@
+/* -------------------------------------------------отступы------------------------------------------------------------------- */
+.p-main {
+   padding: 120px 0;
+}
+
+.m-t {
+   margin-top: 120px;
+}
+
+.p-t {
+   padding-top: 120px;
+}
+
+.m-t200 {
+   margin-top: 200px;
+}
+
+.p-b200 {
+   padding-bottom: 200px;
+}
+
+.m-t64 {
+   margin-top: 64px;
+}
+
+.m-l104 {
+   margin-left: 104px;
+}
+
+/* -------------------------------------------------pmef__subheader------------------------------------------------------------- */
+.pmef__video-header {
+   background: url('./../../assets/images/rostelecom-pmef/pmef-img-header.png') center no-repeat;
+   background-size: cover;
+}
+
+.pmef__bg-header {
+   background: #0D2F7A;
+}
+
+.pmef__logo {
+   background: url('./../../assets/images/rostelecom-pmef/logos/logo_rt.svg') 0 0/auto auto no-repeat;
+}
+
+.pmef__border-top {
+   border-top-color: #1573AA29;
+   width: 447px;
+}
+
+.pmef__description-title {
+   font-family: 'Inter';
+   font-size: 12px;
+   font-weight: 400;
+   color: #9AC9FE7A;
+}
+
+.pmef__text {
+   color: #9AC9FE;
+}
+
+.pmef__subheader__title {
+   font-weight: 400;
+   line-height: 56px;
+   color: #FFFFFF;
+}
+
+@media screen and (max-width: 1590px) {
+   .pmef__subheader__title {
+      font-size: 30px;
+   }
+}
+
+@media screen and (max-width: 1364px) {
+   .pmef__subheader__title {
+      text-align: center;
+   }
+}
+
+@media screen and (max-width: 920px) {
+   .pmef__text-block {
+      margin-right: 0;
+   }
+}
+
+.pmef__subheader__text {
+   font-family: 'Inter';
+   font-size: 20px;
+   font-weight: 300;
+   line-height: 28px;
+   color: #FFFFFF;
+}
+
+/* -------------------------------------------------case-galery------------------------------------------------------------- */
+.pmef__galery {
+   background: #FFFFFF;
+}
+
+.pmef__bg {
+   background: #F1F2F3;
+}
+
+
+
+.pmef__img-container {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+}
+
+.pmef__img-container-left {
+   width: 100%;
+   display: flex;
+   justify-content: start;
+}
+
+.pmef__img-container-center {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+}
+
+.pmef__img-container-right {
+   width: 100%;
+   display: flex;
+   justify-content: end;
+}
+
+.pmef__img-min {
+   width: 480px;
+   height: 270px;
+   background-size: contain !important;
+}
+
+.pmef__img-middle {
+   width: 1064px;
+   height: 600px;
+   background-size: contain !important;
+}
+
+.pmef__img-large {
+   width: 1648px;
+   height: 550px;
+   background-size: contain !important;
+}
+
+.pmef__img-1 {
+   background: url('./../../assets/images/rostelecom-pmef/galery/img-1.png') center no-repeat;
+}
+
+.pmef__img-2 {
+   background: url('./../../assets/images/rostelecom-pmef/galery/img-2.png') center no-repeat;
+}
+
+.pmef__img-3 {
+   background: url('./../../assets/images/rostelecom-pmef/galery/img-3.png') center no-repeat;
+   height: 1117.14px;
+}
+
+.pmef__img-4 {
+   background: url('./../../assets/images/rostelecom-pmef/galery/img-4.png') center no-repeat;
+   height: 910px;
+}
+
+.pmef__img-5 {
+   background: url('./../../assets/images/rostelecom-pmef/galery/img-5.png') center no-repeat;
+}
+
+.pmef__img-6 {
+   background: url('./../../assets/images/rostelecom-pmef/galery/img-6.png') center no-repeat;
+   height: 678px;
+}
+
+.pmef__img-7 {
+   background: url('./../../assets/images/rostelecom-pmef/galery/img-7.png') center no-repeat;
+}
+
+.pmef__img-8 {
+   background: url('./../../assets/images/rostelecom-pmef/galery/img-8.png') center no-repeat;
+}
+
+.pmef__img-9 {
+   background: url('./../../assets/images/rostelecom-pmef/galery/img-9.png') center no-repeat;
+   height: 970px;
+}
+
+
+
+
+
+
+.case__flex-contain-low {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: end;
+}
+
+.pmef__text-container {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+}
+
+.pmef__text-container_right {
+   width: 100%;
+   display: flex;
+   justify-content: end;
+}
+
+@media screen and (max-width: 1660px) {
+   .case__flex-contain-low {
+      flex-direction: column;
+   }
+
+   .pmef__img-container {
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .pmef__img-min {
+      margin-top: 120px;
+   }
+
+}
+
+@media screen and (max-width: 1211px){
+   .pmef__img-container{
+    width: 100%;
+   }
+   .pmef__img-min {
+      width: 100%;
+   }
+
+   .pmef__img-middle {
+      margin-top: 120px;
+      width: 90%;
+   }
+
+   .pmef__img-large {
+      width: 90%;
+   }
+}
+
+@media screen and (max-width: 1134px) {
+   .pmef__text-container {
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .case__text {
+      margin-top: 40px;
+   }
+}
+
+@media screen and (max-width: 980px) {
+
+   .pmef__img-smol,
+   .pmef__img-min,
+   .pmef__img-middle,
+   .pmef__img-large {
+      width: 100%;
+   }
+}
+
+
+@media screen and (max-width: 1660px) {
+   .case__text_dark {
+      margin-top: 50px;
+   }
+}
+
+/* -------------------------------------------------case-galery-dark------------------------------------------------------------- */
+.pmef__galery-dark {
+   background: #E8EEF4;
+}

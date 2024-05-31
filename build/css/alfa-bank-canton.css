@@ -1,0 +1,305 @@
+/* -------------------------------------------------отступы------------------------------------------------------------------- */
+.p-main {
+   padding: 120px 0;
+}
+
+.m-t {
+   margin-top: 120px;
+}
+.m-b64{
+margin-bottom: 64px;
+}
+
+.p-t {
+   padding-top: 120px;
+}
+
+.m-main200 {
+   margin: 200px 0;
+}
+
+.m-t200 {
+   margin-top: 200px;
+}
+
+.m-l104 {
+   margin-left: 104px;
+}
+
+/* -------------------------------------------------canton__subheader------------------------------------------------------------- */
+.canton__video-header {
+   background: url('./../../assets/images/alfa-bank-canton/canton-img-header.png') center no-repeat;
+   background-size: cover;
+}
+
+.canton__bg-header {
+   background: #ED3726;
+}
+
+.canton__logo {
+   background: url('./../../assets/images/alfaBank/logos/alpha_bank-subheader-logo.svg') 0 0/auto auto no-repeat;
+}
+
+.canton__border-top {
+   border-top-color: #FFFFFF29;
+}
+
+.canton__description-title {
+   font-family: 'Inter';
+   font-size: 12px;
+   font-weight: 400;
+   color: #FFFFFF7A;
+}
+
+.canton__text-block {
+   margin-right: 292px;
+}
+
+
+.canton__subheader__title {
+   font-weight: 400;
+   line-height: 56px;
+   text-align: left;
+}
+
+@media screen and (max-width: 1590px) {
+   .canton__subheader__title {
+      font-size: 30px;
+   }
+}
+
+@media screen and (max-width: 1364px) {
+   .canton__subheader__title {
+      text-align: center;
+   }
+}
+
+.canton__subheader__text {
+   font-family: 'Inter';
+   font-size: 20px;
+   font-weight: 300;
+   line-height: 28px;
+}
+
+@media screen and (max-width: 850px) {
+   .canton__text-block {
+      margin-right: 0;
+   }
+}
+
+/* -------------------------------------------------case-galery------------------------------------------------------------- */
+.canton__galery {
+   background: #FFFFFF;
+}
+
+.canton__bg {
+   background: #F1F2F3;
+}
+
+.canton__img-container {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+}
+
+.canton__img-container-left {
+   width: 100%;
+   display: flex;
+   justify-content: start;
+}
+
+.canton__img-container-center {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+}
+
+.canton__img-container-right {
+   width: 100%;
+   display: flex;
+   justify-content: end;
+}
+
+.canton__img-smol {
+   width: 1064px;
+   height: 622px;
+   background-size: contain !important;
+}
+
+.canton__img-min {
+   width: 1064px;
+   height: 788px;
+   background-size: contain !important;
+}
+
+.canton__img-middle {
+   width: 1356px;
+   height: 914px;
+   background-size: contain !important;
+}
+
+.canton__img-large {
+   width: 1648px;
+   height: 788px;
+   background-size: contain !important;
+}
+
+.canton__img-1 {
+   background: url('./../../assets/images/alfa-bank-canton/galery/img-1.png') center no-repeat;
+}
+
+.canton__img-2 {
+   background: url('./../../assets/images/alfa-bank-canton/galery/img-2.png') center no-repeat;
+}
+
+.canton__img-3 {
+   background: url('./../../assets/images/alfa-bank-canton/galery/img-3.png') center no-repeat;
+}
+
+.canton__img-4 {
+   background: url('./../../assets/images/alfa-bank-canton/galery/img-4.png') center no-repeat;
+}
+
+.canton__img-5 {
+   background: url('./../../assets/images/alfa-bank-canton/galery/img-5.png') center no-repeat;
+   background-size: contain;
+}
+
+.canton__img-6 {
+   background: url('./../../assets/images/alfa-bank-canton/galery/img-6.png') center no-repeat;
+   background-size: contain;
+}
+.canton__img-7 {
+   background: url('./../../assets/images/alfa-bank-canton/galery/img-7.png') center no-repeat;
+   background-size: contain;
+}
+.canton__img-8 {
+   background: url('./../../assets/images/alfa-bank-canton/galery/img-8.png') center no-repeat;
+   background-size: contain;
+}
+.canton__img-9 {
+   background: url('./../../assets/images/alfa-bank-canton/galery/img-9.png') center no-repeat;
+   background-size: contain;
+}
+
+.canton__img-10 {
+   background: url('./../../assets/images/alfa-bank-canton/galery/img-10.png') center no-repeat;
+   background-size: contain;
+   width: 772px;
+   height: 520px;
+}
+.canton__img-11 {
+   background: url('./../../assets/images/alfa-bank-canton/galery/img-11.png') center no-repeat;
+   background-size: contain;
+   height: 856px;
+}
+
+.case__flex-contain-low {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: end;
+}
+
+.canton__text-container {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+}
+
+.canton__text-container_right {
+   width: 100%;
+   display: flex;
+   justify-content: end;
+}
+
+@media screen and (max-width: 1660px) {
+   .case__flex-contain-low {
+      flex-direction: column;
+   }
+
+   .canton__img-container {
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .canton__img-min {
+      width: 50%;
+   }
+
+   .canton__img-middle {
+      margin-top: 120px;
+      width: 90%;
+   }
+
+   .canton__img-large {
+      width: 90%;
+   }
+}
+
+@media screen and (max-width: 1134px) {
+   .canton__text-container {
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .case__text {
+      margin-top: 40px;
+   }
+}
+
+@media screen and (max-width: 980px) {
+
+   .canton__img-smol,
+   .canton__img-min,
+   .canton__img-middle,
+   .canton__img-large {
+      width: 100%;
+   }
+}
+
+.canton__img-column-1 {
+   background: url('./../../assets/images/alfa-bank-canton/galery/img-column-1.png') center no-repeat;
+}
+
+.canton__img-column-2 {
+   background: url('./../../assets/images/alfa-bank-canton/galery/img-column-2.png') center no-repeat;
+}
+.canton__img-column-3 {
+   background: url('./../../assets/images/alfa-bank-canton/galery/img-column-3.png') center no-repeat;
+}
+
+
+/* -------------------------------------------------galery-line------------------------------------------------------------- */
+.canton__galery-line {
+   width: 100%;
+   height: 234px;
+}
+
+.canton__img-6 {
+   background: url('./../../assets/images/alfa-bank-canton/galery/img-6.png') center no-repeat;
+   background-size: cover;
+   width: 100vw !important;
+   height: 100%;
+}
+
+@media screen and (max-width: 1745px) {
+   .canton__img-6 {
+      background: url('./../../assets/images/alfa-bank-canton/galery/img-6.png') center no-repeat;
+      background-size: contain;
+      width: 100vw !important;
+      height: 100%;
+   }
+}
+
+@media screen and (max-width: 1134px) {
+   .canton__galery-line {
+      height: 140px;
+   }
+}
+
+@media screen and (max-width: 650px) {
+   .canton__galery-line {
+      height: 80px;
+   }
+}

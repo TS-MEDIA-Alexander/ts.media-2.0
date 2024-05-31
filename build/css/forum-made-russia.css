@@ -6,6 +6,11 @@
 .m-t {
    margin-top: 120px;
 }
+
+.m-b64 {
+   margin-bottom: 64px;
+}
+
 .m-t200 {
    margin-top: 200px;
 }
@@ -33,7 +38,8 @@
 }
 
 .fmr__border-top {
-   border-top-color: #FFFFFF29;
+   border-top-color: #9AC9FE29;
+   width: 516px;
 }
 
 .fmr__description-title {
