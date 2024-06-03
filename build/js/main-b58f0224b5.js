@@ -70421,14 +70421,15 @@ if (document.querySelectorAll('.case__video')) {
                this._changeInitialCursorState = !1,
                this._edgeMap = [6, 4, 5, 3],
                this.setupTags = () => {
-                  this._tagElements = this._tagsContainer.querySelectorAll(".tag"),
+                  //Фильтрация по тэгам
+                  //this._tagElements = this._tagsContainer.querySelectorAll(".tag"),
                      this._sortBy = this._tagsContainer.querySelector(".sortBy");
-                  let t = this._tagElements.length;
-                  for (let e = 0; e < t; e++)
+                 /* let t = this._tagElements.length;
+                   for (let e = 0; e < t; e++)
                      a.IS_TOUCH_DEVICE || (this._tagElements[e]._sortBy = this._sortBy,
                         this._tagElements[e].addEventListener(yo.MOUSE_OVER, this.onTagOver),
                         this._tagElements[e].addEventListener(yo.MOUSE_OUT, this.onTagOut)),
-                        this._tagElements[e].addEventListener(yo.CLICK, this.onTagClick);
+                        this._tagElements[e].addEventListener(yo.CLICK, this.onTagClick); */
                   let e = this._data.getAttribute("data-tags");
                   e && (this._tags = e.split(","))
                }
@@ -70487,7 +70488,7 @@ if (document.querySelectorAll('.case__video')) {
                }
                ,
                this.updateSortBy = () => {
-                  "all" !== this._grid.currentFilter && this._filterActive ? this._sortBy.innerText = "Reset filter" : this._sortBy.innerText = "Filter by"
+                  "all" !== this._grid.currentFilter && this._filterActive ? this._sortBy.innerText = "Reset filter" : this._sortBy.innerText = ""/* "Filter by" */
                }
                ,
                this.onIntersection = t => {

@@ -770,7 +770,7 @@ a {
    justify-content: space-between;
    margin: 98px auto 0px auto;
    display: flex;
-   width: 1063px;
+   width: 1168px;
 }
 
 .JumpAheadComponent .anchors .anchor {
@@ -808,7 +808,7 @@ a {
 
 .anchor-container {
    margin-top: 15px;
-   width: 778px;
+   width: 800px;
 }
 
 .anchor-head {
@@ -819,8 +819,13 @@ a {
 .anchor-companyes {
    margin-top: 25px;
    display: flex;
+   justify-content: space-between;
    flex-wrap: wrap;
 }
+/* .anchor-companyes .anchor{
+   display: inline-block;
+   text-align:justify;
+} */
 
 .anchor-companyes .anchor {
    margin-left: 44px;
