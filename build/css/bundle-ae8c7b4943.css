@@ -729,6 +729,8 @@ a {
 }
 
 .JumpAheadComponent {
+   display: flex;
+   flex-direction: column;
    width: 100%;
    position: absolute;
    top: 100px;
@@ -761,14 +763,21 @@ a {
 }
 
 .JumpAheadComponent .anchors {
-   position: absolute;
+   margin-top: 20px;
+   display: flex;
+   justify-content: space-between;
+   /* position: absolute;
    left: 28%;
-   top: 0
+   top: 0; */
+   width: 100%;
 }
 
 .JumpAheadComponent .anchors .anchor {
    cursor: pointer;
    position: relative
+}
+.JumpAheadComponent .anchors .anchor .sectionLabel.sectionLabelActive {
+   color: #8ba83d;
 }
 
 .JumpAheadComponent .anchors .anchor .bullet {

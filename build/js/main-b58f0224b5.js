@@ -69130,33 +69130,37 @@ if (document.querySelectorAll('.case__video')) {
                ,
                this.onAnchorClick = t => {
                   if (this._caseGridInjected) {
-                     ho.getInstance().goto(0, 1),
+                     /* ho.getInstance().goto(0, 1), */
+
                         this._caseGridModule.applyFilter(t.currentTarget.getAttribute("data-tag"))
-                  } else {
+                        t.currentTarget.querySelector('.sectionLabel').classList.add('sectionLabelActive')
+                        
+
+                  } /* else {
                      let e = parseInt(t.currentTarget.getAttribute("data-id"))
                         , i = this._template.element.querySelectorAll(".PageSectionModule, .ContactModule, .QuoteModule, .FeaturedCollaborationsModule, .CollaborateModule")
-                        , n = ho.getInstance();
-                     n.goto(n.viewport.top + i[e].getBoundingClientRect().top - 20, 1)
-                  }
+                        , n = ho.getInstance(); */
+                     /* n.goto(n.viewport.top + i[e].getBoundingClientRect().top - 20, 1) */
+                  /* } */
                }
                ,
                this.onAnchorOver = t => {
                   let e = parseInt(t.currentTarget.getAttribute("data-id"))
                      , i = t.currentTarget.querySelector(".sectionLabel");
                   this._frameId = 0,
-                     this.updateFrame(),
+                     /* this.updateFrame(), */
                      oo.killTweensOf(this),
                      e > this._prevId ? (oo.set(this._svg, {
                         rotation: 0,
                         transformOrigin: "50% 50%",
                         top: 4
-                     }),
-                        this.replayDot(e)) : e < this._prevId ? (oo.set(this._svg, {
+                     })/* ,
+                        this.replayDot(e) */) : e < this._prevId ? (oo.set(this._svg, {
                            rotation: 180,
                            transformOrigin: "50% 50%",
                            top: 7
-                        }),
-                           this.replayDot(e)) : e === this._prevId && oo.set(this._dotContainer, {
+                        })/* ,
+                           this.replayDot(e) */) : e === this._prevId && oo.set(this._dotContainer, {
                               y: this._offset + 20 * e
                            }),
                      oo.to(this._dotContainer, .3, {
@@ -69171,12 +69175,12 @@ if (document.querySelectorAll('.case__video')) {
                      this._prevId = e
                }
                ,
-               this.updateFrame = () => {
+               /* this.updateFrame = () => {
                   let t = this._svgFrames.length;
                   for (let e = 0; e < t; e++)
                      this._svgFrames[e].style.opacity = e === this._frameId ? 1 : 0
                }
-               ,
+               , */
                this.onAnchorOut = t => {
                   let e = t.currentTarget.querySelector(".sectionLabel");
                   oo.to(this._dotContainer, .3, {
@@ -69206,18 +69210,19 @@ if (document.querySelectorAll('.case__video')) {
                n[t].addEventListener(yo.CLICK, this.onAnchorClick),
                   a.IS_TOUCH_DEVICE || (n[t].addEventListener(yo.MOUSE_OVER, this.onAnchorOver),
                      n[t].addEventListener(yo.MOUSE_OUT, this.onAnchorOut));
-            this._dotContainer = this._element.querySelector(".anchors .dot"),
+                     //this._dotContainer = this._element.querySelector(".anchors .dot"),
+                     /* this._dotContainer = this._element.querySelector(".anchors .dot"),
                this._svg = this._dotContainer.querySelector("svg"),
                i && this._svg.classList.add(i),
                this._svgFrames = this._element.querySelectorAll(".anchors .dot svg circle, path, eclipse"),
-               this._numFrames = this._svgFrames.length,
+               this._numFrames = this._svgFrames.length *//* ,
                oo.set(this._dotContainer, {
                   x: -15,
                   y: this._offset,
                   opacity: 0
-               })
+               }) */
          }
-         replayDot(t) {
+         /* replayDot(t) {
             oo.to(this._dotContainer, .3, {
                y: this._offset + 20 * t
             }),
@@ -69227,7 +69232,7 @@ if (document.querySelectorAll('.case__video')) {
                   roundProps: ["_frameId"],
                   ease: Bs.c.easeNone
                })
-         }
+         } */
       }
       class Mp extends Bo {
          constructor() {
@@ -72504,14 +72509,14 @@ if (document.querySelectorAll('.case__video')) {
                      let e = this._items[t]
                         , i = new Tp(e.querySelector(".bulgeContainer"));
                      this._bulges.push(i);
-                     let n = e.querySelector(".anchor");
+                    /*  let n = e.querySelector(".anchor");
                      n._id = r + 1,
                         n.addEventListener(yo.CLICK, this.onAnchorClick);
                      let s = e.querySelector("svg");
                      s._title = n.querySelector(".anchor h3"),
                         s._id = r,
                         s.querySelector(".bg").style.fill = "#" + this._items[t].getAttribute("data-color"),
-                        this._anchors.push(n);
+                        this._anchors.push(n); */
                      let o = new IntersectionObserver(this.onIntersection);
                      o.observe(s),
                         this._anchorObservers.push(o),
