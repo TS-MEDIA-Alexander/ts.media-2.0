@@ -1,3 +1,8 @@
+.m-t120 {
+   margin-top: 120px;
+}
+
+
 .BehindTheScenesModule .content,
 .disableSelection,
 .InDepthSectionComponent .container .grid .col-2,
@@ -130,9 +135,9 @@
 
 li,
 p {
-   font-size: 12px;
+   /* font-size: 12px; */
    font-family: "Inter", sans-serif;
-   line-height: 1.29
+   /* line-height: 1.29 */
 }
 
 h1 {
@@ -729,12 +734,10 @@ a {
 }
 
 .JumpAheadComponent {
-   display: flex;
-   flex-direction: column;
    width: 100%;
-   position: absolute;
-   top: 100px;
-   left: 0
+   /* position: absolute;
+   top: 98px;
+   left: 0 */
 }
 
 .JumpAheadComponent.white .label {
@@ -763,21 +766,21 @@ a {
 }
 
 .JumpAheadComponent .anchors {
-   margin-top: 20px;
    display: flex;
    justify-content: space-between;
-   /* position: absolute;
-   left: 28%;
-   top: 0; */
-   width: 100%;
+   margin: 98px auto 0px auto;
+   display: flex;
+   width: 1063px;
 }
 
 .JumpAheadComponent .anchors .anchor {
    cursor: pointer;
    position: relative
 }
+
 .JumpAheadComponent .anchors .anchor .sectionLabel.sectionLabelActive {
    color: #8ba83d;
+   border-color: #8ba83d;
 }
 
 .JumpAheadComponent .anchors .anchor .bullet {
@@ -794,19 +797,52 @@ a {
 
 .JumpAheadComponent .anchors .anchor p {
    font-family: "Inter", sans-serif;
-   font-size: 14px;
    font-style: normal;
    font-stretch: normal;
-   line-height: 1.43;
    letter-spacing: normal;
-   color: #000;
    -webkit-user-select: none;
    -moz-user-select: none;
    -ms-user-select: none;
    user-select: none
 }
 
-.JumpAheadComponent .anchors .dot {
+.anchor-container {
+   margin-top: 15px;
+   width: 778px;
+}
+
+.anchor-head {
+   display: flex;
+   justify-content: space-between;
+}
+
+.anchor-companyes {
+   margin-top: 25px;
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.anchor-companyes .anchor {
+   margin-left: 44px;
+   font-size: 17px;
+   font-weight: 300;
+   line-height: 27.37px !important;
+   text-decoration: underline;
+   color: #C6C5C5;
+}
+
+.anchor-companyes .anchor:first-child {
+   margin-left: 0px;
+}
+
+.anchor-head .anchor .sectionLabel {
+   font-size: 23px;
+   font-weight: 300;
+   line-height: 27.37px;
+
+}
+
+/* .JumpAheadComponent .anchors .dot {
    width: 8px;
    height: 10px;
    position: absolute;
@@ -832,13 +868,13 @@ a {
 .JumpAheadComponent .anchors .dot svg.white path {
    fill: #fff;
    color: #fff
-}
+} */
 
 @media (min-width:768px) {
    .JumpAheadComponent {
-      width: 64.67066%;
-      top: 35px;
-      left: 35.32934%
+      margin: 0 auto;
+      /* top: 35px;
+      left: 35.32934% */
    }
 
    .JumpAheadComponent .label {
@@ -1978,6 +2014,26 @@ body.busy * {
    }
 }
 
+.filter__video {
+   margin: 88px auto 0 auto;
+   width: 1168px;
+   height: 657px;
+}
+
+.filter__video video {
+   width: 100%;
+   height: 100%;
+}
+
+.sectionLabelMain {
+   padding: 15px 42px 15px 42px;
+   border-radius: 11px;
+   border: 1px solid #000000;
+   opacity: 0px;
+
+
+}
+
 .CaseFilter .label {
    opacity: .5;
    font-family: "Inter", sans-serif;
@@ -1991,20 +2047,19 @@ body.busy * {
    width: 17.8784267%
 }
 
-.CaseFilter .anchors {
+/* .CaseFilter .anchors {
    position: absolute;
    left: 90px;
    top: 0;
    opacity: 0;
    pointer-events: none
-}
+} */
 
-.CaseFilter .anchors .anchor {
+/* .CaseFilter .anchors .anchor {
    cursor: pointer;
    position: relative;
    opacity: .4
-}
-
+} */
 .CaseFilter .anchors .anchor.selected {
    -webkit-transition: opacity .3s;
    transition: opacity .3s;
@@ -9378,7 +9433,8 @@ case__img-column-m-r {
    margin-left: 0px;
 }
 
-.case__img-column:first-child, .case__img-column-m-r:last-child {
+.case__img-column:first-child,
+.case__img-column-m-r:last-child {
    margin-left: 0;
 }
 

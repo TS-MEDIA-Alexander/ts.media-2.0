@@ -69131,17 +69131,24 @@ if (document.querySelectorAll('.case__video')) {
                this.onAnchorClick = t => {
                   if (this._caseGridInjected) {
                      /* ho.getInstance().goto(0, 1), */
+                     const anchors=document.querySelector('.anchors').querySelectorAll('.sectionLabel')
+                     anchors.forEach(el=>{
+                        if(el.classList.value.includes('sectionLabelActive')){
+                           el.classList.remove('sectionLabelActive')
+                        }
+                     })
 
                         this._caseGridModule.applyFilter(t.currentTarget.getAttribute("data-tag"))
                         t.currentTarget.querySelector('.sectionLabel').classList.add('sectionLabelActive')
-                        
+                       
 
-                  } /* else {
+                  } else {
                      let e = parseInt(t.currentTarget.getAttribute("data-id"))
                         , i = this._template.element.querySelectorAll(".PageSectionModule, .ContactModule, .QuoteModule, .FeaturedCollaborationsModule, .CollaborateModule")
-                        , n = ho.getInstance(); */
+                        , n = ho.getInstance();
+                        
                      /* n.goto(n.viewport.top + i[e].getBoundingClientRect().top - 20, 1) */
-                  /* } */
+                  }
                }
                ,
                this.onAnchorOver = t => {
@@ -69243,14 +69250,14 @@ if (document.querySelectorAll('.case__video')) {
                }
          }
          templateIn() {
-            super.templateIn(),
-               this._jumpAhead = new kp(this.element.querySelector(".JumpAheadComponent"), this)
+            super.templateIn()/* ,
+               this._jumpAhead = new kp(this.element.querySelector(".JumpAheadComponent"), this) */
          }
       }
       class Rp extends Bo {
          templateIn() {
-            super.templateIn(),
-               this._jumpAhead = new kp(this.element.querySelector(".JumpAheadComponent"), this)
+            super.templateIn()/* ,
+               this._jumpAhead = new kp(this.element.querySelector(".JumpAheadComponent"), this) */
          }
       }
       class Fp {
@@ -71712,8 +71719,8 @@ if (document.querySelectorAll('.case__video')) {
                }
          }
          templateIn() {
-            super.templateIn(),
-               this._jumpAhead = new kp(this.element.querySelector(".JumpAheadComponent"), this, "white")
+            super.templateIn()
+               /* this._jumpAhead = new kp(this.element.querySelector(".JumpAheadComponent"), this, "white") */
          }
       }
       class jf {
