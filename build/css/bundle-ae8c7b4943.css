@@ -14,7 +14,7 @@
    -webkit-user-drag: none;
    -webkit-touch-callout: none;
    -webkit-user-select: none;
-   -webkit-app-region: no-drag
+   -webkit-app-region: no-drag;
 }
 
 @font-face {
@@ -781,6 +781,10 @@ a {
 .JumpAheadComponent .anchors .anchor .sectionLabel.sectionLabelActive {
    color: #8ba83d;
    border-color: #8ba83d;
+}
+
+.JumpAheadComponent .anchors .anchor-companyes .anchor .sectionLabel.sectionLabelActive {
+   text-decoration: underline;
 }
 
 .JumpAheadComponent .anchors .anchor .bullet {
@@ -4968,7 +4972,7 @@ body:not(.touch) .FeaturedCollaborationsModule .desktop .entry:hover .videoConta
    display: block;
    cursor: pointer;
    -ms-flex-item-align: end;
-   align-self: flex-end
+   align-self: flex-end;
 }
 
 .ServicesModule .section .favorites .entry .imageContainer {
