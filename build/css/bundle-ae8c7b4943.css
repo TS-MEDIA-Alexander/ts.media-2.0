@@ -826,6 +826,7 @@ a {
    justify-content: space-between;
    flex-wrap: wrap;
 }
+
 /* .anchor-companyes .anchor{
    display: inline-block;
    text-align:justify;
@@ -2104,6 +2105,18 @@ body.busy * {
 
 .CaseGridModule {
    position: relative
+}
+
+.more-title {
+   margin: 94px 0 48px 25%;
+   width: 484px;
+   height: 118px;
+   background: url('./../../assets/images/btn-more.png') 0 0/auto auto no-repeat;
+   transition: all 500ms;
+}
+
+.more-title:hover {
+   transform: rotate(5deg);
 }
 
 .CaseGridModule .all {
@@ -3395,7 +3408,7 @@ body.busy * {
 
 .DeepDiveSplashModule .body {
    text-align: center;
-   font-size: 15px;
+   font-size: 20px;
    line-height: 139%;
    padding-left: 20px;
    padding-right: 20px;
@@ -3406,7 +3419,7 @@ body.busy * {
 .DeepDiveSplashModule .imageContainer {
    position: relative;
    width: 100%;
-   margin-bottom: 37px
+   margin-bottom: 40px
 }
 
 .DeepDiveSplashModule .imageContainer img,
@@ -3499,7 +3512,7 @@ body.busy * {
    .DeepDiveSplashModule .innerContainer {
       position: relative;
       padding-top: 64px;
-      padding-bottom: 63px
+      padding-bottom: 120px
    }
 
    .DeepDiveSplashModule .body {
@@ -3511,7 +3524,7 @@ body.busy * {
       position: absolute;
       top: 14px;
       -webkit-transform: translate3d(0, 81px, 0);
-      transform: translate3d(0, 81px, 0);
+      transform: translate3d(0, 124px, 0);
       font-size: 68px;
       line-height: 84px
    }
