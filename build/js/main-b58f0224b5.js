@@ -18,6 +18,8 @@ let createTimer = (data, time, step) => {
 }
 
 
+
+
 /* Решение со звуком для перезагрузски (на будущее) */
 /* const observer = new MutationObserver(mutationRecords => {
 
@@ -1731,7 +1733,7 @@ if (document.querySelectorAll('.case__video')) {
          t.exports = u,
             u.inject({
                enumerable: !1,
-               toString: function () {
+               /* toString: function () {
                   return null != this._id ? (this._class || "Object") + (this._name ? " '" + this._name + "'" : " @" + this._id) : "{ " + u.each(this, (function (t, e) {
                      if (!/^_/.test(e)) {
                         var i = typeof t;
@@ -1739,7 +1741,7 @@ if (document.querySelectorAll('.case__video')) {
                      }
                   }
                   ), []).join(", ") + " }"
-               },
+               }, */
                getClassName: function () {
                   return this._class || ""
                },
@@ -2118,9 +2120,9 @@ if (document.querySelectorAll('.case__video')) {
                      }),
                      this.project = null,
                      this.projects = [],
-                     this.tools = [],
+                     this.tools = []/* ,
                      this._id = t._id++,
-                     t._scopes[this._id] = this;
+                     t._scopes[this._id] = this; */
                   var e = t.prototype;
                   if (!this.support) {
                      var i = at.getContext(1, 1) || {};
@@ -2200,10 +2202,10 @@ if (document.querySelectorAll('.case__video')) {
                   for (i = e.length - 1; i >= 0; i--)
                      e[i].remove()
                },
-               remove: function () {
+               /* remove: function () {
                   this.clear(),
                      delete d._scopes[this._id]
-               },
+               }, */
                statics: new function () {
                   function t(t) {
                      return t += "Attribute",
@@ -21231,7 +21233,7 @@ if (document.querySelectorAll('.case__video')) {
          var n = void 0 !== t && t || "undefined" != typeof self && self || window
             , r = Function.prototype.apply;
          function s(t, e) {
-            this._id = t,
+            /* this._id = t, */
                this._clearFn = e
          }
          e.setTimeout = function () {
@@ -69217,8 +69219,8 @@ if (document.querySelectorAll('.case__video')) {
                n[t].addEventListener(yo.CLICK, this.onAnchorClick),
                   a.IS_TOUCH_DEVICE || (n[t].addEventListener(yo.MOUSE_OVER, this.onAnchorOver),
                      n[t].addEventListener(yo.MOUSE_OUT, this.onAnchorOut));
-                     //this._dotContainer = this._element.querySelector(".anchors .dot"),
                      /* this._dotContainer = this._element.querySelector(".anchors .dot"),
+                     this._dotContainer = this._element.querySelector(".anchors .dot"),
                this._svg = this._dotContainer.querySelector("svg"),
                i && this._svg.classList.add(i),
                this._svgFrames = this._element.querySelectorAll(".anchors .dot svg circle, path, eclipse"),
@@ -69856,7 +69858,7 @@ if (document.querySelectorAll('.case__video')) {
                       this.bursted(new Et(0, 0))),
                       e */
                }
-               /*  ,
+                ,
                 this.bursted = t => {
                    if (this._allBursted)
                       return;
@@ -69874,7 +69876,7 @@ if (document.querySelectorAll('.case__video')) {
                             this._innerSegments[t].bursted = !0;
                       this._entry.maskBursted(t)
                    }
-                } */
+                }
                /* ,
                this.stopRendering = ()=>{
                    this._isDirty = !1
@@ -69983,20 +69985,20 @@ if (document.querySelectorAll('.case__video')) {
                   overwrite: "true"
                }))
          }
-         /*  get isActive() {
+          get isActive() {
               return this._active
-          } */
-         /* get active() {
+          }
+         get active() {
              return this._active
-         } */
+         }
          set active(t) {
-            /* if (this._active = t,
+            if (this._active = t,
             !t) {
                 let t = this._innerSegments.length;
                 for (let e = 0; e < t; e++)
                     this._innerSegments[e].bursted = !1,
                     this._innerSegments[e].dragging = !1
-            } */
+            }
          }
 
 
@@ -70245,7 +70247,7 @@ if (document.querySelectorAll('.case__video')) {
                this._enterPoint = new Et(0, 0),
                this._edges = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]],
                this._circleContainer = new Zt,
-               /* this._spriteSheet = $r.shared.resources["/assets/spritesheets/face_all.json"].spritesheet, */
+               this._spriteSheet = $r.shared.resources["/assets/spritesheets/face_all.json"].spritesheet,
                this._faceLabels = ["AdultToBaby", "BabyToTeen", "TeenToAdult", "LtoR", "RtoL", "DownUp", "UpDown"],
                this.setupEye = () => {
                   this.changeFace(0)
@@ -70255,7 +70257,7 @@ if (document.querySelectorAll('.case__video')) {
                   this._animatedSprite && (this.container.addChild(this._animatedSprite),
                      this._animatedSprite.destroy(),
                      this._animatedSprite = null),
-                     /* this._animatedSprite = new Is(this._spriteSheet.animations[this._faceLabels[t]]), */
+                     this._animatedSprite = new Is(this._spriteSheet.animations[this._faceLabels[t]]),
                      this._animatedSprite.alpha = 0,
                      this._animatedSprite.scale.x = this._animatedSprite.scale.y = .5,
                      this._animatedSprite.loop = !1,
@@ -71724,7 +71726,7 @@ if (document.querySelectorAll('.case__video')) {
                /* this._jumpAhead = new kp(this.element.querySelector(".JumpAheadComponent"), this, "white") */
          }
       }
-      class jf {
+      /* class jf {
          constructor(t, e) {
             this.updateSignal = new o,
                this.onClick = () => {
@@ -71754,7 +71756,7 @@ if (document.querySelectorAll('.case__video')) {
                this._timer = t.querySelector(".timer"),
                this._element.addEventListener("click", this.onClick)
          }
-      }
+      } */
       class Kf {
          constructor(t) {
             this.updateSignal = new o,
@@ -73271,13 +73273,7 @@ if (document.querySelectorAll('.case__video')) {
                ,
                this.loadSpriteSheets = () => {
                   let t = $r.shared;
-                  /* t.add("/assets/spritesheets/face_all.json"), */
-                  /* t.add("/assets/spritesheets/dot2.json"), */
-                  /* t.add("/assets/spritesheets/play-pause.json"), */
-                  /* t.add("/assets/spritesheets/scroll-dot.json"), */
-                  /* t.add("/assets/spritesheets/behind_eye.json"), */
-                  /* t.add("/assets/spritesheets/menu_blob_init.json"), */ /* !!!!!!!!! */
-                  /* t.add("/assets/spritesheets/menu_blob_init_black.json"), */
+                  t.add("/assets/spritesheets/face_all.json"),
                   t.load(this.assetsLoaded)
                }
                ,
@@ -73305,7 +73301,6 @@ if (document.querySelectorAll('.case__video')) {
                   this._siteInitialized = !0,
                      a.MENU.init(document.body.querySelector(".MainMenu")),
                      a.TEMPLATE_LAYER.style.display = "block",
-                     a.FOOTER.style.display = "block",
                      a.FOOTER.style.display = "block",
                      this.templateManager.addTemplate("HomeTemplate", bo),
                      this.templateManager.addTemplate("AboutTemplate", Mp),
@@ -73346,7 +73341,7 @@ if (document.querySelectorAll('.case__video')) {
                this._favIconBig = document.head.querySelector(".favIconBig"),
                this._favIconSmall = document.head.querySelector(".favIconSmall"),
                po.registerModules(Zf),
-               a.isSafari || setInterval(this.animateFavIcon, 500),
+               /* a.isSafari || setInterval(this.animateFavIcon, 500), */
                a.IS_TOUCH_DEVICE && document.body.classList.add("touch"),
                window.addEventListener("beforeunload", this.onBeforeUnload),
                this._showIntro = !0,
