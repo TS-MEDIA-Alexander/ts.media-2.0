@@ -69603,8 +69603,8 @@ if (document.querySelectorAll('.case__video')) {
                         yoyo: !0,
                         repeat: 1,
                         overwrite: "true"
-                     }),
-                     this._entry.bursted(this._mousePosition)
+                     })/* ,
+                     this._entry.bursted(this._mousePosition) */
                }
                ,
                this.update = () => {
@@ -69858,7 +69858,7 @@ if (document.querySelectorAll('.case__video')) {
                       this.bursted(new Et(0, 0))),
                       e */
                }
-                ,
+                /* ,
                 this.bursted = t => {
                    if (this._allBursted)
                       return;
@@ -69876,7 +69876,7 @@ if (document.querySelectorAll('.case__video')) {
                             this._innerSegments[t].bursted = !0;
                       this._entry.maskBursted(t)
                    }
-                }
+                } */
                /* ,
                this.stopRendering = ()=>{
                    this._isDirty = !1
@@ -70247,7 +70247,7 @@ if (document.querySelectorAll('.case__video')) {
                this._enterPoint = new Et(0, 0),
                this._edges = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]],
                this._circleContainer = new Zt,
-               this._spriteSheet = $r.shared.resources["/ts.media-2.0/assets/spritesheets/face_all.json"].spritesheet,
+               this._spriteSheet = $r.shared.resources["/assets/spritesheets/face_all.json"].spritesheet,
                this._faceLabels = ["AdultToBaby", "BabyToTeen", "TeenToAdult", "LtoR", "RtoL", "DownUp", "UpDown"],
                this.setupEye = () => {
                   this.changeFace(0)
