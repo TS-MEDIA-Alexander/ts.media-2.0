@@ -73273,7 +73273,7 @@ if (document.querySelectorAll('.case__video')) {
                ,
                this.loadSpriteSheets = () => {
                   let t = $r.shared;
-                  t.add("/assets/spritesheets/face_all.json"),
+                  t.add("/ts.media-2.0/assets/spritesheets/face_all.json"),
                   t.load(this.assetsLoaded)
                }
                ,
