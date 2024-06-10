@@ -1,0 +1,445 @@
+/* -------------------------------------------------отступы------------------------------------------------------------------- */
+.p-main {
+   padding: 120px 0;
+}
+
+.m-t {
+   margin-top: 120px;
+}
+
+.p-t {
+   padding-top: 120px;
+}
+
+.p-b {
+   padding-bottom: 120px;
+}
+
+.m-t88 {
+   margin-top: 88px;
+}
+
+.m-t200 {
+   margin-top: 200px;
+}
+
+.p-b200 {
+   padding-bottom: 200px;
+}
+
+.m-t64 {
+   margin-top: 64px;
+}
+
+.m-b64 {
+   margin-bottom: 64px;
+}
+
+.m-l104 {
+   margin-left: 104px;
+}
+
+/* -------------------------------------------------techDay__subheader------------------------------------------------------------- */
+.techDay__video-header {
+   background: url('./../../assets/images/tech-day/tech-day-img-header.png') center no-repeat;
+   background-size: cover;
+}
+
+.techDay__bg-header {
+   background: #080524;
+}
+
+.techDay__logo {
+   background: url('./../../assets/images/tech-day/logos/logo_rt.svg') 0 0/auto auto no-repeat;
+}
+
+.techDay__border-top {
+   border-top-color: #FFFFFF29;
+   width: 447px;
+}
+
+.techDay__description-title {
+   font-family: 'Inter';
+   font-size: 12px;
+   font-weight: 400;
+   color: #FFFFFF7A;
+}
+
+.techDay__text {
+   color: #FFFFFFFC;
+}
+
+.techDay__subheader__title {
+   font-weight: 400;
+   line-height: 56px;
+   color: #FFFFFFFC;
+}
+
+@media screen and (max-width: 1920px) {
+   .techDay__video-header .video {
+      width: auto;
+      height: auto;
+   }
+}
+
+@media screen and (max-width: 1590px) {
+   .techDay__subheader__title {
+      font-size: 30px;
+   }
+}
+
+@media screen and (max-width: 1364px) {
+   .techDay__subheader__title {
+      text-align: center;
+   }
+}
+
+@media screen and (max-width: 920px) {
+   .techDay__text-block {
+      margin-right: 0;
+   }
+}
+
+.techDay__subheader__text {
+   font-family: 'Inter';
+   font-size: 20px;
+   font-weight: 300;
+   line-height: 28px;
+   color: #FFFFFF;
+}
+
+/* -------------------------------------------------case-galery------------------------------------------------------------- */
+.techDay__galery {
+   background: #FFFFFF;
+}
+
+.techDay__bg {
+   background: #F1F2F3;
+}
+
+
+
+.techDay__img-container {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+}
+
+.techDay__img-container-left {
+   width: 100%;
+   display: flex;
+   justify-content: start;
+}
+
+.techDay__img-container-center {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+}
+
+.techDay__img-container-right {
+   width: 100%;
+   display: flex;
+   justify-content: end;
+}
+
+
+.techDay__img-smol {
+   width: 480px;
+   height: 320px;
+   background-size: contain !important;
+}
+
+.techDay__img-min {
+   width: 772px;
+   height: 515px;
+   background-size: contain !important;
+}
+
+.techDay__img-middle {
+   width: 1064px;
+   height: 690px;
+   background-size: contain !important;
+}
+
+.techDay__img-large {
+   width: 1648px;
+   height: 900px;
+   background-size: contain !important;
+}
+
+.techDay__img-1 {
+   background: url('./../../assets/images/tech-day/galery/img-1.png') center no-repeat;
+   height: 892px;
+}
+
+.techDay__img-2 {
+   background: url('./../../assets/images/tech-day/galery/img-2.png') center no-repeat;
+   height: 892px;
+}
+
+.techDay__img-3 {
+   background: url('./../../assets/images/tech-day/galery/img-3.png') center no-repeat;
+}
+
+.techDay__img-4 {
+   background: url('./../../assets/images/tech-day/galery/img-4.png') center no-repeat;
+   height: 709px;
+}
+
+.techDay__img-5 {
+   background: url('./../../assets/images/tech-day/galery/img-5.png') center no-repeat;
+   height: 1060px;
+}
+
+.techDay__img-6 {
+   background: url('./../../assets/images/tech-day/galery/img-6.png') center no-repeat;
+   height: 927px;
+}
+
+.techDay__img-7 {
+   background: url('./../../assets/images/tech-day/galery/img-7.png') center no-repeat;
+   height: 270px;
+}
+
+.techDay__img-8 {
+   background: url('./../../assets/images/tech-day/galery/img-8.png') center no-repeat;
+   height: 270px;
+}
+
+.techDay__img-9 {
+   background: url('./../../assets/images/tech-day/galery/img-9.png') center no-repeat;
+}
+
+.techDay__img-10 {
+   background: url('./../../assets/images/tech-day/galery/img-10.png') center no-repeat;
+}
+
+.techDay__img-11 {
+   background: url('./../../assets/images/tech-day/galery/img-11.png') center no-repeat;
+   /* width: 1594px; */
+}
+
+.techDay__img-12 {
+   background: url('./../../assets/images/tech-day/galery/img-12.png') center no-repeat;
+   height: 800px;
+}
+
+.techDay__img-13 {
+   background: url('./../../assets/images/tech-day/galery/img-13.png') center no-repeat;
+}
+
+.techDay__img-14 {
+   background: url('./../../assets/images/tech-day/galery/img-14.png') center no-repeat;
+   height: 900px;
+}
+
+.case__flex-contain-low {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: end;
+}
+
+.techDay__text-container {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+}
+
+.techDay__text-container_right {
+   width: 100%;
+   display: flex;
+   justify-content: end;
+}
+
+.techDay__text-container_center {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+
+}
+
+@media screen and (max-width: 1660px) {
+   .case__flex-contain-low {
+      flex-direction: column;
+   }
+
+   .techDay__img-container {
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .techDay__img-min {
+      margin-top: 120px;
+   }
+
+}
+
+@media screen and (max-width: 1211px) {
+   .techDay__img-container {
+      width: 100%;
+   }
+
+   .techDay__img-min {
+      width: 100%;
+   }
+
+   .techDay__img-middle {
+      margin-top: 120px;
+      width: 90%;
+   }
+
+   .techDay__img-large {
+      width: 90%;
+   }
+}
+
+@media screen and (max-width: 1134px) {
+   .techDay__text-container {
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .case__text {
+      margin-top: 40px;
+   }
+}
+
+@media screen and (max-width: 980px) {
+
+   .techDay__img-smol,
+   .techDay__img-min,
+   .techDay__img-middle,
+   .techDay__img-large {
+      width: 100%;
+   }
+}
+
+
+@media screen and (max-width: 1660px) {
+   .case__text_dark {
+      margin-top: 50px;
+   }
+}
+
+/* -------------------------------------------------case-galery-dark------------------------------------------------------------- */
+.techDay__galery-dark {
+   background: #040315;
+}
+
+/* -------------------------------------------------Карточки------------------------------------------------------------- */
+.techDay__card-container {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   margin: 0 auto;
+   width: 75%;
+}
+
+.techDay__card {
+   padding: 24px;
+
+   position: relative;
+   width: 268px;
+   height: 402px;
+
+   --b: 1px;
+   --c: #215870;
+   --w: 49px;
+   border: var(--b) solid #0000;
+   --_g: #0000 90deg, var(--c) 0;
+   --_p: var(--w) var(--w) border-box no-repeat;
+   background:
+      conic-gradient(from 90deg at top var(--b) left var(--b), var(--_g)) 0 0 / var(--_p),
+      conic-gradient(from 180deg at top var(--b) right var(--b), var(--_g)) 100% 0 / var(--_p),
+      conic-gradient(from 0deg at bottom var(--b) left var(--b), var(--_g)) 0 100% / var(--_p),
+      conic-gradient(from 0deg at bottom var(--b) left var(--b), var(--_g)) 0 100% / var(--_p),
+      conic-gradient(from -90deg at bottom var(--b) right var(--b), var(--_g)) 100% 100% / var(--_p);
+}
+
+.techDay__card::before {
+   content: '';
+   position: absolute;
+   top: 151px;
+   right: 0;
+   width: 1px;
+   height: 100px;
+   background: #215870;
+}
+
+.techDay__card::after {
+   content: '';
+   position: absolute;
+   top: 151px;
+   left: 0;
+   width: 1px;
+   height: 100px;
+   background: #215870;
+}
+
+.techDay__card-img {
+   width: 220px;
+   height: 290px;
+   background-size: cover;
+}
+
+.techDay__card-img-1 {
+   background: url('./../../assets/images/tech-day/card/card-img-1.png') center no-repeat;
+}
+
+.techDay__card-img-2 {
+   background: url('./../../assets/images/tech-day/card/card-img-2.png') center no-repeat;
+}
+
+.techDay__card-img-3 {
+   background: url('./../../assets/images/tech-day/card/card-img-3.png') center no-repeat;
+}
+
+.techDay__card-img-4 {
+   background: url('./../../assets/images/tech-day/card/card-img-4.png') center no-repeat;
+}
+
+.techDay__card-title {
+   margin-top: 16px;
+   width: 220px;
+   height: 48px;
+   text-align: center;
+   line-height: 48px;
+   border: 1px solid #33AFE566;
+   font-family: 'Inter';
+   font-size: 12px;
+   font-weight: 300;
+   color: #FFFFFF;
+
+}
+
+/* -------------------------------------------------Паттерны и градиенты------------------------------------------------------------- */
+.techDay__container-pattern {
+   background: url('./../../assets/images/tech-day/tech-day-img-pattern.png') center no-repeat;
+   height: 380px;
+}
+
+.techDay__container-pattern-difficult {
+   background: url('./../../assets/images/tech-day/tech-day-img-pattern-difficult.png') center 91px no-repeat;
+   width: 100%;
+   height: 810px;
+   display: flex;
+   align-items: center;
+}
+
+.techDay__gradient {
+   background: radial-gradient(41.15% 42.53% at 50% 50%, rgba(100, 26, 126, 0.2) 0%, rgba(4, 3, 21, 0.2) 100%),
+      linear-gradient(180deg, #040315 0%, rgba(4, 3, 21, 0) 33.33%, rgba(4, 3, 21, 0) 66.67%, #040315 100%);
+   width: 100%;
+   height: 100%;
+}
+
+.techDay__container-pattern-game {
+   background: url('./../../assets/images/tech-day/tech-day-img-pattern-game.png') center no-repeat;
+   background-size: contain;
+   width: 100%;
+   height: 680px;
+   display: flex;
+   align-items: center;
+}

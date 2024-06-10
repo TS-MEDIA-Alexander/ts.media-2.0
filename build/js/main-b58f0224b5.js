@@ -1,25 +1,3 @@
-/* Анимация таймера на главной */
-let createTimer = (data, time, step) => {
-
-   let elem = document.querySelector(data)
-
-   let result = parseFloat(elem?.innerHTML)
-
-   if (typeof result === 'number' && result > 1) {
-      let i = 0
-      var interval = setInterval(() => {
-         elem || clearInterval(interval)
-         i += step
-         elem.textContent = String(i).replace(/(?<=[0-9])(?=(?:[0-9]{3})+(?![0-9]))/g, " ")
-         result <= i && clearInterval(interval)
-      }, time)
-   }
-
-}
-
-
-
-
 /* Решение со звуком для перезагрузски (на будущее) */
 /* const observer = new MutationObserver(mutationRecords => {
 
@@ -68,7 +46,7 @@ case__video.forEach(el => {
 
 
 
-function addEventOnEntry() {
+/* function addEventOnEntry() {
    const entrys = document.querySelectorAll(".entry")
 
    entrys.forEach(el => {
@@ -76,15 +54,16 @@ function addEventOnEntry() {
          setTimeout(() => addControlAudio(), 6000)
       })
    })
-}
+} */
 
+/*
 function hasAudio(video) {
    return video.mozHasAudio ||
       Boolean(video.webkitAudioDecodedByteCount) ||
       Boolean(video.audioTracks && video.audioTracks.length);
 }
 
-function addControlAudio() {
+ function addControlAudio() {
 
    const videos = document.querySelectorAll('.case__video')
    videos.forEach(el => {
@@ -107,11 +86,61 @@ function addControlAudio() {
       }
    });
 
+} */
+/* if (document.querySelectorAll('.case__video')) {
+   setTimeout(() => addControlAudio(), 3000)
+} */
+
+
+
+/* Анимация таймера на главной */
+let createTimer = (data, time, step) => {
+
+   let elem = document.querySelector(data)
+
+   let result = parseFloat(elem?.innerHTML)
+
+   if (typeof result === 'number' && result > 1) {
+      let i = 0
+      var interval = setInterval(() => {
+         elem || clearInterval(interval)
+         i += step
+         elem.textContent = String(i).replace(/(?<=[0-9])(?=(?:[0-9]{3})+(?![0-9]))/g, " ")
+         result <= i && clearInterval(interval)
+      }, time)
+   }
+
 }
 
-if (document.querySelectorAll('.case__video')) {
-   setTimeout(() => addControlAudio(), 3000)
+function addControlAudio() {
+
+   const videos = document.querySelectorAll('.case__video-sound')
+   videos.forEach(el => {
+
+      if (!el.querySelector('.case__video-management')) {
+         console.log('Добавление ')
+         const soundMenager = document.createElement('div')
+         soundMenager.className = 'case__video-management case__video-management_mute'
+         el.append(soundMenager)
+
+         el.querySelector('.case__video-management').addEventListener('click', () => {
+            el.querySelector('video').muted = !el.querySelector('video').muted
+            el.querySelector('video').muted ? (
+               el.querySelector('.case__video-management').classList.remove('case__video-management_sound'),
+               el.querySelector('.case__video-management').classList.add('case__video-management_mute')
+            ) : (
+               el.querySelector('.case__video-management').classList.remove('case__video-management_mute'),
+               el.querySelector('.case__video-management').classList.add('case__video-management_sound')
+            )
+
+         })
+      }
+
+   });
+
 }
+
+
 
 
 
@@ -20250,6 +20279,7 @@ if (document.querySelectorAll('.case__video')) {
                   (d = v(t, "lazybeforeunveil", e)).defaultPrevented || (r && (i ? f(t, n.autosizesClass) : t.setAttribute("sizes", r)),
                      a = t.getAttribute(n.srcsetAttr),
                      o = t.getAttribute(n.srcAttr),
+                     addControlAudio(),
                      s && (u = (l = t.parentNode) && c.test(l.nodeName || "")),
                      A = e.firesLoad || "src" in t && (a || o || u),
                      d = {
@@ -21234,7 +21264,7 @@ if (document.querySelectorAll('.case__video')) {
             , r = Function.prototype.apply;
          function s(t, e) {
             /* this._id = t, */
-               this._clearFn = e
+            this._clearFn = e
          }
          e.setTimeout = function () {
             return new s(r.call(setTimeout, n, arguments), clearTimeout)
@@ -47951,7 +47981,7 @@ if (document.querySelectorAll('.case__video')) {
             if (!ho.instance)
                if (ho.instance = new ho,
                   ho.instance._siteWrapper = document.body.querySelector("#SiteWrapper"),
-                  a.IS_ANDROID ? document.body.style.overflowX = "hidden" : document.body.style.overflow = "hidden",
+                  a.IS_ANDROID ? document.body.style.overflowX = "hidden" : document.body.style.overflow = "hidden", /* скролл */
                   a.IS_TOUCH_DEVICE)
                   a.IS_ANDROID || (document.body.style.overflowX = "hidden",
                      document.body.style.overflowY = "scroll"),
@@ -69133,22 +69163,22 @@ if (document.querySelectorAll('.case__video')) {
                this.onAnchorClick = t => {
                   if (this._caseGridInjected) {
                      /* ho.getInstance().goto(0, 1), */
-                     const anchors=document.querySelector('.anchors').querySelectorAll('.sectionLabel')
-                     anchors.forEach(el=>{
-                        if(el.classList.value.includes('sectionLabelActive')){
+                     const anchors = document.querySelector('.anchors').querySelectorAll('.sectionLabel')
+                     anchors.forEach(el => {
+                        if (el.classList.value.includes('sectionLabelActive')) {
                            el.classList.remove('sectionLabelActive')
                         }
                      })
 
-                        this._caseGridModule.applyFilter(t.currentTarget.getAttribute("data-tag"))
-                        t.currentTarget.querySelector('.sectionLabel').classList.add('sectionLabelActive')
-                       
+                     this._caseGridModule.applyFilter(t.currentTarget.getAttribute("data-tag"))
+                     t.currentTarget.querySelector('.sectionLabel').classList.add('sectionLabelActive')
+
 
                   } else {
                      let e = parseInt(t.currentTarget.getAttribute("data-id"))
                         , i = this._template.element.querySelectorAll(".PageSectionModule, .ContactModule, .QuoteModule, .FeaturedCollaborationsModule, .CollaborateModule")
                         , n = ho.getInstance();
-                        
+
                      /* n.goto(n.viewport.top + i[e].getBoundingClientRect().top - 20, 1) */
                   }
                }
@@ -69165,13 +69195,13 @@ if (document.querySelectorAll('.case__video')) {
                         top: 4
                      })/* ,
                         this.replayDot(e) */) : e < this._prevId ? (oo.set(this._svg, {
-                           rotation: 180,
-                           transformOrigin: "50% 50%",
-                           top: 7
-                        })/* ,
+                        rotation: 180,
+                        transformOrigin: "50% 50%",
+                        top: 7
+                     })/* ,
                            this.replayDot(e) */) : e === this._prevId && oo.set(this._dotContainer, {
-                              y: this._offset + 20 * e
-                           }),
+                        y: this._offset + 20 * e
+                     }),
                      oo.to(this._dotContainer, .3, {
                         opacity: 1
                      }),
@@ -69219,17 +69249,17 @@ if (document.querySelectorAll('.case__video')) {
                n[t].addEventListener(yo.CLICK, this.onAnchorClick),
                   a.IS_TOUCH_DEVICE || (n[t].addEventListener(yo.MOUSE_OVER, this.onAnchorOver),
                      n[t].addEventListener(yo.MOUSE_OUT, this.onAnchorOut));
-                     /* this._dotContainer = this._element.querySelector(".anchors .dot"),
-                     this._dotContainer = this._element.querySelector(".anchors .dot"),
-               this._svg = this._dotContainer.querySelector("svg"),
-               i && this._svg.classList.add(i),
-               this._svgFrames = this._element.querySelectorAll(".anchors .dot svg circle, path, eclipse"),
-               this._numFrames = this._svgFrames.length *//* ,
-               oo.set(this._dotContainer, {
-                  x: -15,
-                  y: this._offset,
-                  opacity: 0
-               }) */
+            /* this._dotContainer = this._element.querySelector(".anchors .dot"),
+            this._dotContainer = this._element.querySelector(".anchors .dot"),
+      this._svg = this._dotContainer.querySelector("svg"),
+      i && this._svg.classList.add(i),
+      this._svgFrames = this._element.querySelectorAll(".anchors .dot svg circle, path, eclipse"),
+      this._numFrames = this._svgFrames.length *//* ,
+                        oo.set(this._dotContainer, {
+                           x: -15,
+                           y: this._offset,
+                           opacity: 0
+                        }) */
          }
          /* replayDot(t) {
             oo.to(this._dotContainer, .3, {
@@ -69858,25 +69888,25 @@ if (document.querySelectorAll('.case__video')) {
                       this.bursted(new Et(0, 0))),
                       e */
                }
-                /* ,
-                this.bursted = t => {
-                   if (this._allBursted)
-                      return;
-                   let e = this._innerSegments.length
-                      , i = !0;
-                   for (let t = 0; t < e; t++)
-                      if (this._innerSegments[t].dragging) {
-                         i = !1;
-                         break
-                      }
-                   if (i) {
-                      this._allBursted = !0;
-                      for (let t = 0; t < e; t++)
-                         this._innerSegments[t].dragging = !1,
-                            this._innerSegments[t].bursted = !0;
-                      this._entry.maskBursted(t)
-                   }
-                } */
+               /* ,
+               this.bursted = t => {
+                  if (this._allBursted)
+                     return;
+                  let e = this._innerSegments.length
+                     , i = !0;
+                  for (let t = 0; t < e; t++)
+                     if (this._innerSegments[t].dragging) {
+                        i = !1;
+                        break
+                     }
+                  if (i) {
+                     this._allBursted = !0;
+                     for (let t = 0; t < e; t++)
+                        this._innerSegments[t].dragging = !1,
+                           this._innerSegments[t].bursted = !0;
+                     this._entry.maskBursted(t)
+                  }
+               } */
                /* ,
                this.stopRendering = ()=>{
                    this._isDirty = !1
@@ -69985,19 +70015,19 @@ if (document.querySelectorAll('.case__video')) {
                   overwrite: "true"
                }))
          }
-          get isActive() {
-              return this._active
-          }
+         get isActive() {
+            return this._active
+         }
          get active() {
-             return this._active
+            return this._active
          }
          set active(t) {
             if (this._active = t,
-            !t) {
-                let t = this._innerSegments.length;
-                for (let e = 0; e < t; e++)
-                    this._innerSegments[e].bursted = !1,
-                    this._innerSegments[e].dragging = !1
+               !t) {
+               let t = this._innerSegments.length;
+               for (let e = 0; e < t; e++)
+                  this._innerSegments[e].bursted = !1,
+                     this._innerSegments[e].dragging = !1
             }
          }
 
@@ -70247,7 +70277,7 @@ if (document.querySelectorAll('.case__video')) {
                this._enterPoint = new Et(0, 0),
                this._edges = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]],
                this._circleContainer = new Zt,
-               this._spriteSheet = $r.shared.resources["/ts.media-2.0/assets/spritesheets/face_all.json"].spritesheet,
+               this._spriteSheet = $r.shared.resources["/assets/spritesheets/face_all.json"].spritesheet,
                this._faceLabels = ["AdultToBaby", "BabyToTeen", "TeenToAdult", "LtoR", "RtoL", "DownUp", "UpDown"],
                this.setupEye = () => {
                   this.changeFace(0)
@@ -70425,13 +70455,13 @@ if (document.querySelectorAll('.case__video')) {
                this.setupTags = () => {
                   //Фильтрация по тэгам
                   //this._tagElements = this._tagsContainer.querySelectorAll(".tag"),
-                     this._sortBy = this._tagsContainer.querySelector(".sortBy");
-                 /* let t = this._tagElements.length;
-                   for (let e = 0; e < t; e++)
-                     a.IS_TOUCH_DEVICE || (this._tagElements[e]._sortBy = this._sortBy,
-                        this._tagElements[e].addEventListener(yo.MOUSE_OVER, this.onTagOver),
-                        this._tagElements[e].addEventListener(yo.MOUSE_OUT, this.onTagOut)),
-                        this._tagElements[e].addEventListener(yo.CLICK, this.onTagClick); */
+                  this._sortBy = this._tagsContainer.querySelector(".sortBy");
+                  /* let t = this._tagElements.length;
+                    for (let e = 0; e < t; e++)
+                      a.IS_TOUCH_DEVICE || (this._tagElements[e]._sortBy = this._sortBy,
+                         this._tagElements[e].addEventListener(yo.MOUSE_OVER, this.onTagOver),
+                         this._tagElements[e].addEventListener(yo.MOUSE_OUT, this.onTagOut)),
+                         this._tagElements[e].addEventListener(yo.CLICK, this.onTagClick); */
                   let e = this._data.getAttribute("data-tags");
                   e && (this._tags = e.split(","))
                }
@@ -71723,7 +71753,7 @@ if (document.querySelectorAll('.case__video')) {
          }
          templateIn() {
             super.templateIn()
-               /* this._jumpAhead = new kp(this.element.querySelector(".JumpAheadComponent"), this, "white") */
+            /* this._jumpAhead = new kp(this.element.querySelector(".JumpAheadComponent"), this, "white") */
          }
       }
       /* class jf {
@@ -72519,14 +72549,14 @@ if (document.querySelectorAll('.case__video')) {
                      let e = this._items[t]
                         , i = new Tp(e.querySelector(".bulgeContainer"));
                      this._bulges.push(i);
-                    /*  let n = e.querySelector(".anchor");
-                     n._id = r + 1,
-                        n.addEventListener(yo.CLICK, this.onAnchorClick);
-                     let s = e.querySelector("svg");
-                     s._title = n.querySelector(".anchor h3"),
-                        s._id = r,
-                        s.querySelector(".bg").style.fill = "#" + this._items[t].getAttribute("data-color"),
-                        this._anchors.push(n); */
+                     /*  let n = e.querySelector(".anchor");
+                      n._id = r + 1,
+                         n.addEventListener(yo.CLICK, this.onAnchorClick);
+                      let s = e.querySelector("svg");
+                      s._title = n.querySelector(".anchor h3"),
+                         s._id = r,
+                         s.querySelector(".bg").style.fill = "#" + this._items[t].getAttribute("data-color"),
+                         this._anchors.push(n); */
                      let o = new IntersectionObserver(this.onIntersection);
                      o.observe(s),
                         this._anchorObservers.push(o),
@@ -72897,8 +72927,8 @@ if (document.querySelectorAll('.case__video')) {
                   this._disableScroll = Boolean(this.element.getAttribute("data-disable-scroll"));
                let n = t.querySelector(".data");
                this._data = n.querySelectorAll(".entry"),
-                  addEventOnEntry();
-                  n.parentNode.removeChild(n),
+                  /* addEventOnEntry(); */
+               n.parentNode.removeChild(n),
                   this.setupColumns(),
                   this.setupEntries(),
                   this._observer = new IntersectionObserver(this.onIntersection, {
@@ -73273,8 +73303,8 @@ if (document.querySelectorAll('.case__video')) {
                ,
                this.loadSpriteSheets = () => {
                   let t = $r.shared;
-                  t.add("/ts.media-2.0/assets/spritesheets/face_all.json"),
-                  t.load(this.assetsLoaded)
+                  t.add("/assets/spritesheets/face_all.json"),
+                     t.load(this.assetsLoaded)
                }
                ,
                this.assetsLoaded = () => {

@@ -9487,6 +9487,7 @@ case__img-column-m-r {
    line-height: 28px;
 }
 
+
 .case__team-title {
    margin-bottom: 40px;
    font-family: inherit;
@@ -9505,6 +9506,11 @@ case__img-column-m-r {
 
 .case__team-item:first-child {
    margin-top: 0px;
+}
+
+.case__team-item-dark .case__team-title,
+.case__team-item-dark .case__team-item {
+   color: #FFFFFF;
 }
 
 .case__more {

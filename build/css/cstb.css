@@ -130,10 +130,17 @@
 }
 
 .cstb__img-7 {
-   background: url('./../../assets/images/cstb/galery/img-7.png') center no-repeat;
-   height: 820px;
+   width: 1248px;
+   height: 698px;
 }
 
+.cstb__img-blue {
+   background: #173B89;
+   height: 970px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
 
 
 
