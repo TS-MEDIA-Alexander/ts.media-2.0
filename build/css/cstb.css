@@ -130,13 +130,11 @@
 }
 
 .cstb__img-7 {
-   width: 1248px;
-   height: 698px;
+   height: 820px;
 }
 
-.cstb__img-blue {
-   background: #173B89;
-   height: 970px;
+.cstb__img-gray {
+   background: #A3A7AD;
    display: flex;
    justify-content: center;
    align-items: center;

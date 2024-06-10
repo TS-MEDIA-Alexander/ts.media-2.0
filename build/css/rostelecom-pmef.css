@@ -64,7 +64,7 @@
 }
 
 @media screen and (max-width: 1920px) {
-   .pmef__video-header .video{
+   .pmef__video-header .video {
       width: auto;
       height: auto;
    }
@@ -185,8 +185,17 @@
 }
 
 .pmef__img-9 {
-   background: url('./../../assets/images/rostelecom-pmef/galery/img-9.png') center no-repeat;
+   width: 1248px;
+   height: 698px;
+}
+
+.pmef__img-blue {
+   background: #173B89;
+   width: 1648px;
    height: 970px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
 
@@ -229,10 +238,11 @@
 
 }
 
-@media screen and (max-width: 1211px){
-   .pmef__img-container{
-    width: 100%;
+@media screen and (max-width: 1211px) {
+   .pmef__img-container {
+      width: 100%;
    }
+
    .pmef__img-min {
       width: 100%;
    }

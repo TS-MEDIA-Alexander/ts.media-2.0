@@ -47981,7 +47981,7 @@ function addControlAudio() {
             if (!ho.instance)
                if (ho.instance = new ho,
                   ho.instance._siteWrapper = document.body.querySelector("#SiteWrapper"),
-                  a.IS_ANDROID ? document.body.style.overflowX = "hidden" : document.body.style.overflow = "hidden", /* скролл */
+                  /* a.IS_ANDROID ? document.body.style.overflowX = "hidden" : document.body.style.overflow = "hidden", */ /* скролл */
                   a.IS_TOUCH_DEVICE)
                   a.IS_ANDROID || (document.body.style.overflowX = "hidden",
                      document.body.style.overflowY = "scroll"),
@@ -70277,7 +70277,7 @@ function addControlAudio() {
                this._enterPoint = new Et(0, 0),
                this._edges = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]],
                this._circleContainer = new Zt,
-               this._spriteSheet = $r.shared.resources["/assets/spritesheets/face_all.json"].spritesheet,
+               this._spriteSheet = $r.shared.resources["/ts.media-2.0/assets/spritesheets/face_all.json"].spritesheet,
                this._faceLabels = ["AdultToBaby", "BabyToTeen", "TeenToAdult", "LtoR", "RtoL", "DownUp", "UpDown"],
                this.setupEye = () => {
                   this.changeFace(0)
@@ -73303,7 +73303,7 @@ function addControlAudio() {
                ,
                this.loadSpriteSheets = () => {
                   let t = $r.shared;
-                  t.add("/assets/spritesheets/face_all.json"),
+                  t.add("/ts.media-2.0/assets/spritesheets/face_all.json"),
                      t.load(this.assetsLoaded)
                }
                ,
