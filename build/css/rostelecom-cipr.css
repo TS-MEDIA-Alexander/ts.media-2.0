@@ -1,0 +1,272 @@
+/* -------------------------------------------------отступы------------------------------------------------------------------- */
+.p-main {
+   padding: 120px 0;
+}
+
+.m-t {
+   margin-top: 120px;
+}
+
+.m-b {
+   margin-bottom: 120px;
+}
+
+.m-t64 {
+   margin-top: 64px;
+}
+
+.m-b64 {
+   margin-bottom: 64px;
+}
+
+.p-t {
+   padding-top: 120px;
+}
+
+.p-b200 {
+   padding-bottom: 200px;
+}
+
+.m-t260 {
+   margin-top: 260px;
+}
+
+.m-main200 {
+   margin: 200px 0;
+}
+
+.m-t200 {
+   margin-top: 200px;
+}
+
+.m-l104 {
+   margin-left: 104px;
+}
+
+/* -------------------------------------------------rstlcomCipr__subheader------------------------------------------------------------- */
+.rstlcomCipr__video-header {
+   background: url('./../../assets/images/rostelecom-cipr/rstlcomCipr-img-header.png') center no-repeat;
+   background-size: cover;
+}
+
+.rstlcomCipr__bg-header {
+   background: #940B93;
+}
+
+.rstlcomCipr__logo {
+   background: url('./../../assets/images/view-in-future/logos/viewFuture-subheader-logo.svg') 0 0/auto auto no-repeat;
+}
+
+.rstlcomCipr__border-top {
+   border-top-color: #FFFFFF29;
+}
+
+.rstlcomCipr__description-title {
+   font-family: 'Inter';
+   font-size: 12px;
+   font-weight: 400;
+   color: #FFFFFF7A;
+}
+
+.rstlcomCipr__text-block {
+   margin-right: 292px;
+}
+
+
+.rstlcomCipr__subheader__title {
+   font-weight: 400;
+   line-height: 56px;
+   text-align: left;
+}
+
+@media screen and (max-width: 1590px) {
+   .rstlcomCipr__subheader__title {
+      font-size: 30px;
+   }
+}
+
+@media screen and (max-width: 1364px) {
+   .rstlcomCipr__subheader__title {
+      text-align: center;
+   }
+}
+
+.rstlcomCipr__subheader__text {
+   font-family: 'Inter';
+   font-size: 20px;
+   font-weight: 300;
+   line-height: 28px;
+}
+
+@media screen and (max-width: 850px) {
+   .rstlcomCipr__text-block {
+      margin-right: 0;
+   }
+}
+
+/* -------------------------------------------------case-galery------------------------------------------------------------- */
+.rstlcomCipr__galery {
+   background: #FFFFFF;
+}
+
+.rstlcomCipr__bg {
+   background: #F1F2F3;
+}
+
+.rstlcomCipr__img-container {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   width: 100%;
+}
+
+.rstlcomCipr__img-container-left {
+   width: 100%;
+   display: flex;
+   justify-content: start;
+}
+
+.rstlcomCipr__img-container-center {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+}
+
+.rstlcomCipr__img-container-right {
+   width: 100%;
+   display: flex;
+   justify-content: end;
+}
+
+.rstlcomCipr__img-smol {
+   width: 772px;
+   height: 1000px;
+   background-size: contain !important;
+}
+
+.rstlcomCipr__img-min {
+   width: 1064px;
+   height: 600px;
+   background-size: contain !important;
+}
+
+.rstlcomCipr__img-middle {
+   width: 1064px;
+   height: 800px;
+   background-size: contain !important;
+}
+
+.rstlcomCipr__img-large {
+   width: 1648px;
+   height: 900px;
+   background-size: contain !important;
+}
+
+.rstlcomCipr__img-1 {
+   background: url('./../../assets/images/rostelecom-cipr/galery/img-1.png') center no-repeat;
+}
+.rstlcomCipr__img-2 {
+   background: url('./../../assets/images/rostelecom-cipr/galery/img-2.png') center no-repeat;
+}
+.rstlcomCipr__img-3 {
+   background: url('./../../assets/images/rostelecom-cipr/galery/img-3.png') center no-repeat;
+}
+.rstlcomCipr__img-4 {
+   background: url('./../../assets/images/rostelecom-cipr/galery/img-4.png') center no-repeat;
+}
+.rstlcomCipr__img-5 {
+   background: url('./../../assets/images/rostelecom-cipr/galery/img-5.png') center no-repeat;
+}
+.rstlcomCipr__img-6 {
+   background: url('./../../assets/images/rostelecom-cipr/galery/img-6.png') center no-repeat;
+}
+.rstlcomCipr__img-7 {
+   background: url('./../../assets/images/rostelecom-cipr/galery/img-7.png') center no-repeat;
+}
+.rstlcomCipr__img-8 {
+   background: url('./../../assets/images/rostelecom-cipr/galery/img-8.png') center no-repeat;
+   height: 355px;
+}
+.rstlcomCipr__img-9 {
+   background: url('./../../assets/images/rostelecom-cipr/galery/img-9.png') center no-repeat;
+   height: 1028px;
+}
+.rstlcomCipr__img-10 {
+   background: url('./../../assets/images/rostelecom-cipr/galery/img-10.png') center no-repeat;
+   height: 355px;
+}
+.rstlcomCipr__img-11 {
+   background: url('./../../assets/images/rostelecom-cipr/galery/img-11.png') center no-repeat;
+}
+.rstlcomCipr__img-12 {
+   background: url('./../../assets/images/rostelecom-cipr/galery/img-12.png') center no-repeat;
+}
+.rstlcomCipr__img-13 {
+   background: url('./../../assets/images/rostelecom-cipr/galery/img-13.png') center no-repeat;
+}
+
+
+
+.case__flex-contain-low {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: end;
+}
+
+.rstlcomCipr__text-container {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+}
+
+.rstlcomCipr__text-container_right {
+   width: 100%;
+   display: flex;
+   justify-content: end;
+}
+
+@media screen and (max-width: 1660px) {
+   .case__flex-contain-low {
+      flex-direction: column;
+   }
+
+   .rstlcomCipr__img-container {
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .rstlcomCipr__img-min {
+      width: 50%;
+   }
+
+   .rstlcomCipr__img-middle {
+      margin-top: 120px;
+      width: 90%;
+   }
+
+   .rstlcomCipr__img-large {
+      width: 90%;
+   }
+}
+
+@media screen and (max-width: 1134px) {
+   .rstlcomCipr__text-container {
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .case__text {
+      margin-top: 40px;
+   }
+}
+
+@media screen and (max-width: 980px) {
+
+   .rstlcomCipr__img-smol,
+   .rstlcomCipr__img-min,
+   .rstlcomCipr__img-middle,
+   .rstlcomCipr__img-large {
+      width: 100%;
+   }
+}
