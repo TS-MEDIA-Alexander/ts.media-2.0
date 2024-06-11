@@ -1,0 +1,293 @@
+/* -------------------------------------------------отступы------------------------------------------------------------------- */
+.p-main {
+   padding: 120px 0;
+}
+
+.m-t {
+   margin-top: 120px;
+}
+
+.m-b64 {
+   margin-bottom: 64px;
+}
+
+.p-t {
+   padding-top: 120px;
+}
+
+.m-t200 {
+   margin-top: 200px;
+}
+
+.m-b200 {
+   margin-bottom: 200px;
+}
+
+/* -------------------------------------------------solarPmef__subheader------------------------------------------------------------- */
+.solarPmef__video-header {
+   background: url('./../../assets/images/solar-pmef/solarPmef-img-header.png') center no-repeat;
+   background-size: cover;
+}
+
+.solarPmef__bg-header {
+   background: #2B323A;
+}
+
+.solarPmef__logo {
+   background: url('./../../assets/images/solar-pmef/logos/solarPmef-subheader-logo.svg') 0 0/auto auto no-repeat;
+}
+
+.solarPmef__border-top {
+   border-top-color: #FFFFFF29;
+}
+
+.solarPmef__description-title {
+   font-family: 'Inter';
+   font-size: 12px;
+   font-weight: 400;
+   color: #FFFFFF7A;
+}
+
+.solarPmef__text-block {
+   margin-right: 292px;
+}
+
+
+.solarPmef__subheader__title {
+   font-weight: 400;
+   line-height: 56px;
+   text-align: left;
+}
+
+@media screen and (max-width: 1590px) {
+   .solarPmef__subheader__title {
+      font-size: 30px;
+   }
+}
+
+@media screen and (max-width: 1364px) {
+   .solarPmef__subheader__title {
+      text-align: center;
+   }
+}
+
+.solarPmef__subheader__text {
+   font-family: 'Inter';
+   font-size: 20px;
+   font-weight: 300;
+   line-height: 28px;
+}
+
+@media screen and (max-width: 850px) {
+   .solarPmef__text-block {
+      margin-right: 0;
+   }
+}
+
+/* -------------------------------------------------case-galery------------------------------------------------------------- */
+.solarPmef__bg-orange {
+   background: linear-gradient(90deg, #FDB682 0%, #EE6716 100%);
+   width: 100%;
+   height: 100%;
+}
+
+.solarPmef__galery {
+   background: #FFFFFF;
+}
+
+.solarPmef__bg {
+   background: #F1F2F3;
+}
+
+.solarPmef__img-container {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+}
+
+.solarPmef__img-container-left {
+   width: 100%;
+   display: flex;
+   justify-content: start;
+}
+
+.solarPmef__img-container-center {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+}
+
+.solarPmef__img-container-right {
+   width: 100%;
+   display: flex;
+   justify-content: end;
+}
+
+.solarPmef__img-min {
+   width: 1064px;
+   height: 600px;
+   background-size: contain !important;
+}
+
+.solarPmef__img-middle {
+   width: 1356px;
+   height: 763px;
+   background-size: contain !important;
+}
+
+.solarPmef__img-large {
+   width: 1648px;
+   height: 956px;
+   background-size: contain !important;
+}
+
+.solarPmef__img-1 {
+   background: url('./../../assets/images/solar-pmef/galery/img-1.png') center no-repeat;
+}
+
+.solarPmef__img-2 {
+   background: url('./../../assets/images/solar-pmef/galery/img-2.png') center no-repeat;
+   height: 927px;
+}
+
+.solarPmef__img-3 {
+   background: url('./../../assets/images/solar-pmef/galery/img-3.png') center no-repeat;
+}
+
+.solarPmef__img-4 {
+   background: url('./../../assets/images/solar-pmef/galery/img-4.png') center no-repeat;
+}
+
+.solarPmef__img-5 {
+   background: url('./../../assets/images/solar-pmef/galery/img-5.png') center no-repeat;
+}
+
+.solarPmef__img-6 {
+   background: url('./../../assets/images/solar-pmef/galery/img-6.png') center no-repeat;
+}
+
+.solarPmef__img-7 {
+   background: url('./../../assets/images/solar-pmef/galery/img-7.png') center no-repeat;
+}
+
+.solarPmef__img-8 {
+   background: url('./../../assets/images/solar-pmef/galery/img-8.png') center no-repeat;
+}
+
+.solarPmef__img-9 {
+   background: url('./../../assets/images/solar-pmef/galery/img-9.png') center no-repeat;
+}
+
+.solarPmef__img-10 {
+   background: url('./../../assets/images/solar-pmef/galery/img-10.png') center no-repeat;
+   height: 709px;
+}
+
+.solarPmef__img-11 {
+   background: url('./../../assets/images/solar-pmef/galery/img-11.png') center no-repeat;
+   height: 709px;
+}
+
+.case__flex-contain-low {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: end;
+}
+
+.solarPmef__text-container {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+}
+
+.solarPmef__text-container_right {
+   width: 100%;
+   display: flex;
+   justify-content: end;
+}
+
+.solarPmef__stay-on-guard-block {
+   display: flex;
+   justify-content: end;
+   align-items: center;
+   width: 1648px;
+   height: 240px;
+}
+.solarPmef__logo-stay-on-guard {
+   background: url('./../../assets/images/solar-pmef/logos/solarPmef-sector-logo.svg') 0 0/auto auto no-repeat;
+   width: 214px;
+   height: 84px;
+   margin-right: 129px;
+}
+
+@media screen and (max-width: 1660px) {
+   .case__flex-contain-low {
+      flex-direction: column;
+   }
+
+   .solarPmef__img-container {
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .solarPmef__img-min {
+      width: 50%;
+   }
+
+   .solarPmef__img-middle {
+      margin-top: 120px;
+      width: 90%;
+   }
+
+   .solarPmef__img-large {
+      width: 90%;
+   }
+}
+
+@media screen and (max-width: 1134px) {
+   .solarPmef__text-container {
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .case__text {
+      margin-top: 40px;
+   }
+}
+
+@media screen and (max-width: 980px) {
+
+   .solarPmef__img-smol,
+   .solarPmef__img-min,
+   .solarPmef__img-middle,
+   .solarPmef__img-large {
+      width: 100%;
+   }
+}
+
+.solarPmef__img-column-1 {
+   background: url('./../../assets/images/solar-pmef/galery/img-column-1.png') center no-repeat;
+}
+.solarPmef__img-column-2 {
+   background: url('./../../assets/images/solar-pmef/galery/img-column-2.png') center no-repeat;
+}
+.solarPmef__img-column-3 {
+   background: url('./../../assets/images/solar-pmef/galery/img-column-3.png') center no-repeat;
+}
+.solarPmef__img-column-4 {
+   background: url('./../../assets/images/solar-pmef/galery/img-column-4.png') center no-repeat;
+}
+
+
+
+@media screen and (max-width: 1660px) {
+   .case__text_dark {
+      margin-top: 50px;
+   }
+}
+
+/* -------------------------------------------------case-galery-Dark------------------------------------------------------------ */
+.solarPmef__galery-dark {
+   background: #181818;
+}

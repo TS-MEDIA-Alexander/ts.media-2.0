@@ -9441,6 +9441,10 @@ button.vjs-play-control:hover {
    display: flex;
    justify-content: start;
 }
+.case__img-row-column-container_right {
+   display: flex;
+   justify-content: end;
+}
 
 .case__img-column,
 case__img-column-m-r {
