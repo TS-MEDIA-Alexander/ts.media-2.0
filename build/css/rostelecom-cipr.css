@@ -47,6 +47,7 @@
 .rstlcomCipr__video-header {
    background: url('./../../assets/images/rostelecom-cipr/rstlcomCipr-img-header.png') center no-repeat;
    background-size: cover;
+   height: auto;
 }
 
 .rstlcomCipr__bg-header {
