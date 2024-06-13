@@ -1,0 +1,257 @@
+/* -------------------------------------------------отступы------------------------------------------------------------------- */
+.p-main {
+   padding: 120px 0;
+}
+
+.m-t {
+   margin-top: 120px;
+}
+
+.p-t {
+   padding-top: 120px;
+}
+
+.p-t200 {
+   padding-top: 200px;
+}
+.p-b200 {
+   padding-bottom: 200px;
+}
+
+/* -------------------------------------------------adCaesarSatellite__subheader------------------------------------------------------------- */
+.adCaesarSatellite__video-header {
+   background: url('./../../assets/images/cipr/cipr-img-header.svg') center no-repeat;
+   background-size: cover;
+}
+
+.adCaesarSatellite__bg-header {
+   background: linear-gradient(0deg, #242219, #242219),
+linear-gradient(0deg, #131317, #131317);
+
+}
+
+.adCaesarSatellite__logo {
+   background: url('./../../assets/images/advertising-caesar-satellite/logos/logo-c-s.svg') 0 0/auto auto no-repeat;
+}
+
+.adCaesarSatellite__border-top {
+   border-top-color: #FFFFFF29; 
+   width: 447px;
+}
+
+.adCaesarSatellite__description-title {
+   font-family: 'Inter';
+   font-size: 12px;
+   font-weight: 400;
+   color: #FFFFFF7A;
+}
+
+.adCaesarSatellite__subheader__title {
+   width: 480px;
+   font-weight: 400;
+   line-height: 56px;
+}
+
+@media screen and (max-width: 1590px) {
+   .adCaesarSatellite__subheader__title {
+      font-size: 30px;
+      width: 280px;
+   }
+}
+
+@media screen and (max-width: 1364px) {
+   .adCaesarSatellite__subheader__title {
+      text-align: center;
+      width: 100%;
+   }
+}
+
+.adCaesarSatellite__subheader__text {
+   font-family: 'Inter';
+   font-size: 20px;
+   font-weight: 300;
+   line-height: 28px;
+}
+
+/* -------------------------------------------------case-galery------------------------------------------------------------- */
+.adCaesarSatellite__galery {
+   background: #EEEEEE;
+}
+
+.adCaesarSatellite__bg {
+   background: #F1F2F3;
+}
+
+.adCaesarSatellite__img-container {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+}
+
+.adCaesarSatellite__img-container-left {
+   width: 100%;
+   display: flex;
+   justify-content: start;
+}
+
+.adCaesarSatellite__img-container-center {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+}
+
+.adCaesarSatellite__img-container-right {
+   width: 100%;
+   display: flex;
+   justify-content: end;
+}
+
+.adCaesarSatellite__img-smal {
+   width: 480px;
+   height: 271px; 
+   background-size: contain !important;
+}
+
+.adCaesarSatellite__img-min {
+   width: 1064px;
+   height: 600px;
+   background-size: contain !important;
+}
+
+.adCaesarSatellite__img-middle {
+   width: 1064px;
+   height: 841px;
+   background-size: contain !important;
+}
+
+.adCaesarSatellite__img-large {
+   width: 1648px;
+   height: 939px;
+   background-size: contain !important;
+}
+
+.adCaesarSatellite__img-1 {
+   background: url('./../../assets/images/advertising-caesar-satellite/galery/img-1.png') center no-repeat;
+}
+.adCaesarSatellite__img-2 {
+   background: url('./../../assets/images/advertising-caesar-satellite/galery/img-2.png') center no-repeat;
+}
+
+.adCaesarSatellite__img-3 {
+   background: url('./../../assets/images/advertising-caesar-satellite/galery/img-3.png') center no-repeat;
+}
+
+.adCaesarSatellite__img-4 {
+   background: url('./../../assets/images/advertising-caesar-satellite/galery/img-4.png') center no-repeat;
+   height: 338px;
+}
+
+.adCaesarSatellite__img-5 {
+   background: url('./../../assets/images/advertising-caesar-satellite/galery/img-5.png') center no-repeat;
+}
+.adCaesarSatellite__img-6 {
+   background: url('./../../assets/images/advertising-caesar-satellite/galery/img-6.png') center no-repeat;
+}
+
+.adCaesarSatellite__img-7 {
+   background: url('./../../assets/images/advertising-caesar-satellite/galery/img-7.png') center no-repeat;
+   height: 321px;
+}
+
+.adCaesarSatellite__img-8 {
+   background: url('./../../assets/images/advertising-caesar-satellite/galery/img-8.png') center no-repeat;
+}
+
+.adCaesarSatellite__img-9 {
+   background: url('./../../assets/images/advertising-caesar-satellite/galery/img-9.png') center no-repeat;
+}
+
+.adCaesarSatellite__img-10 {
+   background: url('./../../assets/images/advertising-caesar-satellite/galery/img-10.png') center no-repeat;
+   height: 271px;
+}
+
+.adCaesarSatellite__img-11 {
+   background: url('./../../assets/images/advertising-caesar-satellite/galery/img-11.png') center no-repeat;
+}
+
+.case__flex-contain-low {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: end;
+}
+
+.adCaesarSatellite__text-container {
+   width: 100%;
+   display: flex;
+   justify-content: flex-end;
+}
+
+@media screen and (max-width: 1660px) {
+   .case__flex-contain-low {
+      flex-direction: column;
+   }
+
+   .adCaesarSatellite__img-container {
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .adCaesarSatellite__img-min {
+      width: 50%;
+   }
+
+   .adCaesarSatellite__img-middle {
+      margin-top: 120px;
+      width: 90%;
+   }
+
+   .adCaesarSatellite__img-large {
+      width: 90%;
+   }
+}
+
+@media screen and (max-width: 980px) {
+   .adCaesarSatellite__img-min {
+      width: 100%;
+   }
+
+   .adCaesarSatellite__img-middle {
+      width: 100%;
+   }
+
+   .adCaesarSatellite__img-large {
+      width: 100%;
+   }
+}
+
+/* -------------------------------------------------adCaesarSatellite__galery_dark------------------------------------------------------------ */
+.adCaesarSatellite__galery_dark {
+   background: #131317;
+}
+
+.adCaesarSatellite__img-column-1 {
+   background: url('./../../assets/images/advertising-caesar-satellite/galery/adCaesarSatellite__img-column-1.png') center no-repeat;
+  
+}
+
+.adCaesarSatellite__img-column-2 {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: #28579A;
+}
+
+.adCaesarSatellite__img-column-2-inner{
+   width: 352px;
+   height: 724px;
+   background: url('./../../assets/images/advertising-caesar-satellite/galery/adCaesarSatellite__img-column-2.png') center no-repeat;
+
+}
+
+@media screen and (max-width: 1660px) {
+   .case__text_dark {
+      margin-top: 50px;
+   }
+}
