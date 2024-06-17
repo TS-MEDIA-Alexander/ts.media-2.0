@@ -47981,7 +47981,7 @@ function addControlAudio() {
             if (!ho.instance)
                if (ho.instance = new ho,
                   ho.instance._siteWrapper = document.body.querySelector("#SiteWrapper"),
-                  /* a.IS_ANDROID ? document.body.style.overflowX = "hidden" : document.body.style.overflow = "hidden", */ /* скролл */
+                  a.IS_ANDROID ? document.body.style.overflowX = "hidden" : document.body.style.overflow = "hidden", /* скролл */
                   a.IS_TOUCH_DEVICE)
                   a.IS_ANDROID || (document.body.style.overflowX = "hidden",
                      document.body.style.overflowY = "scroll"),
